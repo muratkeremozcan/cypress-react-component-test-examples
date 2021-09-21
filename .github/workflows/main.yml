@@ -59,3 +59,18 @@ jobs:
           useRollingCache: true
       - name: typecheck
         run: yarn typecheck
+
+  # no caching, just use Cypress included docker image      
+  e2e-test:
+    needs: [unit-test, lint, typecheck]
+    runs-on: ubuntu-latest
+    container: cypress/included:8.4.1
+    steps:
+      - uses: actions/checkout@v2
+      - name: Cypress tests 🧪
+        uses: cypress-io/github-action@v2
+        with:
+          install: false
+          start: yarn cypress:run
+          wait-on: 'http://localhost:3000'
+
