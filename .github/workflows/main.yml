@@ -1,0 +1,53 @@
+name: Build
+on: push
+
+concurrency:
+  group: ${{ github.head_ref || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  install-dependencies:
+    name: Install Dependencies
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v2
+      with:
+        cache: 'yarn'
+    - uses: bahmutov/npm-install@v1
+
+  unit-test:
+    needs: install-dependencies
+    name: Run Unit Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          cache: 'yarn'
+      - name: Run tests
+        run: yarn test
+    
+  lint:
+    needs: install-dependencies
+    name: Run Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          cache: 'yarn'
+      - name: lint
+        run: yarn lint
+
+  typecheck:
+    needs: install-dependencies
+    name : Run Typecheck
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          cache: 'yarn'
+      - name: typecheck
+        run: yarn typecheck
