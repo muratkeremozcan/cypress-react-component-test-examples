@@ -15,6 +15,8 @@ jobs:
       with:
         cache: 'yarn'
     - uses: bahmutov/npm-install@v1
+      with:
+        useRollingCache: true
 
   unit-test:
     needs: install-dependencies
@@ -37,6 +39,9 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           cache: 'yarn'
+      - uses: bahmutov/npm-install@v1
+        with:
+          useRollingCache: true
       - name: lint
         run: yarn lint
 
@@ -49,5 +54,8 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           cache: 'yarn'
+      - uses: bahmutov/npm-install@v1
+        with:
+          useRollingCache: true
       - name: typecheck
         run: yarn typecheck
