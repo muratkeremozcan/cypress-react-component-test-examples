@@ -70,9 +70,13 @@ jobs:
     container: cypress/included:8.4.1
     steps:
       - uses: actions/checkout@v2
+      - uses: bahmutov/npm-install@v1
+        with:
+          useRollingCache: true
       - name: Cypress tests 🧪
         uses: cypress-io/github-action@v2
         with:
+          install: false
           start: yarn start
           wait-on: 'http://localhost:3000'
 
