@@ -24,9 +24,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          cache: 'yarn'
       - uses: bahmutov/npm-install@v1
         with:
           useRollingCache: true
@@ -39,9 +36,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          cache: 'yarn'
       - uses: bahmutov/npm-install@v1
         with:
           useRollingCache: true
@@ -54,29 +48,25 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          cache: 'yarn'
       - uses: bahmutov/npm-install@v1
         with:
           useRollingCache: true
       - name: typecheck
         run: yarn typecheck
 
-  # no caching, just use Cypress included docker image      
   e2e-test:
     needs: [unit-test, lint, typecheck]
     runs-on: ubuntu-latest
-    container: cypress/included:8.4.1
+    container: cypress/included:8.4.1 # save time on not having to install cypress
     steps:
       - uses: actions/checkout@v2
-      - uses: bahmutov/npm-install@v1
+      - uses: bahmutov/npm-install@v1 # save time on dependencies
         with:
           useRollingCache: true
       - name: Cypress tests 🧪
         uses: cypress-io/github-action@v2
         with:
-          install: false
+          install: false # no need to install because of the above 2
           start: yarn start
           wait-on: 'http://localhost:3000'
 
