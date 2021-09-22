@@ -16,7 +16,7 @@ jobs:
         cache: 'yarn'
     - uses: bahmutov/npm-install@v1
       with:
-        useRollingCache: true
+        useRollingCache: true # recommended for large projects
 
   unit-test:
     needs: install-dependencies
