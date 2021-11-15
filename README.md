@@ -13,7 +13,7 @@ yarn cy:run-ct # headless version
 
 yarn test # run unit tests with jest
 
-# use server-test to start the app and run e2e (the app is not running)
+# use server-test to start the app and run e2e (the app should not already be running)
 yarn server:test
 ```
 

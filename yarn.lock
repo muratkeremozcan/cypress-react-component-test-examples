@@ -1321,7 +1321,7 @@
 
 "@hapi/hoek@^9.0.0":
   version "9.2.1"
-  resolved "https://extend-159581800400.d.codeartifact.us-east-1.amazonaws.com:443/npm/extend-npm/@hapi/hoek/-/hoek-9.2.1.tgz#9551142a1980503752536b5050fd99f4a7f13b17"
+  resolved "https://registry.yarnpkg.com/@hapi/hoek/-/hoek-9.2.1.tgz#9551142a1980503752536b5050fd99f4a7f13b17"
   integrity sha512-gfta+H8aziZsm8pZa0vj04KO6biEiisppNgA1kbJvFrrWu9Vm7eaUEy76DIxsuTaWvti5fkJVhllWc6ZTE+Mdw==
 
 "@hapi/joi@^15.1.0":
@@ -1343,7 +1343,7 @@
 
 "@hapi/topo@^5.0.0":
   version "5.1.0"
-  resolved "https://extend-159581800400.d.codeartifact.us-east-1.amazonaws.com:443/npm/extend-npm/@hapi/topo/-/topo-5.1.0.tgz#dc448e332c6c6e37a4dc02fd84ba8d44b9afb012"
+  resolved "https://registry.yarnpkg.com/@hapi/topo/-/topo-5.1.0.tgz#dc448e332c6c6e37a4dc02fd84ba8d44b9afb012"
   integrity sha512-foQZKJig7Ob0BMAYBfcJk8d77QtOe7Wo4ox7ff1lQYoNNAb6jwcY1ncdoy2e9wQZzvNy7ODZCYJkK8kzmcAnAg==
   dependencies:
     "@hapi/hoek" "^9.0.0"
@@ -1639,19 +1639,19 @@
 
 "@sideway/address@^4.1.0":
   version "4.1.2"
-  resolved "https://extend-159581800400.d.codeartifact.us-east-1.amazonaws.com:443/npm/extend-npm/@sideway/address/-/address-4.1.2.tgz#811b84333a335739d3969cfc434736268170cad1"
+  resolved "https://registry.yarnpkg.com/@sideway/address/-/address-4.1.2.tgz#811b84333a335739d3969cfc434736268170cad1"
   integrity sha512-idTz8ibqWFrPU8kMirL0CoPH/A29XOzzAzpyN3zQ4kAWnzmNfFmRaoMNN6VI8ske5M73HZyhIaW4OuSFIdM4oA==
   dependencies:
     "@hapi/hoek" "^9.0.0"
 
 "@sideway/formula@^3.0.0":
   version "3.0.0"
-  resolved "https://extend-159581800400.d.codeartifact.us-east-1.amazonaws.com:443/npm/extend-npm/@sideway/formula/-/formula-3.0.0.tgz#fe158aee32e6bd5de85044be615bc08478a0a13c"
+  resolved "https://registry.yarnpkg.com/@sideway/formula/-/formula-3.0.0.tgz#fe158aee32e6bd5de85044be615bc08478a0a13c"
   integrity sha512-vHe7wZ4NOXVfkoRb8T5otiENVlT7a3IAiw7H5M2+GO+9CDgcVUUsX1zalAztCmwyOr2RUTGJdgB+ZvSVqmdHmg==
 
 "@sideway/pinpoint@^2.0.0":
   version "2.0.0"
-  resolved "https://extend-159581800400.d.codeartifact.us-east-1.amazonaws.com:443/npm/extend-npm/@sideway/pinpoint/-/pinpoint-2.0.0.tgz#cff8ffadc372ad29fd3f78277aeb29e632cc70df"
+  resolved "https://registry.yarnpkg.com/@sideway/pinpoint/-/pinpoint-2.0.0.tgz#cff8ffadc372ad29fd3f78277aeb29e632cc70df"
   integrity sha512-RNiOoTPkptFtSVzQevY/yWtZwf/RxyVnPy/OcA9HBM3MlGDnBEYL5B41H0MTn0Uec8Hi+2qUtTfG2WWZBmMejQ==
 
 "@sinonjs/commons@^1.7.0":
@@ -2779,7 +2779,7 @@ axe-core@^4.3.5:
 
 axios@^0.21.1:
   version "0.21.4"
-  resolved "https://extend-159581800400.d.codeartifact.us-east-1.amazonaws.com:443/npm/extend-npm/axios/-/axios-0.21.4.tgz#c67b90dc0568e5c1cf2b0b858c43ba28e2eda575"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.4.tgz#c67b90dc0568e5c1cf2b0b858c43ba28e2eda575"
   integrity sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==
   dependencies:
     follow-redirects "^1.14.0"
@@ -5154,7 +5154,7 @@ etag@~1.8.1:
 
 event-stream@=3.3.4:
   version "3.3.4"
-  resolved "https://extend-159581800400.d.codeartifact.us-east-1.amazonaws.com:443/npm/extend-npm/event-stream/-/event-stream-3.3.4.tgz#4ab4c9a0f5a54db9338b4c34d86bfce8f4b35571"
+  resolved "https://registry.yarnpkg.com/event-stream/-/event-stream-3.3.4.tgz#4ab4c9a0f5a54db9338b4c34d86bfce8f4b35571"
   integrity sha1-SrTJoPWlTbkzi0w02Gv86PSzVXE=
   dependencies:
     duplexer "~0.1.1"
@@ -5217,7 +5217,7 @@ execa@4.1.0, execa@^4.0.0:
 
 execa@5.1.1:
   version "5.1.1"
-  resolved "https://extend-159581800400.d.codeartifact.us-east-1.amazonaws.com:443/npm/extend-npm/execa/-/execa-5.1.1.tgz#f80ad9cbf4298f7bd1d4c9555c21e93741c411dd"
+  resolved "https://registry.yarnpkg.com/execa/-/execa-5.1.1.tgz#f80ad9cbf4298f7bd1d4c9555c21e93741c411dd"
   integrity sha512-8uSpZZocAZRBAPIEINJj3Lo9HyGitllczc27Eh5YYojjMFMn8yHMDMaUHE2Jqfq05D/wucwI4JGURyXt1vchyg==
   dependencies:
     cross-spawn "^7.0.3"
@@ -5667,7 +5667,7 @@ from2@^2.1.0:
 
 from@~0:
   version "0.1.7"
-  resolved "https://extend-159581800400.d.codeartifact.us-east-1.amazonaws.com:443/npm/extend-npm/from/-/from-0.1.7.tgz#83c60afc58b9c56997007ed1a768b3ab303a44fe"
+  resolved "https://registry.yarnpkg.com/from/-/from-0.1.7.tgz#83c60afc58b9c56997007ed1a768b3ab303a44fe"
   integrity sha1-g8YK/Fi5xWmXAH7Rp2izqzA6RP4=
 
 fs-extra@^4.0.3:
@@ -5797,7 +5797,7 @@ get-stream@^5.0.0, get-stream@^5.1.0:
 
 get-stream@^6.0.0:
   version "6.0.1"
-  resolved "https://extend-159581800400.d.codeartifact.us-east-1.amazonaws.com:443/npm/extend-npm/get-stream/-/get-stream-6.0.1.tgz#a262d8eef67aced57c2852ad6167526a43cbf7b7"
+  resolved "https://registry.yarnpkg.com/get-stream/-/get-stream-6.0.1.tgz#a262d8eef67aced57c2852ad6167526a43cbf7b7"
   integrity sha512-ts6Wi+2j3jQjqi70w5AlN8DFnkSwC+MqmxEzdEALB2qXZYV3X/b1CTfgPLGJNMeAWxdPfU8FO1ms3NUfaHCPYg==
 
 get-symbol-description@^1.0.0:
@@ -6250,7 +6250,7 @@ human-signals@^1.1.1:
 
 human-signals@^2.1.0:
   version "2.1.0"
-  resolved "https://extend-159581800400.d.codeartifact.us-east-1.amazonaws.com:443/npm/extend-npm/human-signals/-/human-signals-2.1.0.tgz#dc91fcba42e4d06e4abaed33b3e7a3c02f514ea0"
+  resolved "https://registry.yarnpkg.com/human-signals/-/human-signals-2.1.0.tgz#dc91fcba42e4d06e4abaed33b3e7a3c02f514ea0"
   integrity sha512-B4FFZ6q/T2jhhksgkbEW3HBvWIfDW85snkQgawt07S7J5QXTk6BkNV+0yAeZrM5QpMAdYlocGoljn0sJ/WQkFw==
 
 iconv-lite@0.4.24:
@@ -7353,7 +7353,7 @@ jest@26.6.0:
 
 joi@^17.4.0:
   version "17.4.2"
-  resolved "https://extend-159581800400.d.codeartifact.us-east-1.amazonaws.com:443/npm/extend-npm/joi/-/joi-17.4.2.tgz#02f4eb5cf88e515e614830239379dcbbe28ce7f7"
+  resolved "https://registry.yarnpkg.com/joi/-/joi-17.4.2.tgz#02f4eb5cf88e515e614830239379dcbbe28ce7f7"
   integrity sha512-Lm56PP+n0+Z2A2rfRvsfWVDXGEWjXxatPopkQ8qQ5mxCEhwHG+Ettgg5o98FFaxilOxozoa14cFhrE/hOzh/Nw==
   dependencies:
     "@hapi/hoek" "^9.0.0"
@@ -7826,7 +7826,7 @@ map-cache@^0.2.2:
 
 map-stream@~0.1.0:
   version "0.1.0"
-  resolved "https://extend-159581800400.d.codeartifact.us-east-1.amazonaws.com:443/npm/extend-npm/map-stream/-/map-stream-0.1.0.tgz#e56aa94c4c8055a16404a0674b78f215f7c8e194"
+  resolved "https://registry.yarnpkg.com/map-stream/-/map-stream-0.1.0.tgz#e56aa94c4c8055a16404a0674b78f215f7c8e194"
   integrity sha1-5WqpTEyAVaFkBKBnS3jyFffI4ZQ=
 
 map-visit@^1.0.0:
@@ -8754,7 +8754,7 @@ path-type@^4.0.0:
 
 pause-stream@0.0.11:
   version "0.0.11"
-  resolved "https://extend-159581800400.d.codeartifact.us-east-1.amazonaws.com:443/npm/extend-npm/pause-stream/-/pause-stream-0.0.11.tgz#fe5a34b0cbce12b5aa6a2b403ee2e73b602f1445"
+  resolved "https://registry.yarnpkg.com/pause-stream/-/pause-stream-0.0.11.tgz#fe5a34b0cbce12b5aa6a2b403ee2e73b602f1445"
   integrity sha1-/lo0sMvOErWqaitAPuLnO2AvFEU=
   dependencies:
     through "~2.3"
@@ -9671,7 +9671,7 @@ prr@~1.0.1:
 
 ps-tree@1.2.0:
   version "1.2.0"
-  resolved "https://extend-159581800400.d.codeartifact.us-east-1.amazonaws.com:443/npm/extend-npm/ps-tree/-/ps-tree-1.2.0.tgz#5e7425b89508736cdd4f2224d028f7bb3f722ebd"
+  resolved "https://registry.yarnpkg.com/ps-tree/-/ps-tree-1.2.0.tgz#5e7425b89508736cdd4f2224d028f7bb3f722ebd"
   integrity sha512-0VnamPPYHl4uaU/nSFeZZpR21QAWRz+sRv4iW9+v/GS/J5U5iZB5BNN6J0RMoOvdx2gWM2+ZFMIm58q24e4UYA==
   dependencies:
     event-stream "=3.3.4"
@@ -10881,7 +10881,7 @@ split-string@^3.0.1, split-string@^3.0.2:
 
 split@0.3:
   version "0.3.3"
-  resolved "https://extend-159581800400.d.codeartifact.us-east-1.amazonaws.com:443/npm/extend-npm/split/-/split-0.3.3.tgz#cd0eea5e63a211dfff7eb0f091c4133e2d0dd28f"
+  resolved "https://registry.yarnpkg.com/split/-/split-0.3.3.tgz#cd0eea5e63a211dfff7eb0f091c4133e2d0dd28f"
   integrity sha1-zQ7qXmOiEd//frDwkcQTPi0N0o8=
   dependencies:
     through "2"
@@ -10939,7 +10939,7 @@ stackframe@^1.1.1:
 
 start-server-and-test@^1.14.0:
   version "1.14.0"
-  resolved "https://extend-159581800400.d.codeartifact.us-east-1.amazonaws.com:443/npm/extend-npm/start-server-and-test/-/start-server-and-test-1.14.0.tgz#c57f04f73eac15dd51733b551d775b40837fdde3"
+  resolved "https://registry.yarnpkg.com/start-server-and-test/-/start-server-and-test-1.14.0.tgz#c57f04f73eac15dd51733b551d775b40837fdde3"
   integrity sha512-on5ELuxO2K0t8EmNj9MtVlFqwBMxfWOhu4U7uZD1xccVpFlOQKR93CSe0u98iQzfNxRyaNTb/CdadbNllplTsw==
   dependencies:
     bluebird "3.7.2"
@@ -10973,7 +10973,7 @@ stream-browserify@^2.0.1:
 
 stream-combiner@~0.0.4:
   version "0.0.4"
-  resolved "https://extend-159581800400.d.codeartifact.us-east-1.amazonaws.com:443/npm/extend-npm/stream-combiner/-/stream-combiner-0.0.4.tgz#4d5e433c185261dde623ca3f44c586bcf5c4ad14"
+  resolved "https://registry.yarnpkg.com/stream-combiner/-/stream-combiner-0.0.4.tgz#4d5e433c185261dde623ca3f44c586bcf5c4ad14"
   integrity sha1-TV5DPBhSYd3mI8o/RMWGvPXErRQ=
   dependencies:
     duplexer "~0.1.1"
@@ -11887,7 +11887,7 @@ w3c-xmlserializer@^2.0.0:
 
 wait-on@6.0.0:
   version "6.0.0"
-  resolved "https://extend-159581800400.d.codeartifact.us-east-1.amazonaws.com:443/npm/extend-npm/wait-on/-/wait-on-6.0.0.tgz#7e9bf8e3d7fe2daecbb7a570ac8ca41e9311c7e7"
+  resolved "https://registry.yarnpkg.com/wait-on/-/wait-on-6.0.0.tgz#7e9bf8e3d7fe2daecbb7a570ac8ca41e9311c7e7"
   integrity sha512-tnUJr9p5r+bEYXPUdRseolmz5XqJTTj98JgOsfBn7Oz2dxfE2g3zw1jE+Mo8lopM3j3et/Mq1yW7kKX6qw7RVw==
   dependencies:
     axios "^0.21.1"
