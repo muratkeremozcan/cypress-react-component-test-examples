@@ -1,7 +1,6 @@
 {
   "baseUrl": "http://localhost:3000",
   "component": {
-    "testFiles": "**/*.comp-test.{js,ts,jsx,tsx}",
-    "componentFolder": "src"
+    "testFiles": "**/*.test.{js,ts,jsx,tsx}"
   }
 }
