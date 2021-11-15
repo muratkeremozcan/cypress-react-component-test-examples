@@ -60,15 +60,25 @@ jobs:
   e2e-test:
     needs: [unit-test, lint, typecheck]
     runs-on: ubuntu-latest
-    container: cypress/included:8.4.1 # save time on not having to install cypress
+    container: cypress/included:9.0.0 # save time on not having to install cypress
     steps:
       - uses: actions/checkout@v2
+
       - uses: bahmutov/npm-install@v1 # save time on dependencies
         with: { useRollingCache: true }
-      - name: Cypress tests 🧪
-        uses: cypress-io/github-action@v2
+
+      - name: Cypress e2e tests 🧪
+        uses: cypress-io/github-action@v2.11.7
         with:
           install: false # no need to install because of the above 2
           start: yarn start
           wait-on: 'http://localhost:3000'
 
+      # the docs advise to run component tests after the e2e tests 
+      - name: Cypress component tests 🧪
+        uses: cypress-io/github-action@v2.11.7
+        with:
+          # we have already installed everything
+          install: false
+          # to run component tests we need to use "cypress run-ct"
+          command: yarn cypress run-ct

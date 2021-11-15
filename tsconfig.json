@@ -30,7 +30,6 @@
   "exclude": [
     "node_modules",
     "dist",
-    "web/webpack.config.ts",
-    "**/cypress"
+    "web/webpack.config.ts"
   ]
 }
