@@ -19,7 +19,7 @@ yarn test # run unit tests with jest
 Achieve this in a GitHub Actions CI as efficiently as possible:
 
 ```
-build  -->  unit test   -->  Cypress e2e test
+build  -->  unit test   -->  Cypress e2e test + component test
        -->  lint
        -->  type check
 ```
@@ -42,11 +42,11 @@ Caching is not very easy to optimize. Real / working GitHub Actions examples are
     - Subsequent jobs: depend on build, and do the same install step, but by this time the cache is present and they get the modules.
 
     > [useRollingCache](https://github.com/bahmutov/npm-install#cache-snowballing--rolling-cache-expiry) : recommended for large projects.
-
+    
     > `CYPRESS_INSTALL_BINARY: 0` : no need to install the Cypress binary everywhere, we are already using the docker image in the e2e job
 
-4. `cypress-io/github-action@v2`: used in the Cypress e2e test job
-    - `container: cypress/included:8.4.1`: save time on not having to install the Cypress binary
+4. `cypress-io/github-action@v2.11.7`: used in the Cypress e2e test job
+    - `container: cypress/included:9.0.0`: save time on not having to install the Cypress binary
     - `bahmutov/npm-install@v1`: save time on dependencies by caching
     - `install: false`: because if we install, the CI is slower than relying on `bahmutov/npm-install@v1`.
 

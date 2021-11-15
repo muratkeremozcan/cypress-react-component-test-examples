@@ -57,7 +57,7 @@ jobs:
       - name: typecheck
         run: yarn typecheck
 
-  e2e-test:
+  cypress-e2e-and-component-tests:
     needs: [unit-test, lint, typecheck]
     runs-on: ubuntu-latest
     container: cypress/included:9.0.0 # save time on not having to install cypress
