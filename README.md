@@ -12,6 +12,9 @@ yarn cy:open-ct # for cypress component test runner
 yarn cy:run-ct # headless version
 
 yarn test # run unit tests with jest
+
+# use server-test to start the app and run e2e (the app is not running)
+yarn server:test
 ```
 
 ## The goal

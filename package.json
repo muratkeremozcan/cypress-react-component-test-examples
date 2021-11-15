@@ -27,7 +27,8 @@
     "cy:open": "cypress open",
     "cy:run": "cypress run",
     "cy:open-ct": "cypress open-ct",
-    "cy:run-ct": "cypress run-ct"
+    "cy:run-ct": "cypress run-ct",
+    "server:test": "server-test 3000 cy:run"
   },
   "eslintConfig": {
     "extends": [
@@ -54,6 +55,7 @@
     "cypress": "^9.0.0",
     "eslint-plugin-cypress": "^2.12.1",
     "eslint-plugin-prettier": "^4.0.0",
-    "prettier": "^2.4.1"
+    "prettier": "^2.4.1",
+    "start-server-and-test": "^1.14.0"
   }
 }
