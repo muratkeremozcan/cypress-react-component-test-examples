@@ -77,7 +77,6 @@ Minimal instructions:
         "testFiles": "**/*.comp-test.{js,ts,jsx,tsx}",
         "componentFolder": "src"
     }
-    }
     ```
 
 3. Enhance the plugins/index file with the component test configuration. The dev server depends on your react setup.
