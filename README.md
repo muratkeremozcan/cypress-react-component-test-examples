@@ -92,10 +92,10 @@ module.exports = (on, config) => {
 
 Launch component test runner with `yarn cy:open-ct`.
 
-4. For CI, the docs advise to run component tests after the e2e tests.
+4. The component test CI setup can be isolated, or can be steps after the e2e steps
 
 ```yml
-e2e-test:
+component-test:
     needs: [unit-test, lint, typecheck]
     runs-on: ubuntu-latest
     container: cypress/included:9.0.0 # save time on not having to install cypress
@@ -105,14 +105,7 @@ e2e-test:
     - uses: bahmutov/npm-install@v1 # save time on dependencies
         with: { useRollingCache: true }
 
-    - name: Cypress e2e tests 🧪
-        uses: cypress-io/github-action@v2.11.7
-        with:
-        install: false # no need to install because of the above 2
-        start: yarn start
-        wait-on: 'http://localhost:3000'
-
-    # the docs advise to run component tests after the e2e tests 
+    # the docs advise to run component tests after the e2e tests, this part could also be right after e2e tests
     - name: Cypress component tests 🧪
         uses: cypress-io/github-action@v2.11.7
         with:
