@@ -1,5 +1,19 @@
 # Multi stage caching using Github Actions
 
+```bash
+yarn install --registry https://registry.yarnpkg.com # specify the registry in case you are using a proprietary registry
+
+yarn start # start the server
+yarn cy:open # for cypress e2e test runner
+yarn cy:run # headless version
+
+# no need to have server running for these:
+yarn cy:open-ct # for cypress component test runner
+yarn cy:run-ct # headless version
+
+yarn test # run unit tests with jest
+```
+
 ## The goal
 
 Achieve this in a GitHub Actions CI as efficiently as possible:
