@@ -41,24 +41,25 @@ Caching is not very easy to optimize. Real / working GitHub Actions examples are
 
 3. `bahmutov/npm-install@v1` : used in every job for installing dependencies with caching and without any configuration.
 
-    - On the build job: install & cache
-    - Subsequent jobs: depend on build, and do the same install step, but by this time the cache is present and they get the modules.
+   - On the build job: install & cache
+   - Subsequent jobs: depend on build, and do the same install step, but by this time the cache is present and they get the modules.
 
-    > [useRollingCache](https://github.com/bahmutov/npm-install#cache-snowballing--rolling-cache-expiry) : recommended for large projects.
-    
-    > `CYPRESS_INSTALL_BINARY: 0` : no need to install the Cypress binary everywhere, we are already using the docker image in the e2e job
+   > [useRollingCache](https://github.com/bahmutov/npm-install#cache-snowballing--rolling-cache-expiry) : recommended for large projects.
+
+   > `CYPRESS_INSTALL_BINARY: 0` : no need to install the Cypress binary everywhere, we are already using the docker image in the e2e job
 
 4. `cypress-io/github-action@v2.11.7`: used in the Cypress e2e test job
-    - `container: cypress/included:9.0.0`: save time on not having to install the Cypress binary
-    - `bahmutov/npm-install@v1`: save time on dependencies by caching
-    - `install: false`: because if we install, the CI is slower than relying on `bahmutov/npm-install@v1`.
 
-    >  Compare these runs:
-    >
-    >  - `install: true`, not using `bahmutov/npm-install@v1`: [2:26 for e2e](https://github.com/muratkeremozcan/multi-stage-caching/actions/runs/1259021046)
-    >  - `install false`, using `bahmutov/npm-install@v1`: [1:55 for e2e](https://github.com/muratkeremozcan/multi-stage-caching/actions/runs/1259112643)
+   - `container: cypress/included:9.0.0`: save time on not having to install the Cypress binary
+   - `bahmutov/npm-install@v1`: save time on dependencies by caching
+   - `install: false`: because if we install, the CI is slower than relying on `bahmutov/npm-install@v1`.
 
-________
+   > Compare these runs:
+   >
+   > - `install: true`, not using `bahmutov/npm-install@v1`: [2:26 for e2e](https://github.com/muratkeremozcan/multi-stage-caching/actions/runs/1259021046)
+   > - `install false`, using `bahmutov/npm-install@v1`: [1:55 for e2e](https://github.com/muratkeremozcan/multi-stage-caching/actions/runs/1259112643)
+
+---
 
 ## Component Testing
 
@@ -68,16 +69,16 @@ Minimal instructions:
 
 1. `yarn add -D @cypress/react @cypress/webpack-dev-server`, add `cy:open-ct` and `cy:run-ct` scripts to `package.json`.
 
-2. Modify the cypress.json file - we want the component tests near the source code and distict from other unit tests hence the naming `comp-test`:
+2. Modify the cypress.json for - distinct from other unit tests hence the naming `comp-test`:
 
-    ```json
-    {
-    "baseUrl": "http://localhost:3000",
-    "component": {
-        "testFiles": "**/*.comp-test.{js,ts,jsx,tsx}",
-        "componentFolder": "src"
-    }
-    ```
+   ```json
+   {
+   "baseUrl": "http://localhost:3000",
+   "component": {
+       "testFiles": "**/*.comp-test.{js,ts,jsx,tsx}",
+       <!-- "componentFolder": "src"  --> <!-- tests also can be near the source code -->
+   }
+   ```
 
 3. Enhance the plugins/index file with the component test configuration. The dev server depends on your react setup.
 
