@@ -22,6 +22,9 @@ module.exports = (on, config) => {
   // `on` is used to hook into various events Cypress emits
   // `config` is the resolved Cypress config
 
-  injectDevServer(on, config)
+  // recommendation from Jennifer to work around the CI issue when running e2e and component tests together
+  if (config.testingType === 'component') {
+    injectDevServer(on, config)
+  }
   return config
 }
