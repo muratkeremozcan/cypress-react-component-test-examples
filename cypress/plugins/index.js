@@ -25,6 +25,6 @@ module.exports = (on, config) => {
   // recommendation from Jennifer to work around the CI issue when running e2e and component tests together
   if (config.testingType === 'component') {
     injectDevServer(on, config)
+    return config
   }
-  return config
 }
