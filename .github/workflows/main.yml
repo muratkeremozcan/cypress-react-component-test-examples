@@ -10,14 +10,14 @@ jobs:
     name: Install Dependencies
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v2
-      with:
-        cache: 'yarn'
-    - uses: bahmutov/npm-install@v1
-      with: { useRollingCache: true } # recommended for large projects
-      env: 
-        CYPRESS_INSTALL_BINARY: 0 # no need to install the Cypress binary, we are already using the docker image in the e2e job
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          cache: 'yarn'
+      - uses: bahmutov/npm-install@v1
+        with: { useRollingCache: true } # recommended for large projects
+        env:
+          CYPRESS_INSTALL_BINARY: 0 # no need to install the Cypress binary, we are already using the docker image in the e2e job
 
   unit-test:
     needs: install-dependencies
@@ -30,7 +30,7 @@ jobs:
           useRollingCache: true
       - name: Run tests
         run: yarn test
-    
+
   lint:
     needs: install-dependencies
     name: Run Lint
@@ -39,36 +39,57 @@ jobs:
       - uses: actions/checkout@v2
       - uses: bahmutov/npm-install@v1
         with: { useRollingCache: true }
-        env: 
-          CYPRESS_INSTALL_BINARY: 0 
+        env:
+          CYPRESS_INSTALL_BINARY: 0
       - name: lint
         run: yarn lint
 
   typecheck:
     needs: install-dependencies
-    name : Run Typecheck
+    name: Run Typecheck
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: bahmutov/npm-install@v1
         with: { useRollingCache: true }
-        env: 
-          CYPRESS_INSTALL_BINARY: 0 
+        env:
+          CYPRESS_INSTALL_BINARY: 0
       - name: typecheck
         run: yarn typecheck
 
-  e2e-test:
+  cypress-e2e-tests:
     needs: [unit-test, lint, typecheck]
     runs-on: ubuntu-latest
-    container: cypress/included:8.4.1 # save time on not having to install cypress
+    container: cypress/included:9.0.0 # save time on not having to install cypress
     steps:
       - uses: actions/checkout@v2
+
       - uses: bahmutov/npm-install@v1 # save time on dependencies
         with: { useRollingCache: true }
-      - name: Cypress tests 🧪
-        uses: cypress-io/github-action@v2
+
+      - name: Cypress e2e tests 🧪
+        uses: cypress-io/github-action@v2.11.7
         with:
           install: false # no need to install because of the above 2
           start: yarn start
           wait-on: 'http://localhost:3000'
+          browser: chrome
 
+  cypress-component-tests:
+    needs: [unit-test, lint, typecheck]
+    runs-on: ubuntu-latest
+    container: cypress/included:9.0.0 # save time on not having to install cypress
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: bahmutov/npm-install@v1 # save time on dependencies
+        with: { useRollingCache: true }
+
+      - name: Cypress component tests 🧪
+        uses: cypress-io/github-action@v2.11.7
+        with:
+          # we have already installed everything
+          install: false
+          # to run component tests we need to use "cypress run-ct"
+          command: yarn cypress run-ct
+          browser: chrome
