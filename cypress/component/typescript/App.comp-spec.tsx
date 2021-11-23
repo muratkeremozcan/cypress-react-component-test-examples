@@ -1,6 +1,6 @@
 import React from 'react'
 import { mount } from '@cypress/react'
-import App from '../../src/App'
+import App from '../../../src/App'
 
 // note: the tests can also be near the source code,
 // but we have some other case by case examples that are easier to isolate
@@ -22,7 +22,13 @@ it('renders learn react link', () => {
 describe('Alias', () => {
   const Greeting = () => <div>Hello!</div>
   const GreetingCard = (props: {
-    name: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined
+    name:
+      | boolean
+      | React.ReactChild
+      | React.ReactFragment
+      | React.ReactPortal
+      | null
+      | undefined
   }) => <div>Hello {props.name}</div>
 
   it('default alias is the component name', () => {
