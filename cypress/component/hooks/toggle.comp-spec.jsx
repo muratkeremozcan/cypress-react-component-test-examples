@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 // test similar to https://reactjs.org/docs/testing-recipes.html#events
 /// <reference types="cypress" />
 import React from 'react'

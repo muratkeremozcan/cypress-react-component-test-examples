@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 /// <reference types="cypress" />
 const { _ } = Cypress
 const { get } = require('lodash/fp')

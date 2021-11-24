@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 /// <reference types="cypress" />
 import React, { useState, useEffect } from 'react'
 import { mount } from '@cypress/react'

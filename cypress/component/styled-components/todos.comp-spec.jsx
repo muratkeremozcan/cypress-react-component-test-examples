@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 /// <reference types="cypress" />
 import React, { Component } from 'react'
 import { mount } from '@cypress/react'

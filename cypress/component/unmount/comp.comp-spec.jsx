@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-expressions */
-/* eslint-disable no-undef */
 /// <reference types="cypress" />
 import React, { Component } from 'react'
 import { mount, unmount } from '@cypress/react'

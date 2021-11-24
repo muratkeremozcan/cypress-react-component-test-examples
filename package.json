@@ -34,7 +34,11 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "rules": {
+      "no-unused-expressions": "off",
+      "no-undef": "off"
+    }
   },
   "browserslist": {
     "production": [
@@ -53,7 +57,7 @@
     "@cypress/webpack-dev-server": "^1.7.0",
     "axios": "^0.24.0",
     "cross-env": "^7.0.3",
-    "cypress": "^9.0.0",
+    "cypress": "9.0.0",
     "eslint-plugin-cypress": "^2.12.1",
     "eslint-plugin-prettier": "^4.0.0",
     "prettier": "^2.4.1",
