@@ -3,8 +3,8 @@ import React from 'react'
 import { mount } from '@cypress/react'
 import CounterWithHooks from './counter-with-hooks.jsx'
 
-describe('CounterWithHooks component', () => {
-  it('counts clicks 2', () => {
+describe('hook with callback', () => {
+  it('starts at 3, clicks 2 times', () => {
     // mount(<CounterWithHooks initialCount={3} />, { React, ReactDom }) // why this? no difference
     mount(<CounterWithHooks initialCount={3} />)
     cy.contains('3')
