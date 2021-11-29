@@ -28,3 +28,4 @@ cypress/component/use-render
 cypress/component/other/emotion.comp-spec.jsx
 cypress/component/other/hello-pure.comp-spec.jsx
 cypress/component/network/axios-example-3-wrapped
+cypress/component/react-book-chris-noring/App.css
