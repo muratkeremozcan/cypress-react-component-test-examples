@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 import Card from './card.jsx'
 import React from 'react'
-import { mount, unmount } from '@cypress/react'
+import { mount } from '@cypress/react'
 
 // example from https://reactjs.org/docs/testing-recipes.html#timers
 
