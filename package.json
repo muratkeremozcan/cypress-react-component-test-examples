@@ -59,6 +59,7 @@
     "@material-ui/icons": "^4.11.2",
     "@material-ui/lab": "^4.0.0-alpha.60",
     "@material-ui/pickers": "^3.3.10",
+    "@testing-library/cypress": "^8.0.2",
     "axios": "^0.24.0",
     "cross-env": "^7.0.3",
     "cypress": "9.0.0",
