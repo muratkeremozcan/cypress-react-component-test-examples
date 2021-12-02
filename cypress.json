@@ -3,5 +3,6 @@
   "component": {
     "testFiles": "**/**/*.comp-spec.{js,ts,jsx,tsx}"
   },
-  "experimentalPolyfill": true
+  "experimentalPolyfill": true,
+  "projectId": "62pyqm"
 }
