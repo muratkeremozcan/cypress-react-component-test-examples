@@ -60,7 +60,7 @@ jobs:
   cypress-e2e-tests:
     needs: [unit-test, lint, typecheck]
     runs-on: ubuntu-latest
-    container: cypress/included:9.1.0 # save time on not having to install cypress
+    container: cypress/included:9.0.0 # save time on not having to install cypress
     steps:
       - uses: actions/checkout@v2
 
@@ -74,6 +74,9 @@ jobs:
           start: yarn start
           wait-on: 'http://localhost:3000'
           browser: chrome
+          record: true # records on cypress dashboard
+          group: e2e-tests
+          tag: e2e-tests
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
 
@@ -83,7 +86,7 @@ jobs:
         machines: [1, 2, 3] # uses 2 CI machines to run tests in parallel
     needs: [unit-test, lint, typecheck]
     runs-on: ubuntu-latest
-    container: cypress/included:9.1.0 # save time on not having to install cypress
+    container: cypress/included:9.0.0 # save time on not having to install cypress
     steps:
       - uses: actions/checkout@v2
 
@@ -98,5 +101,9 @@ jobs:
           # to run component tests we need to use "cypress run-ct"
           command: yarn cypress run-ct
           browser: chrome
+          record: true # records on cypress dashboard
+          parallel: true # parallelizes tests
+          group: component-tests
+          tag: component-test
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
