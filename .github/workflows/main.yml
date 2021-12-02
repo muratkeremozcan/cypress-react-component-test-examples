@@ -99,11 +99,11 @@ jobs:
           # we have already installed everything
           install: false
           # to run component tests we need to use "cypress run-ct"
-          command: yarn cypress run-ct
+          command: yarn cypress run-ct --record ${{ secrets.CYPRESS_RECORD_KEY }}
           browser: chrome
-          record: true # records on cypress dashboard
+          # record: true # with component tests since we have a custom command, we pass the record with that command instead
           parallel: true # parallelizes tests
           group: component-tests
           tag: component-test
-        env:
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+        # env:
+        # CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
