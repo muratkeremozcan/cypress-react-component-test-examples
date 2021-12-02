@@ -74,8 +74,16 @@ jobs:
           start: yarn start
           wait-on: 'http://localhost:3000'
           browser: chrome
+          record: true # records on cypress dashboard
+          group: e2e-tests
+          tag: e2e-tests
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
 
   cypress-component-tests:
+    strategy:
+      matrix:
+        machines: [1, 2, 3] # uses 2 CI machines to run tests in parallel
     needs: [unit-test, lint, typecheck]
     runs-on: ubuntu-latest
     container: cypress/included:9.0.0 # save time on not having to install cypress
@@ -91,5 +99,12 @@ jobs:
           # we have already installed everything
           install: false
           # to run component tests we need to use "cypress run-ct"
-          command: yarn cypress run-ct
-          browser: chrome
+          command: yarn cypress run-ct --record --key=${{ secrets.CYPRESS_RECORD_KEY }} --browser chrome --group component-tests --tag component-tests --parallel
+          # with component tests since we have a custom command, we pass these parameters in the command instead
+          # browser: chrome
+          # record: true
+          # parallel: true # parallelizes tests
+          # group: component-tests
+          # tag: component-test
+        # env:
+        # CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
