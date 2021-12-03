@@ -60,7 +60,7 @@ jobs:
   cypress-e2e-tests:
     needs: [unit-test, lint, typecheck]
     runs-on: ubuntu-latest
-    container: cypress/included:9.0.0 # save time on not having to install cypress
+    container: cypress/included:9.1.0 # save time on not having to install cypress
     steps:
       - uses: actions/checkout@v2
 
@@ -86,7 +86,7 @@ jobs:
     #     machines: [1, 2, 3] # uses 2 CI machines to run tests in parallel
     needs: [unit-test, lint, typecheck]
     runs-on: ubuntu-latest
-    container: cypress/included:9.0.0 # save time on not having to install cypress
+    container: cypress/included:9.1.0 # save time on not having to install cypress
     steps:
       - uses: actions/checkout@v2
 
