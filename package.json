@@ -4,7 +4,7 @@
   "private": false,
   "license": "UNLICENSED",
   "dependencies": {
-    "@testing-library/jest-dom": "5.15.1",
+    "@testing-library/jest-dom": "5.16.0",
     "@testing-library/react": "12.1.2",
     "@testing-library/user-event": "12.8.3",
     "@types/jest": "^26.0.15",
