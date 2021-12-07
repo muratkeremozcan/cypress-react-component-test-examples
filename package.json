@@ -65,7 +65,7 @@
     "cypress": "9.1.1",
     "eslint-plugin-cypress": "2.12.1",
     "eslint-plugin-prettier": "4.0.0",
-    "i18next": "21.5.3",
+    "i18next": "21.5.5",
     "mobx": "6.3.8",
     "mobx-react-lite": "3.2.2",
     "prettier": "2.5.1",
