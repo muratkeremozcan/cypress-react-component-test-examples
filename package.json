@@ -74,7 +74,7 @@
     "radioactive-state": "1.4.0",
     "react-bootstrap": "2.0.3",
     "react-google-maps": "9.4.5",
-    "react-i18next": "11.15.0",
+    "react-i18next": "11.15.1",
     "react-router-dom": "6.1.1",
     "start-server-and-test": "1.14.0",
     "styled-components": "5.3.3"
