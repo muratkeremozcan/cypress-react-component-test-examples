@@ -70,7 +70,7 @@
     "mobx-react-lite": "3.2.2",
     "prettier": "2.5.1",
     "pretty": "2.0.0",
-    "prop-types": "15.7.2",
+    "prop-types": "15.8.0",
     "radioactive-state": "1.4.0",
     "react-bootstrap": "2.0.4",
     "react-google-maps": "9.4.5",
