@@ -67,7 +67,7 @@
     "eslint-plugin-prettier": "4.0.0",
     "i18next": "21.6.4",
     "mobx": "6.3.10",
-    "mobx-react-lite": "3.2.2",
+    "mobx-react-lite": "3.2.3",
     "prettier": "2.5.1",
     "pretty": "2.0.0",
     "prop-types": "15.8.0",
