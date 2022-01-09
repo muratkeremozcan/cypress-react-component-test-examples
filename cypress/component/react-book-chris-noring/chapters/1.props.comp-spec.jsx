@@ -1,32 +1,29 @@
 /// <reference types="cypress" />
 import React from 'react'
 import { mount } from '@cypress/react'
-import PropType from 'prop-types'
+import PropTypes from 'prop-types'
 
 describe('https://softchris.github.io/books/react/props/', () => {
-  const jediData = {
+  const yodaData = {
     name: 'Yoda',
     age: 300
   }
 
-  const jedis = [
+  const characters = [
+    { ...yodaData },
     {
-      name: 'Yoda',
-      age: 300
-    },
-    {
-      name: 'Palpatine',
-      age: 60
+      name: 'Obi-Wan Kenobi',
+      age: 30
     }
   ]
 
   class Jedi extends React.Component {
     // best practice to use propTypes, and make it a member of the class
     static propTypes = {
-      jedi: PropType.shape({
-        name: PropType.string.isRequired,
-        age: PropType.number.isRequired,
-        key: PropType.number
+      jedi: PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        age: PropTypes.number.isRequired,
+        key: PropTypes.number
       })
     }
     render() {
@@ -40,7 +37,7 @@ describe('https://softchris.github.io/books/react/props/', () => {
 
   class Jedis extends React.Component {
     static propTypes = {
-      jedis: PropType.arrayOf(Jedi)
+      jedis: PropTypes.arrayOf(Jedi)
     }
 
     // we either render a primitive, an object or a list
@@ -61,13 +58,14 @@ describe('https://softchris.github.io/books/react/props/', () => {
       render() {
         return (
           <div>
-            <Jedi jedi={jediData} />
+            <Jedi jedi={yodaData} />
           </div>
         )
       }
     }
 
     mount(<Application />)
+    cy.contains('div', 'Yoda 300')
   })
 
   it('renders the component and its children as a list', () => {
@@ -75,12 +73,14 @@ describe('https://softchris.github.io/books/react/props/', () => {
       render() {
         return (
           <div>
-            <Jedis jedis={jedis} />
+            <Jedis jedis={characters} />
           </div>
         )
       }
     }
 
     mount(<Application />)
+    cy.contains('div', 'Yoda 300')
+    cy.contains('div', 'Obi-Wan Kenobi 30')
   })
 })
