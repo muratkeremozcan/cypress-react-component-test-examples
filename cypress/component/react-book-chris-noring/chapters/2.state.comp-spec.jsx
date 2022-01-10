@@ -20,7 +20,7 @@ describe('https://softchris.github.io/books/react/state/', () => {
       }
 
       changeName() {
-        this.setState({
+        return this.setState({
           name: 'new name'
         })
       }
