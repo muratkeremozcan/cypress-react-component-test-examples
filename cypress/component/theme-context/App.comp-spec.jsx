@@ -4,19 +4,18 @@ import App from './App'
 import { ThemeContext } from './context'
 import { Toolbar } from './Toolbar.jsx'
 
-it('Context example renders', () => {
+it('Default Context renders', () => {
   mount(<App />)
-  // the label "dark" was passed through React context
-  cy.contains('button', 'dark').should('be.visible')
+  // the default "light" value was passed through React context
+  cy.contains('button', 'light').should('be.visible')
 })
 
-it('Mock Context passes given value', () => {
+it('Custom context renders', () => {
+  // the label "dark" was passed through React context
   mount(
-    <ThemeContext.Provider value="mocked">
+    <ThemeContext.Provider value="dark">
       <Toolbar />
     </ThemeContext.Provider>
   )
-
-  // the label "mocked" was passed through React context
-  cy.contains('button', 'mocked').should('be.visible')
+  cy.contains('button', 'dark').should('be.visible')
 })
