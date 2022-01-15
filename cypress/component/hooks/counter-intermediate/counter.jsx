@@ -14,11 +14,11 @@ const ProductList = () => {
 
   // flattened cart array & copy of the product
   const addToCart = (product) => setCart([...cart, { ...product }])
-  // setCart([...cart, {...product}]) would be this.state({ cart: [...cart, {...product}] })
+  // setCart([...cart, {...product}]) would be: this.state({ cart: [...cart, {...product}] })
 
   return (
     <div>
-      a<h2>Products</h2>
+      <h2>Products</h2>
       {products.map((p) => (
         <div key={p.id}>
           <button data-cy="product-button" onClick={() => addToCart(p)}>
