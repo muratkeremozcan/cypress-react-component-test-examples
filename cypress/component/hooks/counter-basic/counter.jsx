@@ -2,7 +2,10 @@ import React, { useState } from 'react'
 
 // example from https://reactjs.org/docs/hooks-state.html
 function Counter() {
-  // Declare a new state variable, which we'll call "count"
+  // we give state an initial value of 0, we get an array back and destructure
+  // the first value count  is the actual value that we can showcase in our render method
+  // the second value setCount() is a function that we can invoke and thereby change the value of count
+  // setCount(1) would be equivalent to writing this.setState({ count: 1 })
   const [count, setCount] = useState(0)
 
   return (

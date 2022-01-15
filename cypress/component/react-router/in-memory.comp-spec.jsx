@@ -5,7 +5,7 @@ import { App } from './app.jsx'
 import { MemoryRouter } from 'react-router-dom'
 
 // question: how do we see the url in a component test?
-describe.only('React Memory Router', () => {
+describe('React Memory Router', () => {
   it('navigates through the link without changing url', () => {
     cy.viewport(600, 300)
 

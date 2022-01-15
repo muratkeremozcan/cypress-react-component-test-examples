@@ -22,6 +22,9 @@ export const App = () => (
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="about" element={<About />} />
+      {/* if you had something like the below, you would use exact paths, otherwise react-router matches the first pattern it sees */}
+      {/* <Route exact path="/products" component={Products} />
+      <Route path="/products/:id" component={ProductDetail} /> */}
     </Routes>
   </div>
 )
