@@ -2,6 +2,9 @@ import React, { useState } from 'react'
 
 // example from https://reactjs.org/docs/hooks-state.html
 function Counter() {
+  // useState: a hook we can use to persist state in a functional component
+  // think of it this.setState({...})
+
   // we give state an initial value of 0, we get an array back and destructure
   // the first value count  is the actual value that we can showcase in our render method
   // the second value setCount() is a function that we can invoke and thereby change the value of count

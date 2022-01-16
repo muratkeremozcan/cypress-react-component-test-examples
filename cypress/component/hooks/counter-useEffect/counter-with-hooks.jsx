@@ -1,5 +1,5 @@
 // example from https://reactjs.org/docs/hooks-overview.html
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 
 export default function CounterWithHooks({ initialCount = 0 }) {
   const [count, setCount] = useState(initialCount)
@@ -8,7 +8,7 @@ export default function CounterWithHooks({ initialCount = 0 }) {
     document.title = `You clicked ${count} times while using effect`
   })
 
-  const handleCountIncrement = React.useCallback(
+  const handleCountIncrement = useCallback(
     () => setCount(count + 1),
     [count] // needed for memoization
   )
