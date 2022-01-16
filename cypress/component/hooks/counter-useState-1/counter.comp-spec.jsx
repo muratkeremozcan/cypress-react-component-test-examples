@@ -2,7 +2,7 @@ import React from 'react'
 import { mount } from '@cypress/react'
 import Counter from './counter.jsx'
 
-describe('basic hook', () => {
+describe('basic useState hook', () => {
   it('works', () => {
     mount(<Counter />)
     cy.contains('You clicked 0 times')

@@ -2,7 +2,7 @@ import React from 'react'
 import { mount } from '@cypress/react'
 import Counter from './counter.jsx'
 
-it('intermediate hook', () => {
+it('intermediate useState hook', () => {
   mount(<Counter />)
 
   cy.wrap(Cypress._.range(0, 3)).each((index) =>

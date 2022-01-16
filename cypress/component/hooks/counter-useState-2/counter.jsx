@@ -1,7 +1,8 @@
 import { commerce } from 'faker'
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 const ProductList = () => {
+  // useState is like this.setState({...})
   // we give state an initial value of products & cart, we get an array back and destructure
   // products is what we render
   const [products] = useState([
