@@ -8,7 +8,7 @@ describe('Note', () => {
     mount(<Select />)
     cy.get('#change').type('input text')
     cy.contains('button', 'Save').click()
-    cy.get('[data-testid=saved]').should('have.text', 'Saved: input text')
+    cy.getByCy('saved').should('have.text', 'Saved: input text')
   })
 
   it('load data', () => {
@@ -16,7 +16,7 @@ describe('Note', () => {
     cy.contains('button', 'Load').click()
     // there is a built-in delay in loading the data
     // but we don't worry about it - we just check if the text eventually appears
-    cy.get('[data-testid=item]')
+    cy.getByCy('item')
       .should('have.length', 2)
       .and('be.visible')
       .first()

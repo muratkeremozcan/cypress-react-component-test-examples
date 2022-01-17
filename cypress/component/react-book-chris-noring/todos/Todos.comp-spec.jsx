@@ -16,30 +16,30 @@ it('Todo - should create snapshot', () => {
     />
   )
 
-  cy.get('[data-testid=item]').should('have.length', 2)
+  cy.getByCy('item').should('have.length', 2)
 
   // entire test area
   cy.get('#__cy_root')
     .invoke('html')
     .then(pretty)
     .should(
-      'equal',
+      'eq',
       stripIndent`
-        <h3 data-testid="item" class="">item1</h3>
+        <h3 data-cy="item" class="">item1</h3>
         <div>an item</div><button>Select</button>
-        <h3 data-testid="item" class="">item2</h3>
+        <h3 data-cy="item" class="">item2</h3>
         <div>another item</div><button>Select</button>
       `
     )
 
-  cy.contains('[data-testid=item]', 'item1').should('be.visible')
+  cy.contains('[data-cy=item]', 'item1').should('be.visible')
   // selecting works
-  cy.contains('[data-testid=item]', 'item2')
+  cy.contains('[data-cy=item]', 'item2')
     .next()
     .should('have.text', 'another item')
     .next()
     .should('have.text', 'Select')
     .click()
 
-  cy.contains('[data-testid=item]', 'item2').should('have.class', 'selected')
+  cy.contains('[data-cy=item]', 'item2').should('have.class', 'selected')
 })
