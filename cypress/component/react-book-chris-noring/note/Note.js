@@ -27,7 +27,7 @@ class Note extends React.Component {
       me.setState({
         data: [{ title: 'test' }, { title: 'test2' }]
       })
-    }, 3000)
+    }, 2000)
   }
 
   render() {
@@ -35,16 +35,14 @@ class Note extends React.Component {
       <React.Fragment>
         <label htmlFor="change">Change text</label>
         <input id="change" placeholder="change text" onChange={this.onChange} />
-        <div data-testid="saved">{this.state.saved}</div>
+        <div data-cy="saved">{this.state.saved}</div>
         {this.state.data && (
-          <div data-testid="data">
-            {this.state.data.map((item) => {
-              return (
-                <div data-testid="item" className="item">
-                  {item.title}
-                </div>
-              )
-            })}
+          <div data-cy="data">
+            {this.state.data.map((item) => (
+              <div data-cy="item" className="item">
+                {item.title}
+              </div>
+            ))}
           </div>
         )}
         <div>

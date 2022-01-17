@@ -8,7 +8,7 @@ const Todos = ({ todos, select, selected }) => {
         return (
           <React.Fragment key={todo.title}>
             <h3
-              data-testid="item"
+              data-cy="item"
               className={
                 selected && selected.title === todo.title ? 'selected' : ''
               }
