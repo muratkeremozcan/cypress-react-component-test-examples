@@ -7,10 +7,10 @@ describe('FormTouched', () => {
     mount(<FormTouched />)
     cy.get('span').should('not.exist')
     cy.getByCy('submit').click()
-    cy.contains('span', 'Name is required')
-    cy.contains('span', 'Address is required')
+    cy.contains('Name is required')
+    cy.contains('Address is required')
 
     cy.get('input').each((field) => cy.wrap(field).type('a'))
-    cy.get('span').should('not.exist')
+    cy.contains('is required').should('not.exist')
   })
 })

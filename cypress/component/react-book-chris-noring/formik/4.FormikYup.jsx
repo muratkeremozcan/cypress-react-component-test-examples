@@ -1,32 +1,27 @@
 import React from 'react'
+import * as Yup from 'yup'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 
-// Formik has built-in components
-// * Form replaces a normal form element
-// * Field replaces any type of input element
-// * ErrorMessage, this doesn't really replace any controls that you have
-/// but is a great component that given the attribute name is able to show your error message
-/// KEY: no need for the custom: error message && <span>{errors.name}</span>
-/// KEY: no need for onChange attribute:  onChange={handleChange}
+// Yup replaces Formik's validate attribute
 
-const FormikError = () => (
+const FormikYup = () => (
   <Formik
     initialValues={{ name: '', address: '', email: '' }}
     onSubmit={(values) => console.log('submitting ', values)}
-    validate={(values) => {
-      let errors = {}
-      if (!values.name) {
-        errors.name = 'Name is required'
-      }
-      if (!values.address) {
-        errors.address = 'Address is required'
-      }
-      if (!values.email) {
-        errors.email = 'Email is required'
-      }
-
-      return errors
-    }}
+    validationSchema={Yup.object().shape({
+      name: Yup.string()
+        .min(2, 'Too short!')
+        .max(50, 'Too long!')
+        .required('Name is required'),
+      address: Yup.string()
+        .min(2, 'Too short!')
+        .max(50, 'Too long!')
+        .required('Address is required'),
+      email: Yup.string()
+        .min(2, 'Too short!')
+        .max(50, 'Too long!')
+        .required('Email is required')
+    })}
   >
     {({ values, handleSubmit }) => (
       <Form onSubmit={handleSubmit}>
@@ -64,4 +59,4 @@ const FormikError = () => (
   </Formik>
 )
 
-export default FormikError
+export default FormikYup
