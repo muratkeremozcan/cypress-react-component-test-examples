@@ -68,7 +68,7 @@
     "eslint-plugin-cypress": "2.12.1",
     "eslint-plugin-prettier": "4.0.0",
     "faker": "5.5.3",
-    "formik": "^2.2.9",
+    "formik": "2.2.9",
     "i18next": "21.6.6",
     "mobx": "6.3.12",
     "mobx-react-lite": "3.2.3",
