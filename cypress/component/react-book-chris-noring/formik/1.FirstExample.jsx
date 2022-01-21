@@ -1,9 +1,10 @@
 import { Formik } from 'formik'
 import React from 'react'
 
-// initialValues: Formik attribute for life cycle of inputs. Give it an object representing our Form input values
-// onSubmit: form attribute for submit event
-// onChange: input attribute for change event
+// initialValues: Formik attribute for life cycle of inputs.
+/// Give it an object representing our Form input values
+// * onSubmit: form attribute for submit event
+// * onChange: input attribute for change event
 
 // form validation: define the validate attribute on the Formik component,
 /// it expects a function that returns an object with a mapping of our errors

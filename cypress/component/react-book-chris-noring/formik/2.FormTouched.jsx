@@ -37,7 +37,6 @@ const FormTouched = () => (
             onBlur={handleBlur}
           />
 
-          {/* {console.log(touched)} */}
           {errors.name && touched.name && (
             <span style={{ color: 'red', fontWeight: 'bold' }}>
               {errors.name}
