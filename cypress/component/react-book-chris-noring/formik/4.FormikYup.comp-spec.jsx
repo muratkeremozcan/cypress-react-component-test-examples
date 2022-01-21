@@ -27,7 +27,7 @@ describe('FormikYup', () => {
       cy.wrap(field).clear().type(generateString(2), { delay: 0 })
       cy.contains(field.text(), /^$/)
 
-      cy.wrap(field).clear().type(generateString(51), { delay: 0 })
+      cy.wrap(field).clear().type(generateString(50), { delay: 0 })
       cy.contains(field.text(), /^$/)
     })
   })
