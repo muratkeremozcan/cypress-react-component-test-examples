@@ -15,7 +15,7 @@ describe('FormikYup', () => {
 
     cy.getByCy('submit').click()
 
-    cy.get('input').each((field) => {
+    cy.get('input').each((field, index) => {
       cy.contains(field.text(), /is required$/)
 
       cy.wrap(field).type(generateString(1), { delay: 0 })
@@ -24,11 +24,17 @@ describe('FormikYup', () => {
       cy.wrap(field).clear().type(generateString(51), { delay: 0 })
       cy.contains(field.text(), 'Too long')
 
+      const shouldNotIncludeText = (text) =>
+        cy
+          .get(`form > :nth-child(${index + 1})`)
+          .should('not.include.text', text)
+
       cy.wrap(field).clear().type(generateString(2), { delay: 0 })
-      cy.contains(field.text(), /^$/)
+      shouldNotIncludeText('Too short')
+      // cy.contains(field.text(), /^$/) // not a good way to check empty string here
 
       cy.wrap(field).clear().type(generateString(50), { delay: 0 })
-      cy.contains(field.text(), /^$/)
+      shouldNotIncludeText('Too long')
     })
   })
 })
