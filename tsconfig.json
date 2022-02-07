@@ -16,7 +16,8 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "baseUrl": ".",
-    "rootDir": "."
+    "rootDir": ".",
+    "noImplicitAny": false
   },
   "types": ["cypress", "cypress-real-events"],
   "include": ["**/*.ts", "**/*.tsx"],

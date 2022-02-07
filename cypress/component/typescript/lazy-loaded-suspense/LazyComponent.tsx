@@ -1,7 +1,9 @@
 import * as React from 'react'
 
 const LazyDog = React.lazy(() =>
+  // @ts-ignore
   import(/* webpackChunkName: "Dog" */ './Dog').then(
+    // @ts-ignore
     (comp) => new Promise((resolve) => setTimeout(() => resolve(comp), 500))
   )
 )
