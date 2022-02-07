@@ -1,12 +1,7 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": [
-      "es5",
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "target": "esnext",
+    "lib": ["esnext", "dom", "dom.iterable"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -21,16 +16,10 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "baseUrl": ".",
-    "rootDir": "."
+    "rootDir": ".",
+    "noImplicitAny": false
   },
-  "include": [
-    "**/*.ts",
-    "**/*.tsx"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist",
-    "web/webpack.config.ts",
-    "**/cypress"
-  ]
+  "types": ["cypress", "cypress-real-events"],
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules", "dist", "web/webpack.config.ts"]
 }

@@ -7,7 +7,10 @@ const DocumentTest = ({ reportHeight }) => (
   <div>
     <button
       onClick={() =>
-        reportHeight(document.documentElement.clientHeight, document.body.clientHeight)
+        reportHeight(
+          document.documentElement.clientHeight,
+          document.body.clientHeight
+        )
       }
     >
       Report height
@@ -25,9 +28,13 @@ describe('DocumentTest', () => {
       .should('have.been.called')
       .its('firstCall.args')
       .then(([docElementHeight, docBodyHeight]) => {
-        expect(docElementHeight).to.be.gt(0).and.equal(Cypress.config('viewportHeight'))
+        expect(docElementHeight)
+          // @ts-ignore
+          .to.be.gt(0)
+          .and.equal(Cypress.config('viewportHeight'))
 
         // contains a single DIV, so probably more than 10px
+        // @ts-ignore
         expect(docBodyHeight).to.be.gt(10)
       })
   })
