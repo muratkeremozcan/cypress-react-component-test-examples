@@ -71,7 +71,7 @@
     "formik": "2.2.9",
     "i18next": "21.6.11",
     "mobx": "6.4.0",
-    "mobx-react-lite": "3.2.3",
+    "mobx-react-lite": "3.3.0",
     "prettier": "2.5.1",
     "pretty": "2.0.0",
     "prop-types": "15.8.1",
