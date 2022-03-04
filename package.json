@@ -69,7 +69,7 @@
     "eslint-plugin-prettier": "4.0.0",
     "faker": "5.5.3",
     "formik": "2.2.9",
-    "i18next": "21.6.12",
+    "i18next": "21.6.13",
     "mobx": "6.4.2",
     "mobx-react-lite": "3.3.0",
     "prettier": "2.5.1",
