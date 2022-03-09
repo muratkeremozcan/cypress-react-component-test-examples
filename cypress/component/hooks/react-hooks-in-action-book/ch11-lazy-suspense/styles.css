@@ -1,0 +1,25 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  padding: 1em;
+}
+
+main {
+  background-color: rebeccapurple;
+  padding: 2em;
+  color: white;
+}
+
+aside {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+}
+
+aside > div {
+  background: skyblue;
+  flex-grow: 1;
+  margin: 1em;
+  padding: 4em 0;
+  width: 200px;
+}

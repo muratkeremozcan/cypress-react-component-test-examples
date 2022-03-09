@@ -1,0 +1,18 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+p {
+  padding: 2em;
+  margin: 2em;
+}
+.message {
+  background: rgb(34, 190, 183);
+}
+.loading {
+  background: rgb(247, 247, 91);
+}
+.error {
+  background: rgb(247, 58, 58);
+}

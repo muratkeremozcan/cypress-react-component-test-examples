@@ -1,0 +1,48 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  margin: 40px;
+  padding: 40px;
+  background: #eee7be;
+}
+
+h1 {
+  background: #173f5f;
+  color: #fff;
+  padding: 1em;
+  margin: -40px -40px 0;
+}
+
+label[for='txtPhrase'] {
+  display: block;
+  margin-top: 2em;
+}
+input[type='text'] {
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 1em;
+  margin: 8px 1em 2em;
+  font-size: 100%;
+  text-align: center;
+}
+
+.count {
+  padding: 0.75em;
+  background: #3caea3;
+  color: #fff;
+  font-size: 120%;
+  border-radius: 3em;
+}
+
+.anagrams {
+  margin: 20px -40px -40px;
+  padding: 1em;
+  background: #ed553b;
+}
+span {
+  display: inline-block;
+  background: #eee7be;
+  padding: 0.2em 1em;
+  margin: 0.5em 1em;
+  border-radius: 1em;
+}
