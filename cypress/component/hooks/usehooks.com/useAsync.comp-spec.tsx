@@ -80,7 +80,7 @@ it('useAsync', () => {
   cy.get('button').click()
   cy.tick(1000)
 
-  cy.getByCy('result').then((el) =>
+  cy.getByCy('result').should((el) =>
     // @ts-ignore
     expect(el.text()).to.be.oneOf(['success', 'failure'])
   )
