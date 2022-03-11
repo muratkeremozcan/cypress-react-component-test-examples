@@ -81,6 +81,7 @@ it('useAsync', () => {
   cy.tick(1000)
 
   cy.getByCy('result').then((el) =>
+    // @ts-ignore
     expect(el.text()).to.be.oneOf(['success', 'failure'])
   )
 })
