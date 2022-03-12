@@ -8,9 +8,5 @@
     "allowJs": true,
     "jsx": "react-jsx"
   },
-  "include": [
-    "**/*.ts",
-    "**/*.tsx",
-    "component/hooks/usehooks.com/useFirestoreQuery.com-spec.jsx"
-  ]
+  "include": ["**/*.ts", "**/*.tsx"]
 }
