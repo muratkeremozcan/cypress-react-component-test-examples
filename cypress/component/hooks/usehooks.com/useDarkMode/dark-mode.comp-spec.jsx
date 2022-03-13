@@ -24,7 +24,6 @@ describe('Dark Mode', () => {
     cy.get('.toggle-control').should('be.visible')
 
     cy.get('.toggle-control').click()
-    cy.get('body').should('not.have.class', 'dark-mode')
     cy.get('#dmcheck').should('not.be.checked')
 
     cy.get('.toggle-control').click()
@@ -35,7 +34,6 @@ describe('Dark Mode', () => {
     cy.wrap(localStorage).invoke('setItem', 'dark-mode-enabled', false)
     mount(<App />)
     cy.get('#dmcheck').should('not.be.checked')
-    cy.get('body').should('not.have.class', 'dark-mode')
 
     cy.wrap(localStorage).invoke('setItem', 'dark-mode-enabled', true)
     mount(<App />)
