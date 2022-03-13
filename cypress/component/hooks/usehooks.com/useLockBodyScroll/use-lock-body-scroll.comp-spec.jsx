@@ -15,7 +15,8 @@ describe('App', { viewportHeight: 1000 }, () => {
       (yAxis) => yAxis >= 245,
       {
         log: false,
-        delay: 200,
+        timeout: 5000,
+        delay: 500,
         post() {
           cy.scrollTo('bottom', { log: false })
         }
