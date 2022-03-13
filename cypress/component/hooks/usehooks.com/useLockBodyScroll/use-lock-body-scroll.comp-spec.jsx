@@ -12,11 +12,12 @@ describe('App', { viewportHeight: 1000 }, () => {
     // https://www.youtube.com/watch?v=KHn7647xOz8
     recurse(
       () => cy.window({ log: false }).its('scrollY', { log: false }),
-      (yAxis) => yAxis >= 245,
+      (yAxis) => yAxis >= 200,
       {
-        log: false,
-        timeout: 5000,
-        delay: 500,
+        log: true,
+        limit: 20,
+        timeout: 10000,
+        delay: 300,
         post() {
           cy.scrollTo('bottom', { log: false })
         }
