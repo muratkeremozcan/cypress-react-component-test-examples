@@ -12,7 +12,7 @@ export default function App() {
         <button onClick={() => setModalOpen(true)}>Show Modal</button>
       </div>
 
-      <Content />
+      <Content data-cy="content" />
 
       {modalOpen && (
         <Modal
@@ -54,7 +54,11 @@ const Content = () => {
   ]
 
   const images = terms.map((term) => (
-    <img src={`https://source.unsplash.com/random/800x200?${term}`} alt="" />
+    <img
+      data-cy="image"
+      src={`https://source.unsplash.com/random/800x200?${term}`}
+      alt=""
+    />
   ))
 
   return <div className="images">{images}</div>

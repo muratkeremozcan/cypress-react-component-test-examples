@@ -4421,6 +4421,11 @@ cypress-real-events@1.7.0:
   resolved "https://registry.yarnpkg.com/cypress-real-events/-/cypress-real-events-1.7.0.tgz#ad6a78de33af3af0e6437f5c713e30691c44472c"
   integrity sha512-iyXp07j0V9sG3YClVDcvHN2DAQDgr+EjTID82uWDw6OZBlU3pXEBqTMNYqroz3bxlb0k+F74U81aZwzMNaKyew==
 
+cypress-recurse@^1.14.2:
+  version "1.14.2"
+  resolved "https://registry.yarnpkg.com/cypress-recurse/-/cypress-recurse-1.14.2.tgz#40540a23fa6defedc8ca7276c1b620da6a914e26"
+  integrity sha512-O/jUVV0wigxInTqVzeYVrBR6C2qmWSGlfP3lcIiUPm4Ttez3+CsEUOCI+5L7RAiJyO0FZ8HETcupQmABeY/DPQ==
+
 cypress@9.5.1:
   version "9.5.1"
   resolved "https://registry.yarnpkg.com/cypress/-/cypress-9.5.1.tgz#51162f3688cedf5ffce311b914ef49a7c1ece076"
