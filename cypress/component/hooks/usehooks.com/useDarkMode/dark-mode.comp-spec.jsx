@@ -19,27 +19,20 @@ function App() {
 }
 
 describe('Dark Mode', () => {
-  it('should toggle dark mode', () => {
-    mount(<App />)
-    cy.get('.toggle-control').click().click()
-
-    cy.wrap(localStorage)
-      .invoke('getItem', 'dark-mode-enabled')
-      .should('eq', 'true')
-    cy.get('#dmcheck', { timeout: 10000 }).should('be.checked')
-
-    cy.get('.toggle-control').click()
-    cy.wrap(localStorage)
-      .invoke('getItem', 'dark-mode-enabled')
-      .should('eq', 'false')
-    cy.get('#dmcheck', { timeout: 10000 }).should('not.be.checked')
-  })
-
-  it('should load the theme from the local storage', () => {
+  it('should toggle to dark mode', () => {
     cy.wrap(localStorage).invoke('setItem', 'dark-mode-enabled', false)
     mount(<App />)
     cy.get('#dmcheck').should('not.be.checked')
 
+    cy.get('.toggle-control').click()
+
+    cy.wrap(localStorage)
+      .invoke('getItem', 'dark-mode-enabled')
+      .should('equal', 'true')
+    cy.get('#dmcheck', { timeout: 10000 }).should('be.checked')
+  })
+
+  it('should toggle to light mode', () => {
     cy.wrap(localStorage).invoke('setItem', 'dark-mode-enabled', true)
     mount(<App />)
     cy.get('#dmcheck').should('be.checked')
@@ -47,6 +40,8 @@ describe('Dark Mode', () => {
     cy.wrap(localStorage)
       .invoke('getItem', 'dark-mode-enabled')
       .should('equal', 'true')
+    cy.get('.toggle-control').click()
+    cy.get('#dmcheck').should('not.be.checked')
   })
 })
 
