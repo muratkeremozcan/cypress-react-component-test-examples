@@ -5,8 +5,6 @@ import Toggle from './Toggle'
 import Content from './Content'
 import './styles.css'
 
-import { recurse } from 'cypress-recurse'
-
 function App() {
   const [darkMode, setDarkMode] = useDarkMode()
 
@@ -23,14 +21,18 @@ function App() {
 describe('Dark Mode', () => {
   it('should toggle dark mode', () => {
     mount(<App />)
-    cy.get('.toggle-control').click()
-    cy.get('#dmcheck').should('not.be.checked')
+    cy.get('.toggle-control').click().click()
 
-    cy.get('.toggle-control').click()
     cy.wrap(localStorage)
       .invoke('getItem', 'dark-mode-enabled')
       .should('eq', 'true')
     cy.get('#dmcheck', { timeout: 10000 }).should('be.checked')
+
+    cy.get('.toggle-control').click()
+    cy.wrap(localStorage)
+      .invoke('getItem', 'dark-mode-enabled')
+      .should('eq', 'false')
+    cy.get('#dmcheck', { timeout: 10000 }).should('not.be.checked')
   })
 
   it('should load the theme from the local storage', () => {
