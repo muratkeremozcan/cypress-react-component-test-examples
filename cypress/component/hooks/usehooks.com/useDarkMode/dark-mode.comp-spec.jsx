@@ -5,6 +5,8 @@ import Toggle from './Toggle'
 import Content from './Content'
 import './styles.css'
 
+import { recurse } from 'cypress-recurse'
+
 function App() {
   const [darkMode, setDarkMode] = useDarkMode()
 
@@ -24,6 +26,10 @@ describe('Dark Mode', () => {
     cy.get('.toggle-control').should('be.visible')
 
     cy.get('.toggle-control').click()
+    recurse(
+      () => cy.get('#dmcheck').should(Cypress._.noop),
+      (toggle) => toggle[0].checked === false
+    )
     cy.get('#dmcheck').should('not.be.checked')
 
     cy.get('.toggle-control').click()
