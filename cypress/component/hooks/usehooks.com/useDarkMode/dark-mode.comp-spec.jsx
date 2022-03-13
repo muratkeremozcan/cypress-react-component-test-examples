@@ -23,16 +23,13 @@ function App() {
 describe('Dark Mode', () => {
   it('should toggle dark mode', () => {
     mount(<App />)
-    cy.get('.toggle-control').should('be.visible')
-
     cy.get('.toggle-control').click()
-    recurse(
-      () => cy.get('#dmcheck').should(Cypress._.noop),
-      (toggle) => toggle[0].checked === false
-    )
     cy.get('#dmcheck').should('not.be.checked')
 
     cy.get('.toggle-control').click()
+    cy.wrap(localStorage)
+      .invoke('getItem', 'dark-mode-enabled')
+      .should('eq', 'true')
     cy.get('#dmcheck', { timeout: 10000 }).should('be.checked')
   })
 
