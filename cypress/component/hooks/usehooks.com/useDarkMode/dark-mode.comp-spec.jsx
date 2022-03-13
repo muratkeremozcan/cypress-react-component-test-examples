@@ -21,7 +21,8 @@ function App() {
 describe('Dark Mode', () => {
   it('should toggle dark mode', () => {
     mount(<App />)
-    cy.get('#dmcheck').should('be.checked')
+    cy.get('.toggle-control').should('be.visible')
+    cy.get('body').should('have.class', 'dark-mode')
     cy.get('.toggle-control').click()
     cy.get('body').should('not.have.class', 'dark-mode')
   })

@@ -8,9 +8,5 @@
     "allowJs": true,
     "jsx": "react-jsx"
   },
-  "include": [
-    "**/*.ts",
-    "**/*.tsx",
-    "component/hooks/usehooks.com/useLockBodyScroll/App.js"
-  ]
+  "include": ["**/*.ts", "**/*.tsx"]
 }
