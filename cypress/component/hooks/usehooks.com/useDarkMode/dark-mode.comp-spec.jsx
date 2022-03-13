@@ -23,9 +23,12 @@ describe('Dark Mode', () => {
     mount(<App />)
     cy.get('.toggle-control').should('be.visible')
 
-    cy.get('#dmcheck', { timeout: 10000 }).should('be.checked')
     cy.get('.toggle-control').click()
     cy.get('body').should('not.have.class', 'dark-mode')
+    cy.get('#dmcheck').should('not.be.checked')
+
+    cy.get('.toggle-control').click()
+    cy.get('#dmcheck', { timeout: 10000 }).should('be.checked')
   })
 
   it('should load the theme from the local storage', () => {
