@@ -21,6 +21,7 @@ function App() {
 describe('Dark Mode', () => {
   it('should toggle dark mode', () => {
     mount(<App />)
+    cy.get('#dmcheck').should('be.checked')
     cy.get('body').should('have.class', 'dark-mode')
     cy.get('.toggle-control').click()
     cy.get('body').should('not.have.class', 'dark-mode')
@@ -29,10 +30,12 @@ describe('Dark Mode', () => {
   it('should load the theme from the local storage', () => {
     cy.wrap(localStorage).invoke('setItem', 'dark-mode-enabled', false)
     mount(<App />)
+    cy.get('#dmcheck').should('not.be.checked')
     cy.get('body').should('not.have.class', 'dark-mode')
 
     cy.wrap(localStorage).invoke('setItem', 'dark-mode-enabled', true)
     mount(<App />)
+    cy.get('#dmcheck').should('be.checked')
     cy.get('body').should('have.class', 'dark-mode')
     cy.wrap(localStorage)
       .invoke('getItem', 'dark-mode-enabled')
