@@ -1,0 +1,64 @@
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  font-family: Roboto, sans-serif;
+}
+.main {
+  padding: 100px;
+  text-align: center;
+}
+.theme-changer {
+  margin-top: 30px;
+}
+.theme-changer label {
+  margin: 0 12px;
+}
+.button {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  border: none;
+  border: var(--button-border);
+  padding: 1rem;
+  padding: var(--button-padding);
+  border-radius: 0;
+  border-radius: var(--button-border-radius);
+  font-weight: normal;
+  font-weight: var(--button-font-weight);
+  font-size: 1.2rem;
+  font-size: var(--button-font-size);
+  text-transform: uppercase;
+  text-transform: var(--button-text-transform);
+  color: #000;
+  color: var(--button-color);
+  background: #fff;
+  background: var(--button-background);
+}
+.button:hover {
+  border: none;
+  border: var(--button-hover-border);
+  color: #000;
+  color: var(--button-hover-color);
+  background: #efefef;
+  background: var(--button-hover-background);
+  transform: none;
+  transform: var(--button-hover-transform);
+}
+.button:active {
+  border: none;
+  border: var(--button-active-border);
+  color: #000;
+  color: var(--button-active-color);
+  background: #ccc;
+  background: var(--button-active-background);
+  transform: none;
+  transform: var(--button-active-transform);
+}
+.button:focus {
+  outline: 0;
+}
