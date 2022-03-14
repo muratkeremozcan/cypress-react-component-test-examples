@@ -4,14 +4,13 @@ import UserStorage from './3.user-storage'
 describe('UserStorage', () => {
   it('should select each item in the list', () => {
     mount(<UserStorage />)
+    cy.get('select').should('be.visible')
 
-    cy.wrap(['Jason', 'Jason', 'Akiko', 'Clarisse', 'Sanjiv']).each(
-      (dropdownItem) =>
-        cy
-          .get('select')
-          .select(dropdownItem)
-          .then(() => expect(localStorage.getItem('user')).eq(dropdownItem))
-    )
+    cy.wrap(['Akiko', 'Clarisse', 'Sanjiv', 'Jason']).each((dropdownItem) => {
+      cy.get('select')
+        .select(dropdownItem)
+        .should(() => expect(localStorage.getItem('user')).eq(dropdownItem))
+    })
   })
 
   it('should have no local storage in the beginning', () => {
