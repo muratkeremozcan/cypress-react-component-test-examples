@@ -46,7 +46,7 @@ export function useLoadItems() {
       setItems((current) => [...current, ...data])
       setHasNextPage(newHasNextPage)
     } catch (err) {
-      setError(err)
+      setError(err as any)
     } finally {
       setLoading(false)
     }

@@ -19,7 +19,12 @@
     "rootDir": ".",
     "noImplicitAny": false
   },
-  "types": ["cypress", "cypress-real-events"],
+  "types": [
+    "cypress",
+    "node",
+    "@testing-library/cypress",
+    "cypress-real-events"
+  ],
   "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules", "dist", "web/webpack.config.ts"]
 }
