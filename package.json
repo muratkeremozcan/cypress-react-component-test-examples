@@ -80,11 +80,14 @@
     "axios": "0.26.1",
     "cross-env": "7.0.3",
     "cypress": "9.5.1",
+    "cypress-react-app-actions": "^1.0.2",
     "cypress-real-events": "1.7.0",
     "cypress-recurse": "^1.14.2",
     "eslint-plugin-cypress": "2.12.1",
     "eslint-plugin-prettier": "4.0.0",
     "prettier": "2.5.1",
-    "pretty": "2.0.0"
+    "pretty": "2.0.0",
+    "react-error-boundary": "^3.1.4",
+    "react-infinite-scroll-hook": "^4.0.2"
   }
 }

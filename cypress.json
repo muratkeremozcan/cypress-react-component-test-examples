@@ -1,7 +1,10 @@
 {
   "baseUrl": "http://localhost:3000",
   "component": {
-    "testFiles": "**/**/*.comp-spec.{js,ts,jsx,tsx}"
+    "testFiles": [
+      "**/**/*.comp-spec.{js,ts,jsx,tsx}",
+      "**/**/*.cy.{js,ts,jsx,tsx}"
+    ]
   },
   "experimentalPolyfill": true,
   "projectId": "62pyqm"
