@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 
 export default function Challenge() {
   // https://usehooks.com/useWindowSize/
+  // cypress / component / hooks / usehooks.com / useWindowSize.cy.tsx
   const getSize = () => ({
     width: window.innerWidth,
     height: window.innerHeight
