@@ -69,6 +69,7 @@ describe('useHover', () => {
   })
 
   it('useHover', () => {
+    // @ts-ignore
     cy.get('button').click().realHover()
 
     cy.getByCy('smile').should(
@@ -77,6 +78,7 @@ describe('useHover', () => {
       'rgb(204, 204, 204)'
     )
 
+    // @ts-ignore
     cy.getByCy('smile').click().realHover()
     cy.getByCy('smile').should(
       'have.css',
@@ -84,9 +86,11 @@ describe('useHover', () => {
       'rgb(0, 227, 227)'
     )
 
-    // @ts-expect-error
+    // @ts-ignore
     cy.wrap().should((): void => {
+      // @ts-ignore
       expect(mouseoverEventFired).to.eq(true)
+      // @ts-ignore
       expect(mouseoutEventFired).to.eq(true)
     })
   })
