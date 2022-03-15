@@ -45,7 +45,7 @@ function App() {
   )
 }
 
-let resizeEventFired
+// cypress/component/hooks/react-hooks-in-action-book-examples/ch4-useState-useEffect/4.challenge.cy.js
 
 describe('Challenge', () => {
   let resizeEventFired
