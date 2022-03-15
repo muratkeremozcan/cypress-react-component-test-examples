@@ -74,7 +74,7 @@ function App() {
   )
 }
 
-it('useOnScreen', { viewportHeight: 900 }, () => {
+it('useOnScreen', () => {
   mount(<App />)
   cy.getByCy('scroll-down').should('be.visible')
   cy.getByCy('hey').should('not.exist')
