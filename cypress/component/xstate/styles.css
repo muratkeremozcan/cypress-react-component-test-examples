@@ -1,0 +1,16 @@
+.app {
+  font-family: sans-serif;
+  text-align: center;
+}
+.resolved {
+  background: green;
+}
+.pending {
+  background: yellow;
+}
+.loading {
+  background: orange;
+}
+.rejected {
+  background: red;
+}
