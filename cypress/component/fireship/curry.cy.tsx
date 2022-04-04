@@ -30,12 +30,17 @@ const CodeThis = () => {
 }
 
 describe('with curry', () => {
+  const { _ } = Cypress
+  const randomChar = (n = 1) =>
+    _.times(n, () => _.random(35).toString(36)).join('')
+
   const testIt = () => {
-    cy.getByCyLike('input').each(($input) => cy.wrap($input).type('a'))
+    cy.getByCyLike('input').each(($input) => cy.wrap($input).type(randomChar()))
     return cy.get('@log').should('have.been.called', 'thrice')
   }
 
-  beforeEach('spy on console.log', () =>
+  // spy on console.log
+  beforeEach(() =>
     cy
       .window()
       .its('console')
