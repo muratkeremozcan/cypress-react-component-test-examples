@@ -24,7 +24,7 @@ const CodeThis = () => {
     <>
       <input data-cy="input-1" onChange={handleIt(1)}></input>
       <input data-cy="input-2" onChange={handleIt(2)}></input>
-      <input data-cy="input-2" onChange={handleIt(3)}></input>
+      <input data-cy="input-3" onChange={handleIt(3)}></input>
     </>
   )
 }
