@@ -81,7 +81,7 @@
     "@types/faker": "6.6.8",
     "axios": "0.26.1",
     "cross-env": "7.0.3",
-    "cypress": "9.5.3",
+    "cypress": "9.5.4",
     "cypress-react-app-actions": "^1.0.2",
     "cypress-real-events": "1.7.0",
     "cypress-recurse": "1.20.0",
