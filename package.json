@@ -21,7 +21,7 @@
     "formik": "2.2.9",
     "i18next": "21.7.1",
     "mobx": "6.5.0",
-    "mobx-react-lite": "3.3.0",
+    "mobx-react-lite": "3.4.0",
     "prop-types": "15.8.1",
     "query-string": "^7.1.1",
     "radioactive-state": "1.4.0",
