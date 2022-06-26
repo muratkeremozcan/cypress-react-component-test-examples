@@ -19,17 +19,17 @@ jobs:
         env:
           CYPRESS_INSTALL_BINARY: 0 # no need to install the Cypress binary, we are already using the docker image in the e2e job
 
-  unit-test:
-    needs: install-dependencies
-    name: Run Unit Tests
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: bahmutov/npm-install@v1
-        with:
-          useRollingCache: true
-      - name: Run tests
-        run: yarn test
+  # unit-test:
+  #   needs: install-dependencies
+  #   name: Run Unit Tests
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     - uses: bahmutov/npm-install@v1
+  #       with:
+  #         useRollingCache: true
+  #     - name: Run tests
+  #       run: yarn test
 
   lint:
     needs: install-dependencies
