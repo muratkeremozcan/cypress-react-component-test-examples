@@ -83,7 +83,7 @@ describe('game', { viewportHeight: 300, viewportWidth: 400 }, () => {
       expect(winner).to.equal('X')
     })
 
-    it.only('returns O for second row of O', () => {
+    it('returns O for second row of O', () => {
       // preserve our Tic-Tac-Toe board formatting
       // prettier-ignore
       const squares = [

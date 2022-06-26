@@ -15,7 +15,7 @@ describe('Error Boundary', () => {
     throw new Error(errorMessage)
   }
 
-  it.only('renders normal children', () => {
+  it('renders normal children', () => {
     mount(
       <ErrorBoundary>
         <ChildWithoutError />
