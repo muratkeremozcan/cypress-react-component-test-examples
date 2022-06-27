@@ -1,15 +1,25 @@
 /// <reference types="cypress" />
-import Game, { Board, calculateWinner } from './tic-tac-toe-fn-comp.jsx'
+import Game, { Board, calculateWinner } from './tic-tac-toe.js'
 import React from 'react'
 import { mount } from '@cypress/react'
 import './tic-tac-toe.css'
 
-describe('game', { viewportHeight: 300, viewportWidth: 400 }, () => {
-  it.only('renders empty Board', () => {
-    // const squares = Array(9).fill(null)
-    // const onClick = cy.stub()
+const BoardWrap = ({ squares, onClick }) => {
+  return (
+    <div className="game">
+      <div className="game-board">
+        <Board squares={squares} onClick={onClick} />
+      </div>
+    </div>
+  )
+}
 
-    mount(<Game squares={squares} onClick={onClick} />)
+describe('game', { viewportHeight: 300, viewportWidth: 400 }, () => {
+  it('renders empty Board', () => {
+    const squares = Array(9).fill(null)
+    const onClick = cy.stub()
+
+    mount(<BoardWrap squares={squares} onClick={onClick} />)
     cy.get('.board-row')
       .eq(0)
       .find('.square')
@@ -25,7 +35,7 @@ describe('game', { viewportHeight: 300, viewportWidth: 400 }, () => {
 
     squares[0] = 'X'
     squares[1] = 'O'
-    mount(<Board squares={squares} />)
+    mount(<BoardWrap squares={squares} />)
 
     cy.get('.board-row').eq(0).find('.square').eq(0).should('have.text', 'X')
     cy.get('.board-row').eq(0).find('.square').eq(1).should('have.text', 'O')
@@ -52,7 +62,7 @@ describe('game', { viewportHeight: 300, viewportWidth: 400 }, () => {
     cy.get('ol li')
       .should('have.length', 6)
       .first()
-      .should('have.text', 'Go to game start')
+      .should('include.text', 'Go to game start')
       .click()
   })
 
