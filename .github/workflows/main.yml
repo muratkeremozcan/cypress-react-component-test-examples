@@ -58,7 +58,7 @@ jobs:
         run: yarn typecheck
 
   cypress-e2e-tests:
-    needs: [unit-test, lint, typecheck]
+    needs: [lint, typecheck]
     runs-on: ubuntu-latest
     container: cypress/included:9.1.0 # save time on not having to install cypress
     steps:
@@ -84,7 +84,7 @@ jobs:
     # strategy: # ran out of parallelization, turning it off
     #   matrix:
     #     machines: [1, 2, 3] # uses 2 CI machines to run tests in parallel
-    needs: [unit-test, lint, typecheck]
+    needs: [lint, typecheck]
     runs-on: ubuntu-latest
     container: cypress/included:9.1.0 # save time on not having to install cypress
     steps:
