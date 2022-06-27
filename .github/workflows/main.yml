@@ -14,13 +14,14 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           cache: 'yarn'
+          node-version: 16.10.0
       - uses: bahmutov/npm-install@v1.8.16
         with: { useRollingCache: true } # recommended for large projects
         env:
           CYPRESS_INSTALL_BINARY: 0 # no need to install the Cypress binary, we are already using the docker image in the e2e job
 
   # unit-test:
-  #   needs: install-dependencies
+  #   needs: [install-dependencies]
   #   name: Run Unit Tests
   #   runs-on: ubuntu-latest
   #   steps:
@@ -32,7 +33,7 @@ jobs:
   #       run: yarn test
 
   lint:
-    needs: install-dependencies
+    needs: [install-dependencies]
     name: Run Lint
     runs-on: ubuntu-latest
     steps:
@@ -45,7 +46,7 @@ jobs:
         run: yarn lint
 
   typecheck:
-    needs: install-dependencies
+    needs: [install-dependencies]
     name: Run Typecheck
     runs-on: ubuntu-latest
     steps:
@@ -58,9 +59,9 @@ jobs:
         run: yarn typecheck
 
   cypress-e2e-tests:
-    needs: [lint, typecheck]
+    needs: [install-dependencies]
     runs-on: ubuntu-latest
-    container: cypress/included:9.1.0 # save time on not having to install cypress
+    container: cypress/included:9.6.0 # save time on not having to install cypress
     steps:
       - uses: actions/checkout@v3
 
@@ -84,9 +85,9 @@ jobs:
     # strategy: # ran out of parallelization, turning it off
     #   matrix:
     #     machines: [1, 2, 3] # uses 2 CI machines to run tests in parallel
-    needs: [lint, typecheck]
+    needs: [install-dependencies]
     runs-on: ubuntu-latest
-    container: cypress/included:9.1.0 # save time on not having to install cypress
+    container: cypress/included:9.6.0 # save time on not having to install cypress
     steps:
       - uses: actions/checkout@v3
 

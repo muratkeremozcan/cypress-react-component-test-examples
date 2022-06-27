@@ -24,9 +24,10 @@ yarn server:test
 Achieve this in a GitHub Actions CI as efficiently as possible:
 
 ```
-build  -->  unit test   -->  Cypress e2e test + component test
-       -->  lint
+build  -->  lint
        -->  type check
+       -->  Cypress e2e tests
+       -->  Cypress component tests
 ```
 
 ## Why?
