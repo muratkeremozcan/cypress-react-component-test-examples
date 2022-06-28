@@ -105,7 +105,7 @@ jobs:
           # with component tests since we have a custom command, we pass these parameters in the command instead
           # command: yarn cypress run-ct --record --key=${{ secrets.CYPRESS_RECORD_KEY }} --browser chrome --group component-tests --tag component-tests --parallel
           # ran out of parallelization, turning it off
-          component: true,
+          component: true
           browser: chrome
           # record: true
           # parallel: true # parallelizes tests
