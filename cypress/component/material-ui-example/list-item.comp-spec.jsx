@@ -18,6 +18,6 @@ it('renders a list item', () => {
 // demo from https://material-ui.com/components/lists/
 it('renders full list', () => {
   cy.viewport(500, 800)
-  mount(<SimpleList />)
+  cy.mount(<SimpleList />)
   cy.contains('Drafts').click().wait(1000).click().wait(1000).click()
 })

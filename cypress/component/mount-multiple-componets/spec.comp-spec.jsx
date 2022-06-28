@@ -3,7 +3,7 @@ import React from 'react'
 
 describe('mounting a div', () => {
   it('mounts a div', () => {
-    mount(<div className="example">Works</div>)
+    cy.mount(<div className="example">Works</div>)
     cy.contains('.example', 'Works')
   })
 

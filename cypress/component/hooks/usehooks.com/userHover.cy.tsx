@@ -69,7 +69,8 @@ describe('useHover', () => {
 
   it('useHover', () => {
     // @ts-ignore
-    cy.get('button').click().realHover()
+    cy.get('button').click()
+    // .realHover()
 
     cy.getByCy('smile').should(
       'have.css',
@@ -78,7 +79,8 @@ describe('useHover', () => {
     )
 
     // @ts-ignore
-    cy.getByCy('smile').click().realHover()
+    cy.getByCy('smile').click()
+    // .realHover()
     cy.getByCy('smile').should(
       'have.css',
       'background-color',
