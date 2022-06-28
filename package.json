@@ -18,7 +18,7 @@
     "radioactive-state": "1.4.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-bootstrap": "2.3.1",
+    "react-bootstrap": "2.4.0",
     "react-google-maps": "9.4.5",
     "react-i18next": "11.17.3",
     "react-router-dom": "6.3.0",
@@ -65,7 +65,7 @@
   },
   "devDependencies": {
     "@testing-library/cypress": "8.0.3",
-    "@types/faker": "6.6.8",
+    "@types/faker": "6.6.9",
     "axios": "0.27.2",
     "cross-env": "7.0.3",
     "cypress": "10.2.0",
