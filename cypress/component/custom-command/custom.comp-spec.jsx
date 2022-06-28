@@ -1,16 +1,15 @@
 /// <reference types="cypress" />
 import React from 'react'
-import { mount } from '@cypress/react'
 
 // https://github.com/bahmutov/@cypress/react/issues/184
 Cypress.Commands.add('myMount', () => {
-  return mount(<div>My mount</div>)
+  return cy.mount(<div>My mount</div>)
 })
 
 Cypress.Commands.add('myMount2', () => {
   const toMount = React.createElement('div', null, ['mount 2'])
 
-  return mount(toMount)
+  return cy.mount(toMount)
 })
 
 describe('Wrapped mount in custom command', () => {

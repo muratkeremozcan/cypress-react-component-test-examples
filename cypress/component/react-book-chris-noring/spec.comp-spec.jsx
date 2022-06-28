@@ -1,15 +1,14 @@
 /// <reference types="cypress" />
 import React from 'react'
-import { mount } from '@cypress/react'
 
 describe('Jsx', () => {
   const Elem = () => <div>Some title</div>
 
   it('has title attribute', () => {
-    mount(<Elem title="a title" />)
+    cy.mount(<Elem title="a title" />)
     cy.contains('Some title')
 
-    mount(
+    cy.mount(
       <Elem title="a title">can close like this too it it has children</Elem>
     )
     cy.contains('Some title')
@@ -18,7 +17,7 @@ describe('Jsx', () => {
   it('calls React.createElement with props and text', () => {
     cy.spy(React, 'createElement').as('reactStub')
 
-    mount(<Elem title="a title"></Elem>)
+    cy.mount(<Elem title="a title"></Elem>)
 
     cy.get('@reactStub').should('have.been.called')
   })
@@ -31,7 +30,7 @@ describe('Jsx', () => {
       </React.Fragment>
     )
 
-    mount(<ElemFragment />)
+    cy.mount(<ElemFragment />)
     cy.contains('h1', 'Some title')
     cy.contains('div', 'Som content')
   })
@@ -55,7 +54,7 @@ describe('Component', () => {
   }
 
   it('renders Application and child component', () => {
-    mount(<Application />)
+    cy.mount(<Application />)
     cy.contains('I am a Jedi Component')
   })
 })

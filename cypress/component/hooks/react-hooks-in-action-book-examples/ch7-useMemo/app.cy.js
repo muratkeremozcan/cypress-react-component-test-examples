@@ -1,9 +1,8 @@
 import App from './App'
-import { mount } from '@cypress/react'
 
 describe('App', { viewportWidth: 900, viewportHeight: 700 }, () => {
   beforeEach(() => {
-    mount(<App />)
+    cy.mount(<App />)
 
     cy.getByCy('input').clear().type('abcc')
   })

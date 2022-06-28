@@ -1,13 +1,13 @@
 import App from './errorBoundary-example'
 import { ErrorBoundary } from 'react-error-boundary'
-import { mount } from '@cypress/react'
+
 import './styles.css'
 
 describe('Pokemon api', () => {
   beforeEach(() => {
     cy.intercept('POST', /pokemon/).as('fetchPokemon')
 
-    mount(
+    cy.mount(
       <ErrorBoundary>
         <App />
       </ErrorBoundary>

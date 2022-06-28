@@ -1,5 +1,4 @@
 import React from 'react'
-import { mount, unmount } from '@cypress/react'
 import LoadingIndicator from './LoadingIndicator'
 
 // compare these tests to Jest + Enzyme tests in
@@ -8,7 +7,7 @@ import LoadingIndicator from './LoadingIndicator'
 describe('LoadingIndicator', () => {
   describe('when isLoading is false', () => {
     it('should render children', () => {
-      mount(
+      cy.mount(
         <LoadingIndicator isLoading={false}>
           <div>ahoy!</div>
         </LoadingIndicator>
@@ -21,7 +20,7 @@ describe('LoadingIndicator', () => {
   describe('when isLoading is true', () => {
     describe('given 2000ms have not yet elapsed', () => {
       it('should render nothing', () => {
-        mount(
+        cy.mount(
           <LoadingIndicator isLoading={true}>
             <div>ahoy!</div>
           </LoadingIndicator>
@@ -34,7 +33,7 @@ describe('LoadingIndicator', () => {
 
     describe('given 2000ms have elapsed', () => {
       it('should render loading indicator (waits 2 seconds)', () => {
-        mount(
+        cy.mount(
           <LoadingIndicator isLoading={true}>
             <div>ahoy!</div>
           </LoadingIndicator>
@@ -47,7 +46,7 @@ describe('LoadingIndicator', () => {
 
       it('should render loading indicator (mocks clock)', () => {
         cy.clock()
-        mount(
+        cy.mount(
           <LoadingIndicator isLoading={true}>
             <div>ahoy!</div>
           </LoadingIndicator>
@@ -58,24 +57,6 @@ describe('LoadingIndicator', () => {
         cy.tick(2010)
         cy.contains('loading...', { timeout: 100 }).should('be.visible')
       })
-    })
-  })
-
-  describe('on unmount', () => {
-    it('should clear timeout', () => {
-      cy.clock()
-      cy.window().then((win) => cy.spy(win, 'clearTimeout').as('clearTimeout'))
-
-      mount(
-        <LoadingIndicator isLoading={true}>
-          <div>ahoy!</div>
-        </LoadingIndicator>
-      )
-
-      cy.tick(2010)
-      unmount()
-
-      cy.get('@clearTimeout').should('have.been.calledOnce')
     })
   })
 })

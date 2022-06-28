@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 import React from 'react'
-import { mount } from '@cypress/react'
+
 import { SimpleContext } from './simple-context'
 import { SimpleComponent } from './simple-component.jsx'
 
@@ -9,14 +9,14 @@ import { SimpleComponent } from './simple-component.jsx'
 describe('Enzyme', () => {
   context('setContext', () => {
     it('does not provide the context', () => {
-      mount(<SimpleComponent />)
+      cy.mount(<SimpleComponent />)
       cy.contains('context not set').should('be.visible')
     })
 
     it('surround the component with the real provider but set the value prop to whatever the test requires', () => {
       // surround the component with the real provider but
       // set the value prop to whatever the test requires
-      mount(
+      cy.mount(
         <SimpleContext.Provider value={{ name: 'test context' }}>
           <SimpleComponent />
         </SimpleContext.Provider>
@@ -30,7 +30,7 @@ describe('Enzyme', () => {
       // just mount the component again with a different provider around it
       const cmp = <SimpleComponent id="0x123" />
 
-      mount(
+      cy.mount(
         <SimpleContext.Provider value={{ name: 'first context' }}>
           {cmp}
         </SimpleContext.Provider>
@@ -40,7 +40,7 @@ describe('Enzyme', () => {
       cy.contains('.id', '0x123').should('be.visible')
 
       // same component, different provider
-      mount(
+      cy.mount(
         <SimpleContext.Provider value={{ name: 'second context' }}>
           {cmp}
         </SimpleContext.Provider>

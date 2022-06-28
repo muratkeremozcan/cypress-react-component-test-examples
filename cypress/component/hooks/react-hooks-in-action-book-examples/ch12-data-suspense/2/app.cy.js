@@ -1,11 +1,10 @@
 import App from './App'
-import { mount } from '@cypress/react'
 
 describe('App', () => {
   it('should render data, start and then stop erroring', () => {
     Cypress.on('uncaught:exception', () => false)
     cy.clock()
-    mount(<App />)
+    cy.mount(<App />)
     cy.contains('Loading message...')
     cy.tick(2000)
     cy.contains('Hello')

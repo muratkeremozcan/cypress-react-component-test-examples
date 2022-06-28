@@ -1,11 +1,11 @@
 import './counter.css'
 import React from 'react'
-import { mount } from '@cypress/react'
+
 import { Counter } from './Counter.jsx'
 
 describe('reactive-state Counter', () => {
   it('increments count on click', () => {
-    mount(
+    cy.mount(
       <div className="App">
         <Counter />
       </div>

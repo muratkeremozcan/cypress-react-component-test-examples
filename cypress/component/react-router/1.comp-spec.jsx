@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 import React from 'react'
-import { mount } from '@cypress/react'
+
 import { App } from './app.jsx'
 import { BrowserRouter as Router, MemoryRouter } from 'react-router-dom'
 
@@ -13,9 +13,11 @@ describe('React Router', () => {
   it('shows links', () => {
     cy.viewport(600, 300)
 
-    mount(
+    cy.mount(
       <Router>
-        <App />
+        <>
+          <App />
+        </>
       </Router>
     )
 

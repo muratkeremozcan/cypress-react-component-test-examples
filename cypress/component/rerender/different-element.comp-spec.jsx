@@ -1,6 +1,5 @@
 /// <reference types="cypress" />
 import React from 'react'
-import { mount } from '@cypress/react'
 
 it('should properly handle swapping components with rerender', () => {
   const Component1 = ({ input }) => <div>{input}</div>
@@ -8,7 +7,7 @@ it('should properly handle swapping components with rerender', () => {
     <div style={{ backgroundColor: 'blue' }}>{differentProp}</div>
   )
 
-  mount(<Component1 input="0" />).then(({ rerender }) => {
+  cy.mount(<Component1 input="0" />).then(({ rerender }) => {
     rerender(<Component2 differentProp="1" />)
       .get('body')
       .should('contain', '1')

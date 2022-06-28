@@ -1,7 +1,6 @@
 /// <reference types="cypress" />
 import { ErrorBoundary } from './error-boundary.jsx'
 import React from 'react'
-import { mount } from '@cypress/react'
 
 Cypress.on('uncaught:exception', (err, runnable) => {
   return false
@@ -16,7 +15,7 @@ describe('Error Boundary', () => {
   }
 
   it('renders normal children', () => {
-    mount(
+    cy.mount(
       <ErrorBoundary>
         <ChildWithoutError />
       </ErrorBoundary>
@@ -36,7 +35,7 @@ describe('Error Boundary', () => {
       return false
     })
 
-    mount(
+    cy.mount(
       <ErrorBoundary name="ChildWithError">
         <ChildWithError />
       </ErrorBoundary>

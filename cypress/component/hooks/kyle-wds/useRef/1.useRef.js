@@ -39,7 +39,7 @@ export default function App() {
         value={name}
         onChange={(e) => setName(e.target.value)}
       />
-      <div>
+      <div data-cy="name-text">
         My name is {name} and it used to be {prevName.current}
       </div>
       <button onClick={focus}>Focus</button>

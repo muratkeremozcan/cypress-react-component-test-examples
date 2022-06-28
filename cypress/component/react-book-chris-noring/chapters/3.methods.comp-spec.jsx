@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 import React from 'react'
-import { mount } from '@cypress/react'
+
 import PropTypes from 'prop-types'
 
 describe('https://softchris.github.io/books/react/methods/', () => {
@@ -24,7 +24,7 @@ describe('https://softchris.github.io/books/react/methods/', () => {
       }
     }
 
-    mount(<Element />)
+    cy.mount(<Element />)
     cy.get('button').contains('initial').click()
     cy.contains('button', 'clicked')
   })
@@ -46,7 +46,7 @@ describe('https://softchris.github.io/books/react/methods/', () => {
       }
     }
 
-    mount(<Element />)
+    cy.mount(<Element />)
     cy.get('button').contains('initial').click()
     cy.contains('button', 'clicked')
   })
@@ -78,7 +78,7 @@ describe('https://softchris.github.io/books/react/methods/', () => {
       }
     }
 
-    mount(<Element />)
+    cy.mount(<Element />)
     cy.get('input').type('reflection')
     cy.contains('button', 'reflection').click()
     cy.contains('button', 'clicked')

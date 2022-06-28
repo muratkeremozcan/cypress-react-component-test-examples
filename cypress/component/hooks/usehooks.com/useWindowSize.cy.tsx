@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import { mount } from '@cypress/react'
 
 // Define general type for useWindowSize hook, which includes width and height
 interface Size {
@@ -51,7 +50,7 @@ describe('Challenge', () => {
   let resizeEventFired
 
   beforeEach(() => {
-    mount(<App />)
+    cy.mount(<App />)
     resizeEventFired = false
 
     // if resize fires at any point, we set the variable to true

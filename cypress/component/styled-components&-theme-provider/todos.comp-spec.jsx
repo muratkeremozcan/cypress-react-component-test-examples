@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 import React, { Component } from 'react'
-import { mount } from '@cypress/react'
+
 import Todos from './Todos'
 
 const todos = [
@@ -25,7 +25,7 @@ class App extends Component {
 
 it('renders todos', () => {
   cy.viewport(400, 500)
-  mount(<App />)
+  cy.mount(<App />)
 
   cy.contains('[data-cy="todo"]', 'clean')
     .find('input[type=checkbox]')

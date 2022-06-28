@@ -1,13 +1,12 @@
 // www.youtube.com/watch?v=0ZJgIjIuY7U
 
-import { mount } from '@cypress/react'
 import App from './2.useEffect-example'
 
 describe('useEffect', () => {
   let resizeEventFired
 
   beforeEach(() => {
-    mount(<App />)
+    cy.mount(<App />)
     resizeEventFired = false
 
     // if resize fires at any point, we set the variable to true

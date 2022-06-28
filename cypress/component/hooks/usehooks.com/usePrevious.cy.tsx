@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from 'react'
-import { mount } from '@cypress/react'
 
 // Hook https://usehooks.com/usePrevious/
 function usePrevious<T>(value: T): T {
@@ -35,7 +34,7 @@ function App() {
 }
 
 it('useRef vs useState', () => {
-  mount(<App />)
+  cy.mount(<App />)
 
   cy.get('button').click()
   cy.contains('Now: 1, before: 0')

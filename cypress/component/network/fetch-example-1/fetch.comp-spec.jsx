@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 import React from 'react'
-import { mount } from '@cypress/react'
+
 import { Users } from './fetch.jsx'
 
 // assuming "experimentalFetchPolyfill": true in cypress.json
@@ -25,7 +25,7 @@ describe('Uses Fetch API directly', () => {
 
   it('can inspect real data in XHR', () => {
     cy.intercept('/users?_limit=3').as('users')
-    mount(<Users />)
+    cy.mount(<Users />)
 
     cy.get('li').should('have.length', 3)
 
@@ -40,7 +40,7 @@ describe('Uses Fetch API directly', () => {
     const userStub = [{ id: 1, name: 'foo' }]
     it('can stub XHR response', () => {
       cy.intercept('GET', '/users?_limit=3', userStub).as('userStub')
-      mount(<Users />)
+      cy.mount(<Users />)
 
       cy.wait('@userStub').its('response.body').should('deep.equal', userStub)
       cy.get('li').should('have.length', 1).first().contains('foo')
@@ -58,7 +58,7 @@ describe('Uses Fetch API directly', () => {
         }
       ).as('userStub')
 
-      mount(<Users />)
+      cy.mount(<Users />)
       cy.get('li').should('have.length', 0)
       cy.wait('@userStub')
       cy.get('li').should('have.length', 1)
@@ -70,7 +70,7 @@ describe('Uses Fetch API directly', () => {
         json: cy.stub().resolves(userStub).as('userStub')
       })
 
-      mount(<Users />)
+      cy.mount(<Users />)
       cy.get('li').should('have.length', 1)
       cy.get('@userStub').should('have.been.calledOnce')
     })

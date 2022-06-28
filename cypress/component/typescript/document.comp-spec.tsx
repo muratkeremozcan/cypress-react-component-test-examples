@@ -1,6 +1,5 @@
 /// <reference types="cypress" />
 import React from 'react'
-import { mount } from '@cypress/react'
 
 // example from https://github.com/bahmutov/cypress-react-unit-test/issues/52
 const DocumentTest = ({ reportHeight }) => (
@@ -22,7 +21,7 @@ describe('DocumentTest', () => {
   it('has valid dimensions', () => {
     const reportStub = cy.stub().as('report')
 
-    mount(<DocumentTest reportHeight={reportStub} />)
+    cy.mount(<DocumentTest reportHeight={reportStub} />)
     cy.get('button').click()
     cy.get('@report')
       .should('have.been.called')

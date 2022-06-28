@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 import React from 'react'
-import { mount } from '@cypress/react'
+
 import Todo from './Todo'
 
 it('renders Todo', () => {
@@ -12,7 +12,7 @@ it('renders Todo', () => {
   // KEY: stub functions internal to the component
   const handleChecked = cy.stub()
 
-  mount(<Todo todo={todo} handleChecked={handleChecked} key={todo.id} />)
+  cy.mount(<Todo todo={todo} handleChecked={handleChecked} key={todo.id} />)
 
   cy.contains('clean')
   cy.get('input[type=checkbox]')

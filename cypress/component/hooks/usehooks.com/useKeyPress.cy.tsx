@@ -1,5 +1,4 @@
 import { useState, useEffect, useCallback } from 'react'
-import { mount } from '@cypress/react'
 
 function useKeyPress(targetKey: string): boolean {
   // State for keeping track of whether key is pressed
@@ -60,7 +59,7 @@ it('useKeyPress', () => {
     doc.addEventListener('keydown', cy.spy().as('keydown'))
     doc.addEventListener('keyup', cy.spy().as('keyup'))
   })
-  mount(<App />)
+  cy.mount(<App />)
   cy.get('input').type('abc')
 
   cy.get('@keydown').should('have.been.calledThrice')

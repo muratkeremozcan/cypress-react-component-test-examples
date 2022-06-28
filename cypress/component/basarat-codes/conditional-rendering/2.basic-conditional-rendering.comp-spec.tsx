@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import './App.css'
-import { mount } from '@cypress/react'
 
 it('should operate basic counter', () => {
   function App() {
@@ -23,7 +22,7 @@ it('should operate basic counter', () => {
     )
   }
 
-  mount(<App />)
+  cy.mount(<App />)
   cy.getByCy('count').should('contain', 'Count: 0')
   cy.getByCy('inc').dblclick()
   cy.getByCy('count').should('contain', 'Count: 2')
@@ -49,7 +48,7 @@ it('should operate basic toggler', () => {
     )
   }
 
-  mount(<App />)
+  cy.mount(<App />)
   cy.getByCy('content').should('not.exist')
   cy.getByCy('toggle').click()
   cy.getByCy('content').should('be.visible')
@@ -79,7 +78,7 @@ it('should load & clear user', () => {
     )
   }
 
-  mount(<App />)
+  cy.mount(<App />)
   cy.getByCy('user').should('not.exist')
   cy.getByCy('load').click()
   cy.getByCy('user').should('contain', 'Jane')

@@ -1,6 +1,5 @@
 /// <reference types="cypress" />
 import React from 'react'
-import { mount } from '@cypress/react'
 
 describe('You can pass a cy.stub as a property to the mounted component and then assert it was invoked', () => {
   describe('clicker', () => {
@@ -13,7 +12,7 @@ describe('You can pass a cy.stub as a property to the mounted component and then
     it('calls the click property twice', () => {
       const onClick = cy.stub().as('clicker')
 
-      mount(<Clicker click={onClick} />)
+      cy.mount(<Clicker click={onClick} />)
 
       cy.get('button')
         .click()
@@ -45,7 +44,7 @@ describe('You can pass a cy.stub as a property to the mounted component and then
     it('calls the click property twice', () => {
       const onClick = cy.stub().as('clicker')
 
-      mount(<Clicker click={onClick} />)
+      cy.mount(<Clicker click={onClick} />)
 
       cy.get('button')
         .click()

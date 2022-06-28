@@ -1,10 +1,10 @@
 /// <reference types="cypress" />
-import { mount } from '@cypress/react'
+
 import FormikError from './3.FormikError'
 
 describe('FormikError', () => {
   it('should show errors when an empty form is submitted', () => {
-    mount(<FormikError />)
+    cy.mount(<FormikError />)
     cy.get('span').should('not.exist')
     cy.getByCy('submit').click()
     cy.contains('Name is required')

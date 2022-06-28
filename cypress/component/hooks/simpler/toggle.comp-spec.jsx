@@ -1,13 +1,13 @@
 // test similar to https://reactjs.org/docs/testing-recipes.html#events
 /// <reference types="cypress" />
 import React from 'react'
-import { mount } from '@cypress/react'
+
 import Toggle from './toggle'
 
 it('changes value when clicked', () => {
   const onChange = cy.stub()
 
-  mount(<Toggle onChange={onChange} />)
+  cy.mount(<Toggle onChange={onChange} />)
 
   cy.get('[data-testid=toggle]')
     .click()

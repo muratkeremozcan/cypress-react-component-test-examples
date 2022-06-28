@@ -1,11 +1,10 @@
-import { mount } from '@cypress/react'
 import Challenge from './4.challenge'
 
 describe('Challenge', () => {
   let resizeEventFired
 
   beforeEach(() => {
-    mount(<Challenge />)
+    cy.mount(<Challenge />)
     resizeEventFired = false
 
     // if resize fires at any point, we set the variable to true

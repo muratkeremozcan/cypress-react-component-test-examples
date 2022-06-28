@@ -1,9 +1,8 @@
-import { mount } from '@cypress/react'
 import UserStorage from './3.user-storage'
 
 describe('UserStorage', () => {
   it('should select each item in the list', () => {
-    mount(<UserStorage />)
+    cy.mount(<UserStorage />)
     cy.get('select').should('be.visible')
 
     cy.wrap(['Akiko', 'Clarisse', 'Sanjiv', 'Jason']).each((dropdownItem) => {
@@ -14,7 +13,7 @@ describe('UserStorage', () => {
   })
 
   it('should have no local storage in the beginning', () => {
-    mount(<UserStorage />)
+    cy.mount(<UserStorage />)
 
     cy.then(() => expect(localStorage.getItem('user')).to.eq('undefined'))
   })
@@ -28,7 +27,7 @@ describe('UserStorage', () => {
       })
 
     // devhints.io/sinon-chai
-    mount(<UserStorage />)
+    cy.mount(<UserStorage />)
     cy.get('@1stUseEffect')
       .should('be.calledWith', 'user')
       .should('returned', null)
@@ -39,7 +38,7 @@ describe('UserStorage', () => {
       .and('returned', undefined)
       .then(() => expect(localStorage.getItem('user')).to.eq('Akiko'))
 
-    mount(<UserStorage />)
+    cy.mount(<UserStorage />)
     cy.get('@1stUseEffect')
       .should('be.calledWith', 'user')
       .and('returned', 'Akiko')

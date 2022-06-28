@@ -1,14 +1,13 @@
-import { mount } from '@cypress/react'
 import App from './1.useRef'
 
 describe('useRef', () => {
   it('should store previous state and focus', () => {
-    mount(<App />)
+    cy.mount(<App />)
 
     const name = 'Ali'
 
     cy.get('input').type(name)
-    cy.get('#__cy_root > div')
+    cy.getByCy('name-text')
       .click()
       .should(
         'contain',

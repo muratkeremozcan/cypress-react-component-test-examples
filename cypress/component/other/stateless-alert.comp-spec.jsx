@@ -1,14 +1,13 @@
 /// <reference types="cypress" />
 import HelloWorld from './stateless-alert.jsx'
 import React from 'react'
-import { mount } from '@cypress/react'
 
 describe('Stateless alert', () => {
   beforeEach(() => {
     const spy = cy.spy().as('alert') // can use cy.stub too
 
     cy.on('window:alert', spy)
-    mount(<HelloWorld name="React" />)
+    cy.mount(<HelloWorld name="React" />)
   })
 
   it('alerts with name', () => {

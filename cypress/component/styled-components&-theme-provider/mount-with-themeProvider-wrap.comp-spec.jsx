@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 import React from 'react'
-import { mount } from '@cypress/react'
+
 import styled, { ThemeProvider } from 'styled-components'
 
 const lightest = '#FFFEFD'
@@ -29,7 +29,7 @@ export const SearchResults = (props) => (
 )
 
 const mountComponent = ({ results }, options) =>
-  mount(
+  cy.mount(
     <ThemeProvider theme={theme}>
       <div style={{ margin: '6rem', maxWidth: '105rem' }}>
         <SearchResults results={results} />

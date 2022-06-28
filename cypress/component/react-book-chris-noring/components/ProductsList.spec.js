@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-import { mount } from '@cypress/react'
+
 import React from 'react'
 import ProductsList from './ProductsList.jsx'
 
@@ -10,17 +10,17 @@ describe.skip('Selecting by React props and state', () => {
   context('without delay', () => {
     beforeEach(() => {
       cy.stub(window, 'fetch')
-      .withArgs('http://myapi.com/products')
-      .resolves({
-        json: cy.stub().resolves({
-          products: [
-            { id: 1, name: 'First item' },
-            { id: 2, name: 'Second item' },
-          ],
-        }),
-      })
+        .withArgs('http://myapi.com/products')
+        .resolves({
+          json: cy.stub().resolves({
+            products: [
+              { id: 1, name: 'First item' },
+              { id: 2, name: 'Second item' }
+            ]
+          })
+        })
 
-      mount(<ProductsList />)
+      cy.mount(<ProductsList />)
 
       // to find DOM elements by React component constructor name, props, or state
       cy.waitForReact()
@@ -37,86 +37,83 @@ describe.skip('Selecting by React props and state', () => {
       // find the top level <ProductsContainer> that we have mounted
       // under imported name "ProductsList"
       cy.react('ProductsContainer')
-      .first()
-      .should('have.class', 'product-container')
+        .first()
+        .should('have.class', 'product-container')
 
       // find all instances of <AProduct> component
       cy.react('AProduct').should('have.length', 2)
       // find a single instance with prop
       // <AProduct name={'Second item'} />
       cy.react('AProduct', { props: { name: 'Second item' } })
-      .first()
-      .find('.name')
-      .and('have.text', 'Second item')
+        .first()
+        .find('.name')
+        .and('have.text', 'Second item')
     })
 
     it('find React components', () => {
       cy.log('**cy.getReact**')
       // returns React component wrapper with props
       cy.getReact('AProduct', { props: { name: 'Second item' } })
-      .getProps()
-      .should('deep.equal', { name: 'Second item' })
+        .getProps()
+        .should('deep.equal', { name: 'Second item' })
 
       cy.getReact('AProduct', { props: { name: 'First item' } })
-      // get single prop
-      .getProps('name')
-      .should('eq', 'First item')
+        // get single prop
+        .getProps('name')
+        .should('eq', 'First item')
 
       cy.log('**.getCurrentState**')
       cy.getReact('AProduct', { props: { name: 'Second item' } })
-      .getCurrentState()
-      .should('include', { myName: 'Second item' })
+        .getCurrentState()
+        .should('include', { myName: 'Second item' })
 
       // find component using state
       cy.getReact('AProduct', { state: { myName: 'Second item' } }).should(
-        'exist',
+        'exist'
       )
     })
 
     it('chains getReact', () => {
       // note that by itself, the component is found
       cy.getReact('AProduct', { props: { name: 'First item' } })
-      .getProps('name')
-      .should('eq', 'First item')
+        .getProps('name')
+        .should('eq', 'First item')
 
       // chaining getReact
       cy.getReact('ProductsContainer')
-      .getReact('AProduct', { props: { name: 'First item' } })
-      .getProps('name')
-      .should('eq', 'First item')
+        .getReact('AProduct', { props: { name: 'First item' } })
+        .getProps('name')
+        .should('eq', 'First item')
     })
 
     it('finds components by props and state', () => {
       // by clicking on the Order button we change the
       // internal state of that component
       cy.contains('.product', 'First item')
-      .find('button.order')
-      .click()
-      .wait(1000)
+        .find('button.order')
+        .click()
+        .wait(1000)
 
       // the component is there for sure, since the DOM has updated
       cy.contains('.product', '1')
-      .find('.name')
-      .should('have.text', 'First item')
+        .find('.name')
+        .should('have.text', 'First item')
 
       // now find that component using the state value
       cy.react('AProduct', { state: { orderCount: 1 } })
-      .find('.name')
-      .should('have.text', 'First item')
+        .find('.name')
+        .should('have.text', 'First item')
     })
 
     it('finds components by props and state (click twice)', () => {
       // by clicking on the Order button we change the
       // internal state of that component
-      cy.contains('.product', 'First item')
-      .find('button.order')
-      .click()
-      .click()
+      cy.contains('.product', 'First item').find('button.order').click().click()
 
       // now find that component using the state value
       cy.react('AProduct', { state: { orderCount: 2 } })
-      .find('.name')
-      .should('have.text', 'First item')
+        .find('.name')
+        .should('have.text', 'First item')
     })
   })
 
@@ -125,20 +122,20 @@ describe.skip('Selecting by React props and state', () => {
       // or the command times out
       const products = [
         { id: 1, name: 'First item' },
-        { id: 2, name: 'Second item' },
+        { id: 2, name: 'Second item' }
       ]
       const response = {
         json: cy.stub().resolves({
-          products,
-        }),
+          products
+        })
       }
 
       cy.stub(window, 'fetch')
-      .withArgs('http://myapi.com/products')
-      // simulate slow load by delaying the response
-      .resolves(Cypress.Promise.resolve(response).delay(1000))
+        .withArgs('http://myapi.com/products')
+        // simulate slow load by delaying the response
+        .resolves(Cypress.Promise.resolve(response).delay(1000))
 
-      mount(<ProductsList />)
+      cy.mount(<ProductsList />)
 
       // to find DOM elements by React component constructor name, props, or state
       cy.waitForReact()
@@ -146,7 +143,7 @@ describe.skip('Selecting by React props and state', () => {
       // the assertions that follow it are satisfied,
       // or, if there are no assertions, that an element is found
       cy.react('AProduct', {
-        props: { name: 'Second item' },
+        props: { name: 'Second item' }
       }).should('have.length', '1')
     })
   })

@@ -1,6 +1,5 @@
 /// <reference types="cypress" />
 import React from 'react'
-import { mount } from '@cypress/react'
 
 describe('mounting a div', () => {
   it('mounts a div', () => {
@@ -11,7 +10,7 @@ describe('mounting a div', () => {
   const Button = () => <button>Hello</button>
 
   it('mount multiple components', () => {
-    mount(
+    cy.mount(
       <div>
         <Button />
         <hr />

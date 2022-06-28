@@ -1,5 +1,4 @@
 import React from 'react'
-import { mount } from '@cypress/react'
 
 const Login = () => (
   <div>
@@ -10,7 +9,7 @@ const Login = () => (
 
 describe('full navigation', () => {
   it('should not happen', () => {
-    mount(<Login />)
+    cy.mount(<Login />)
 
     const clicked = cy.stub()
 

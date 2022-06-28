@@ -1,5 +1,4 @@
 import { useState, useEffect, useCallback } from 'react'
-import { mount } from '@cypress/react'
 
 // https://usehooks.com/useAsync
 // similar to useFetch https://github.com/muratkeremozcan/react-hooks-in-action-with-cypress/blob/main/src/utils/useFetch.js
@@ -74,7 +73,7 @@ function App() {
 
 it('useAsync', () => {
   cy.clock()
-  mount(<App />)
+  cy.mount(<App />)
   cy.contains('Start your journey')
 
   cy.get('button').click()

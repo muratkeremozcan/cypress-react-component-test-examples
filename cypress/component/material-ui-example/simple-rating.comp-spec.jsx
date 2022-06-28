@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-import { mount } from '@cypress/react'
+
 // select example from
 // https://material-ui.com/components/rating/
 
@@ -8,7 +8,7 @@ import Rating from '@material-ui/lab/Rating'
 import Typography from '@material-ui/core/Typography'
 import Box from '@material-ui/core/Box'
 
-export default function SimpleRating ({ onSetRating }) {
+export default function SimpleRating({ onSetRating }) {
   const [value, setValue] = React.useState(2)
 
   return (
@@ -47,16 +47,16 @@ it('renders simple rating', () => {
   cy.viewport(300, 400)
   const onSetRating = cy.stub()
 
-  mount(<SimpleRating onSetRating={onSetRating} />, {
+  cy.mount(<SimpleRating onSetRating={onSetRating} />, {
     stylesheets: [
       'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap',
-      'https://fonts.googleapis.com/icon?family=Material+Icons',
-    ],
+      'https://fonts.googleapis.com/icon?family=Material+Icons'
+    ]
   })
 
   cy.get('label[for=simple-controlled-4]')
-  .click()
-  .then(() => {
-    expect(onSetRating).to.have.been.calledWith(4)
-  })
+    .click()
+    .then(() => {
+      expect(onSetRating).to.have.been.calledWith(4)
+    })
 })

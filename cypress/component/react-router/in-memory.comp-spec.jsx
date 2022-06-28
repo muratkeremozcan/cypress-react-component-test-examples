@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 import React from 'react'
-import { mount } from '@cypress/react'
+
 import { App } from './app.jsx'
 import { MemoryRouter } from 'react-router-dom'
 
@@ -9,7 +9,7 @@ describe('React Memory Router', () => {
   it('navigates through the link without changing url', () => {
     cy.viewport(600, 300)
 
-    mount(
+    cy.mount(
       <MemoryRouter
         initialEntries={['/about', '/two', { pathname: '/three ' }]}
         initialIndex={0}

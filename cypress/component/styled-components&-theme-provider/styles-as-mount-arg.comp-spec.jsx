@@ -1,8 +1,7 @@
 /// <reference types="cypress" />
 import React from 'react'
-import { mount } from '@cypress/react'
 
-describe('mounting styled components: styles are the 2nd arg to mount()', () => {
+describe('mounting styled components: styles are the 2nd arg to cy.mount)', () => {
   const backgroundColor = 'rgb(0, 255, 0)'
   const indexButtonHeight = '20px'
   const buttonHeightOverride = '50px'
@@ -16,7 +15,7 @@ describe('mounting styled components: styles are the 2nd arg to mount()', () => 
         <button className={className}>Green button</button>
       )
 
-      mount(<Component />, { style: indexStyle })
+      cy.mount(<Component />, { style: indexStyle })
 
       cy.get('button')
         .should('have.class', className)
@@ -28,7 +27,7 @@ describe('mounting styled components: styles are the 2nd arg to mount()', () => 
         <button className={className}>Green button</button>
       )
 
-      mount(<Component />, { style: [indexStyle] })
+      cy.mount(<Component />, { style: [indexStyle] })
 
       cy.get('button')
         .should('have.class', className)
@@ -42,7 +41,7 @@ describe('mounting styled components: styles are the 2nd arg to mount()', () => 
         <button className={className}>Green button</button>
       )
 
-      mount(<Component />, {
+      cy.mount(<Component />, {
         styles: indexStyle,
         log: false // logs whether it mounts or not
       })
@@ -57,7 +56,7 @@ describe('mounting styled components: styles are the 2nd arg to mount()', () => 
         <button className={className}>Large green button</button>
       )
 
-      mount(<Component />, {
+      cy.mount(<Component />, {
         styles: [baseStyle, indexStyle]
       })
 
@@ -82,7 +81,7 @@ describe('mounting styled components: styles are the 2nd arg to mount()', () => 
         <button className={className}>Large green button</button>
       )
 
-      mount(<Component />)
+      cy.mount(<Component />)
       // the component should NOT have CSS styles
 
       cy.get('button')

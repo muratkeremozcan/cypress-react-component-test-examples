@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-import { mount } from '@cypress/react'
+
 import FormikYup from './4.FormikYup'
 
 // note toString takes a radix param, the "base" in which the integer is translated to string.
@@ -11,7 +11,7 @@ const generateString = (length) =>
 
 describe('FormikYup', () => {
   it('should validate form schema', () => {
-    mount(<FormikYup />)
+    cy.mount(<FormikYup />)
 
     cy.getByCy('submit').click()
 

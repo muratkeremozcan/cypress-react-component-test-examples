@@ -1,5 +1,5 @@
 import React from 'react'
-import { mount } from '@cypress/react'
+
 import { Timer } from './Timer'
 import { TimerView } from './timer-view'
 
@@ -8,7 +8,7 @@ describe('MobX v6', () => {
     it('increments every second', () => {
       const myTimer = new Timer()
 
-      mount(<TimerView timer={myTimer} />)
+      cy.mount(<TimerView timer={myTimer} />)
       cy.contains('Seconds passed: 0').then(() => {
         cy.log('we can increment the timer from outside')
         myTimer.increaseTimer()
