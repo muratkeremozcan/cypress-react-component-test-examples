@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
 /// <reference types="cypress" />
 import React from 'react'
-import { mount } from '@cypress/react'
+
 import PropTypes from 'prop-types'
 
 describe('https://softchris.github.io/books/react/conditional/', () => {
@@ -32,7 +32,7 @@ describe('https://softchris.github.io/books/react/conditional/', () => {
       }
     }
 
-    mount(<Element show={false} />)
+    cy.mount(<Element show={false} />)
     cy.get('span').should('not.exist')
     cy.get('button').click()
     cy.get('span').should('contain', 'show text..')
@@ -65,7 +65,7 @@ describe('https://softchris.github.io/books/react/conditional/', () => {
       }
     }
 
-    mount(<Element show={false} />)
+    cy.mount(<Element show={false} />)
     cy.contains('span', 'loading..')
     cy.get('button').click()
     cy.get('span').should('contain', 'show text..')
@@ -106,7 +106,7 @@ describe('https://softchris.github.io/books/react/conditional/', () => {
       }
     }
 
-    mount(<Element show={false} />)
+    cy.mount(<Element show={false} />)
     cy.contains('span', 'loading..')
     cy.get('button').click()
     cy.get('span').should('contain', 'show text..')

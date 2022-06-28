@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 import React from 'react'
-import { mount } from '@cypress/react'
+
 import { Users } from './axios.jsx'
 
 // Axios to GET a list of users.
@@ -11,7 +11,7 @@ describe('Uses Axios (which uses XMLHttpRequest) to GET a list of users.', () =>
 
   it('can inspect real data in XHR', () => {
     cy.intercept('/users?_limit=3').as('users')
-    mount(<Users />)
+    cy.mount(<Users />)
 
     cy.get('li').should('have.length', 3)
 
@@ -24,7 +24,7 @@ describe('Uses Axios (which uses XMLHttpRequest) to GET a list of users.', () =>
 
   it('can mock XHR response', () => {
     cy.intercept('GET', '/users?_limit=3', userStub).as('userStub')
-    mount(<Users />)
+    cy.mount(<Users />)
 
     cy.wait('@userStub').its('response.body').should('deep.equal', userStub)
     cy.get('li').should('have.length', 1).first().contains(userStub[0].name)
@@ -42,7 +42,7 @@ describe('Uses Axios (which uses XMLHttpRequest) to GET a list of users.', () =>
       }
     ).as('userStub')
 
-    mount(<Users />)
+    cy.mount(<Users />)
     cy.get('li').should('have.length', 0)
     cy.wait('@userStub')
     cy.get('li').should('have.length', 1)
@@ -58,7 +58,7 @@ describe('Uses Axios (which uses XMLHttpRequest) to GET a list of users.', () =>
       })
       .as('get')
 
-    mount(<Users />)
+    cy.mount(<Users />)
     // only the test user should be shown
     cy.get('li').should('have.length', 1)
     cy.get('@get').should('have.been.called')

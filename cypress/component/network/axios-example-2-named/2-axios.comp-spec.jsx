@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 import React from 'react'
-import { mount } from '@cypress/react'
+
 import { Users } from './2-users-named.jsx'
 
 // to mock CommonJS module loaded from `node_modules` use "require" in spec file
@@ -19,7 +19,7 @@ describe('Mocking Axios named import get makes no difference in the test', () =>
       })
       .as('get')
 
-    mount(<Users />)
+    cy.mount(<Users />)
     // only the test user should be shown
     cy.get('li').should('have.length', 1)
     cy.get('@get').should('have.been.called')

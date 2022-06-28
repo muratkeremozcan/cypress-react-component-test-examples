@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 import Game, { Board, calculateWinner } from './tic-tac-toe.js'
 import React from 'react'
-import { mount } from '@cypress/react'
+
 import './tic-tac-toe.css'
 
 const BoardWrap = ({ squares, onClick }) => {
@@ -19,7 +19,7 @@ describe('game', { viewportHeight: 300, viewportWidth: 400 }, () => {
     const squares = Array(9).fill(null)
     const onClick = cy.stub()
 
-    mount(<BoardWrap squares={squares} onClick={onClick} />)
+    cy.mount(<BoardWrap squares={squares} onClick={onClick} />)
     cy.get('.board-row')
       .eq(0)
       .find('.square')
@@ -35,14 +35,14 @@ describe('game', { viewportHeight: 300, viewportWidth: 400 }, () => {
 
     squares[0] = 'X'
     squares[1] = 'O'
-    mount(<BoardWrap squares={squares} />)
+    cy.mount(<BoardWrap squares={squares} />)
 
     cy.get('.board-row').eq(0).find('.square').eq(0).should('have.text', 'X')
     cy.get('.board-row').eq(0).find('.square').eq(1).should('have.text', 'O')
   })
 
   it('plays the game', () => {
-    mount(<Game />)
+    cy.mount(<Game />)
 
     cy.contains('.game-info', 'Next player: X').should('be.visible')
 

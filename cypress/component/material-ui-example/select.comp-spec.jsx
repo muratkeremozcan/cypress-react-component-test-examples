@@ -1,4 +1,3 @@
-import { mount } from '@cypress/react'
 // select example from
 // https://material-ui.com/components/selects/
 import React from 'react'
@@ -13,15 +12,15 @@ const useStyles = makeStyles((theme) => {
   return {
     formControl: {
       margin: theme.spacing(1),
-      minWidth: 120,
+      minWidth: 120
     },
     selectEmpty: {
-      marginTop: theme.spacing(2),
-    },
+      marginTop: theme.spacing(2)
+    }
   }
 })
 
-export default function SimpleSelect () {
+export default function SimpleSelect() {
   const classes = useStyles()
   const [age, setAge] = React.useState('')
 
@@ -252,17 +251,15 @@ export default function SimpleSelect () {
 it('renders selects', () => {
   cy.viewport(1200, 600)
 
-  mount(<SimpleSelect />, {
+  cy.mount(<SimpleSelect />, {
     stylesheets: [
       'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap',
-      'https://fonts.googleapis.com/icon?family=Material+Icons',
-    ],
+      'https://fonts.googleapis.com/icon?family=Material+Icons'
+    ]
   })
 
   cy.get('#demo-simple-select').click()
-  cy.contains('[role=option]', 'Twenty')
-  .should('be.visible')
-  .click()
+  cy.contains('[role=option]', 'Twenty').should('be.visible').click()
 
   // check that other select has changed
   cy.contains('#demo-simple-select-outlined', 'Twenty').should('be.visible')

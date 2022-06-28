@@ -1,6 +1,5 @@
 /// <reference types="cypress" />
 import React from 'react'
-import { mount } from '@cypress/react'
 
 class Foo extends React.Component {
   constructor(props) {
@@ -36,7 +35,7 @@ describe('Enzyme setState', () => {
     // and place it into the component object for Cypress to "wait" for it
     let comp = {}
 
-    mount(<Foo id="foo" foo="initial" ref={(i) => (comp.instance = i)} />)
+    cy.mount(<Foo id="foo" foo="initial" ref={(i) => (comp.instance = i)} />)
 
     cy.contains('initial').should('be.visible')
 
@@ -54,27 +53,27 @@ describe('Enzyme setState', () => {
 describe('Enzyme setProps', () => {
   it('mount the component with new props', () => {
     // There is no direct implementation of setProps, so mount the component with new props
-    mount(<Foo id="foo" foo="initial" />)
+    cy.mount(<Foo id="foo" foo="initial" />)
     cy.contains('initial').should('be.visible')
 
-    mount(<Foo id="foo" foo="second" />)
+    cy.mount(<Foo id="foo" foo="second" />)
     cy.contains('second').should('be.visible')
   })
 
   it('If you want to reuse properties, you can clone the component', () => {
     const comp = <Foo id="foo" foo="initial" />
-    mount(comp)
+    cy.mount(comp)
     cy.contains('initial').should('be.visible')
 
     const cloned = Cypress._.cloneDeep(comp)
     // change a property, leaving the rest unchanged
     cloned.props.foo = 'second'
-    mount(cloned)
+    cy.mount(cloned)
     cy.contains('second').should('be.visible')
   })
 
   it('you can get props of the component, but not change them', () => {
-    mount(<Foo id="foo" foo="initial" />)
+    cy.mount(<Foo id="foo" foo="initial" />)
     cy.contains('initial').should('be.visible')
 
     cy.get('@Foo')

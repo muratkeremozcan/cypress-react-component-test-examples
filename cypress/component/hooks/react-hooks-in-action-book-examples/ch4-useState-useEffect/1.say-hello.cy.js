@@ -1,8 +1,7 @@
-import { mount } from '@cypress/react'
 import SayHello from './1.say-hello'
 
 it('useEffect should change document.title', () => {
-  mount(<SayHello />)
+  cy.mount(<SayHello />)
   cy.spy(Math, 'floor').as('updateGreeting')
 
   Cypress._.times(2, () => {

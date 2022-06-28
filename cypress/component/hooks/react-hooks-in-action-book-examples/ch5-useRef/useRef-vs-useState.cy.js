@@ -3,7 +3,6 @@
 // useRef: can update a value without a corresponding change to the UI.
 
 import { useRef, useState } from 'react'
-import { mount } from '@cypress/react'
 
 function Counter() {
   const [count, setCount] = useState(1)
@@ -31,7 +30,7 @@ function Counter() {
 }
 
 it('useRef vs useState', () => {
-  mount(<Counter />)
+  cy.mount(<Counter />)
 
   cy.getByCy('count').contains('1')
   cy.getByCyLike('ref').contains('1')

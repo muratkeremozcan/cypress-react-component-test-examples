@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 import React from 'react'
-import { mount } from '@cypress/react'
+
 import PropTypes from 'prop-types'
 
 describe('https://softchris.github.io/books/react/props/', () => {
@@ -64,7 +64,7 @@ describe('https://softchris.github.io/books/react/props/', () => {
       }
     }
 
-    mount(<Application />)
+    cy.mount(<Application />)
     cy.contains('div', 'Yoda 300')
   })
 
@@ -79,7 +79,7 @@ describe('https://softchris.github.io/books/react/props/', () => {
       }
     }
 
-    mount(<Application />)
+    cy.mount(<Application />)
     cy.contains('div', 'Yoda 300')
     cy.contains('div', 'Obi-Wan Kenobi 30')
   })

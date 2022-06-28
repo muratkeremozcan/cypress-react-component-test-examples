@@ -1,4 +1,3 @@
-import { mount } from '@cypress/react'
 import React from 'react'
 import useDarkMode from './use-dark-mode'
 import Toggle from './Toggle'
@@ -21,7 +20,7 @@ function App() {
 describe('Dark Mode', () => {
   it('should toggle to dark mode', () => {
     cy.wrap(localStorage).invoke('setItem', 'dark-mode-enabled', false)
-    mount(<App />)
+    cy.mount(<App />)
     cy.get('#dmcheck').should('not.be.checked')
 
     cy.get('.toggle-control').click()
@@ -34,7 +33,7 @@ describe('Dark Mode', () => {
 
   it('should toggle to light mode', () => {
     cy.wrap(localStorage).invoke('setItem', 'dark-mode-enabled', true)
-    mount(<App />)
+    cy.mount(<App />)
     cy.get('#dmcheck').should('be.checked')
 
     cy.wrap(localStorage)

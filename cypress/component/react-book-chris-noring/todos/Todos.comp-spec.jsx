@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-import { mount } from '@cypress/react'
+
 import React from 'react'
 import Todos from './Todos'
 import pretty from 'pretty'
@@ -7,7 +7,7 @@ import { stripIndent } from 'common-tags'
 
 it('Todo - should create snapshot', () => {
   cy.viewport(400, 400)
-  mount(
+  cy.mount(
     <Todos
       todos={[
         { title: 'item1', description: 'an item' },
@@ -19,7 +19,8 @@ it('Todo - should create snapshot', () => {
   cy.getByCy('item').should('have.length', 2)
 
   // entire test area
-  cy.get('#__cy_root')
+  cy.getByCy('item')
+    .parent()
     .invoke('html')
     .then(pretty)
     .should(

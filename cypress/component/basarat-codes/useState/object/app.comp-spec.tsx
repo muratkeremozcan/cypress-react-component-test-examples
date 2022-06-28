@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { mount } from '@cypress/react'
 
 describe('App', () => {
   it('useState with objects', () => {
@@ -27,7 +26,7 @@ describe('App', () => {
       )
     }
 
-    mount(<App />)
+    cy.mount(<App />)
 
     const first = 'Murat'
     const last = 'Ozcan'
@@ -57,7 +56,7 @@ describe('App', () => {
       )
     }
 
-    mount(<App />)
+    cy.mount(<App />)
 
     const first = 'Murat'
     const last = 'Ozcan'

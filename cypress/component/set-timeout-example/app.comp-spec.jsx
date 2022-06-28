@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 import React from 'react'
-import { mount } from '@cypress/react'
+
 import App from './App'
 
 // compare to test in
@@ -8,7 +8,7 @@ import App from './App'
 
 it('renders without crashing', () => {
   cy.viewport(800, 800)
-  mount(<App />)
+  cy.mount(<App />)
   // first the loading message is visible
   // then it changes
   cy.contains('isLoading: true').should('be.visible')
@@ -19,7 +19,7 @@ it('renders without crashing', () => {
 it('loads really quickly', () => {
   cy.clock()
   cy.viewport(800, 800)
-  mount(<App />)
+  cy.mount(<App />)
   // first the loading message is visible
   // then it changes
   cy.contains('isLoading: true').should('be.visible')

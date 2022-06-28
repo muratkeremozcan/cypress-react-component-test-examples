@@ -1,11 +1,10 @@
-import { mount } from '@cypress/react'
 import SimpleInfiniteList from './SimpleInfiniteList'
 import { recurse } from 'cypress-recurse'
 
 // @ts-ignore
 describe('InfiniteListSimple', { viewportHeight: 800 }, () => {
   it('should render items lower down the infinite list', () => {
-    mount(<SimpleInfiniteList />)
+    cy.mount(<SimpleInfiniteList />)
     cy.getByCyLike('list-item-19').should('be.visible')
 
     const itemId = '60'

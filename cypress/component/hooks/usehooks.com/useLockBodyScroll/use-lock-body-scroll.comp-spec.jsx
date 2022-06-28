@@ -1,11 +1,11 @@
 import App from './App'
-import { mount } from '@cypress/react'
+
 import './styles.css'
 import { recurse } from 'cypress-recurse'
 
 describe('App', { viewportHeight: 1000 }, () => {
   it('should', () => {
-    mount(<App />)
+    cy.mount(<App />)
 
     cy.getByCy('image').should('have.length', 10)
 

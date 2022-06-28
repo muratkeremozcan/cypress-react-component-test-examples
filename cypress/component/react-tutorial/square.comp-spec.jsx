@@ -1,13 +1,13 @@
 /// <reference types="cypress" />
 import React from 'react'
-import { mount } from '@cypress/react'
+
 import Square from './square'
 
 it(
   'says hello to different people',
   { viewportWidth: 600, viewportHeight: 400 },
   () => {
-    mount(<Square value="X" />)
+    cy.mount(<Square value="X" />)
     cy.on('window:alert', cy.stub().as('alerted'))
 
     cy.get('.square').click()

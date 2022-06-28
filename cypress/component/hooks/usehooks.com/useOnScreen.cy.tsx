@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef, MutableRefObject } from 'react'
-import { mount } from '@cypress/react'
 
 // Hook https://usehooks.com/useOnScreen/
 function useOnScreen<T extends Element>(
@@ -75,7 +74,7 @@ function App() {
 }
 
 it('useOnScreen', () => {
-  mount(<App />)
+  cy.mount(<App />)
   cy.getByCy('scroll-down').should('be.visible')
   cy.getByCy('hey').should('not.exist')
 

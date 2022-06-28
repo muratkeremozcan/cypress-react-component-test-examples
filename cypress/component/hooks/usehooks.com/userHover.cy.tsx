@@ -1,5 +1,4 @@
 import { useRef, useState, useEffect, MutableRefObject } from 'react'
-import { mount } from '@cypress/react'
 
 // Hook https://usehooks.com/useHover/
 // T - could be any type of HTML element like: HTMLDivElement, HTMLParagraphElement and etc.
@@ -58,7 +57,7 @@ describe('useHover', () => {
   let mouseoverEventFired, mouseoutEventFired
 
   before(() => {
-    mount(<App />)
+    cy.mount(<App />)
     mouseoverEventFired = false
     mouseoutEventFired = false
 
@@ -70,7 +69,7 @@ describe('useHover', () => {
 
   it('useHover', () => {
     // @ts-ignore
-    cy.get('button').click().realHover()
+    cy.get('button').click()
 
     cy.getByCy('smile').should(
       'have.css',
@@ -79,7 +78,7 @@ describe('useHover', () => {
     )
 
     // @ts-ignore
-    cy.getByCy('smile').click().realHover()
+    cy.getByCy('smile').click()
     cy.getByCy('smile').should(
       'have.css',
       'background-color',

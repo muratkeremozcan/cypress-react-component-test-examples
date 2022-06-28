@@ -1,12 +1,11 @@
 /// <reference types="cypress" />
 import { Transpiled } from './transpiled.jsx'
 import React from 'react'
-import { mount } from '@cypress/react'
 
 /* eslint-env mocha */
 describe('Transpiled', () => {
   it('counts clicks', () => {
-    mount(<Transpiled />)
+    cy.mount(<Transpiled />)
     cy.contains('count: 0')
       .click()
       .contains('count: 1')
@@ -17,7 +16,7 @@ describe('Transpiled', () => {
 
 describe('Counter mounted before each test', () => {
   beforeEach(() => {
-    mount(<Transpiled />)
+    cy.mount(<Transpiled />)
   })
 
   it('goes to 3', () => {

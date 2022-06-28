@@ -1,5 +1,5 @@
 import React from 'react'
-import { mount } from '@cypress/react'
+
 import Fetcher from './fetcher'
 
 describe('Testing lib vs normal', () => {
@@ -16,7 +16,7 @@ describe('Testing lib vs normal', () => {
     //   }
     // ).as('greet')
 
-    mount(<Fetcher url={'/greeting'} />)
+    cy.mount(<Fetcher url={'/greeting'} />)
   })
 
   const commonAssertion = () =>

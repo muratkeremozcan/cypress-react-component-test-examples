@@ -1,4 +1,3 @@
-import { mount } from '@cypress/react'
 import './App.css'
 
 function App() {
@@ -18,7 +17,7 @@ function App() {
 }
 
 it('should render numeric falsy values', () => {
-  mount(<App />)
+  cy.mount(<App />)
   cy.getByCy('0').should('contain', '0')
   cy.getByCy('NaN').should('contain', 'NaN')
 })

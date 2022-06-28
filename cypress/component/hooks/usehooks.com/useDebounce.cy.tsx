@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import { mount } from '@cypress/react'
 
 // Hook https://usehooks.com/useDebounce/
 // T is a generic type for value parameter, our case this will be string
@@ -100,7 +99,7 @@ it('useDebounce', () => {
     cy.spy().as('networkSpy')
   ).as('apiCall')
 
-  mount(<App />)
+  cy.mount(<App />)
 
   cy.get('input').type('iron', { delay: 0 })
   cy.wait('@apiCall')

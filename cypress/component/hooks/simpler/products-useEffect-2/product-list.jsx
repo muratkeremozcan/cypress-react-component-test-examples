@@ -60,7 +60,7 @@ Lifecycle method vs hooks
 
 Lifecycle methods were needed because we needed the ability todo something to the component before render()
 
-componentDidMount() {
+componentDidMount {
   document.title = 'Component started';
 }
 

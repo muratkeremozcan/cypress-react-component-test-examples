@@ -1,5 +1,7 @@
 name: Build
-on: push
+on:
+  push:
+  workflow_dispatch:
 
 concurrency:
   group: ${{ github.head_ref || github.ref }}
@@ -12,10 +14,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
-        # with:
-        #   cache: 'yarn'
-        #   node-version: 16.10.0
-      - uses: bahmutov/npm-install@v1.8.16
+        with:
+          cache: 'yarn'
+          node-version: 16.10.0
+      - uses: bahmutov/npm-install@v1.8.15
         with: { useRollingCache: true } # recommended for large projects
         env:
           CYPRESS_INSTALL_BINARY: 0 # no need to install the Cypress binary, we are already using the docker image in the e2e job
@@ -26,7 +28,7 @@ jobs:
   #   runs-on: ubuntu-latest
   #   steps:
   #     - uses: actions/checkout@v3
-  #     - uses: bahmutov/npm-install@v1.8.16
+  #     - uses: bahmutov/npm-install@v1.8.15
   #       with:
   #         useRollingCache: true
   #     - name: Run tests
@@ -38,7 +40,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: bahmutov/npm-install@v1.8.16
+      - uses: bahmutov/npm-install@v1.8.15
         with: { useRollingCache: true }
         env:
           CYPRESS_INSTALL_BINARY: 0
@@ -51,7 +53,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: bahmutov/npm-install@v1.8.16
+      - uses: bahmutov/npm-install@v1.8.15
         with: { useRollingCache: true }
         env:
           CYPRESS_INSTALL_BINARY: 0
@@ -61,15 +63,15 @@ jobs:
   cypress-e2e-tests:
     needs: [install-dependencies]
     runs-on: ubuntu-latest
-    container: cypress/included:9.6.0 # save time on not having to install cypress
+    container: cypress/included:10.2.0 # save time on not having to install cypress
     steps:
       - uses: actions/checkout@v3
 
-      - uses: bahmutov/npm-install@v1.8.16 # save time on dependencies
+      - uses: bahmutov/npm-install@v1.8.15 # save time on dependencies
         with: { useRollingCache: true }
 
       - name: Cypress e2e tests 🧪
-        uses: cypress-io/github-action@v3.0.4
+        uses: cypress-io/github-action@v4.1.1
         with:
           install: false # no need to install because of the above 2
           start: yarn start
@@ -87,15 +89,15 @@ jobs:
     #     machines: [1, 2, 3] # uses 2 CI machines to run tests in parallel
     needs: [install-dependencies]
     runs-on: ubuntu-latest
-    container: cypress/included:9.6.0 # save time on not having to install cypress
+    container: cypress/included:10.2.0 # save time on not having to install cypress
     steps:
       - uses: actions/checkout@v3
 
-      - uses: bahmutov/npm-install@v1.8.16 # save time on dependencies
+      - uses: bahmutov/npm-install@v1.8.15 # save time on dependencies
         with: { useRollingCache: true }
 
       - name: Cypress component tests 🧪
-        uses: cypress-io/github-action@v3.0.4
+        uses: cypress-io/github-action@v4.1.1
         with:
           # we have already installed everything
           install: false
@@ -103,8 +105,8 @@ jobs:
           # with component tests since we have a custom command, we pass these parameters in the command instead
           # command: yarn cypress run-ct --record --key=${{ secrets.CYPRESS_RECORD_KEY }} --browser chrome --group component-tests --tag component-tests --parallel
           # ran out of parallelization, turning it off
-          command: yarn cypress run-ct --browser chrome
-          # browser: chrome
+          component: true
+          browser: chrome
           # record: true
           # parallel: true # parallelizes tests
           # group: component-tests

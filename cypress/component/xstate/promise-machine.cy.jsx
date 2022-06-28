@@ -1,7 +1,7 @@
 // https://glebbahmutov.com/blog/negative-assertions-and-missing-states/
 import { useMachine } from '@xstate/react'
 import { createMachine } from 'xstate'
-import { mount } from '@cypress/react'
+
 import './styles.css'
 
 const promiseMachine = createMachine({
@@ -78,7 +78,7 @@ Cypress.Commands.add('reachedState', (state) => {
 
 describe('Promise machine', () => {
   beforeEach(() => {
-    mount(<Component />)
+    cy.mount(<Component />)
 
     cy.contains('p', /pending/i)
     windowState('pending')

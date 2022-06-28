@@ -1,11 +1,10 @@
-import { mount } from '@cypress/react'
 import InfiniteListWithVerticalScroll from './InfiniteListWithVerticalScroll'
 import { recurse } from 'cypress-recurse'
 
 // @ts-ignore
 describe('InfiniteListWithVerticalScroll', { viewportWidth: 600 }, () => {
   it('should render items lower down the infinite list', () => {
-    mount(<InfiniteListWithVerticalScroll />)
+    cy.mount(<InfiniteListWithVerticalScroll />)
     cy.getByCyLike('list-item-10').should('be.visible')
 
     const itemId = '30'

@@ -1,6 +1,5 @@
 import React from 'react'
 import PizzaProps from './PizzaProps'
-import { mount } from '@cypress/react'
 
 const ingredients = ['bacon', 'tomato', 'mozzarella', 'something']
 
@@ -10,7 +9,7 @@ describe('PizzaProps', () => {
       .resolves({ args: { ingredients } })
       .as('fetchMock')
 
-    mount(<PizzaProps />)
+    cy.mount(<PizzaProps />)
     cy.contains('button', /cook/i).click()
 
     for (const ingredient of ingredients) {

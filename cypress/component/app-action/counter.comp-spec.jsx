@@ -1,12 +1,12 @@
 /// <reference types="cypress" />
 import React from 'react'
-import { mount } from '@cypress/react'
+
 import { Counter } from './counter.jsx'
 
 /* eslint-env mocha */
 describe('Counter with app action', () => {
   it('no regression after adding if(window.Cypress) window.myComponent = this', () => {
-    mount(<Counter />)
+    cy.mount(<Counter />)
     cy.contains('count: 0')
       .click()
       .contains('count: 1')
@@ -15,7 +15,7 @@ describe('Counter with app action', () => {
   })
 
   it('allows access via reference', () => {
-    mount(<Counter />)
+    cy.mount(<Counter />)
 
     // the window.counter was set from the Counter's constructor
     cy.window()

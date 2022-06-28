@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { mount } from '@cypress/react'
 
 const RenderInPortal = ({ children }) => {
   return ReactDOM.createPortal(children, document.body)
@@ -8,7 +7,7 @@ const RenderInPortal = ({ children }) => {
 
 describe('Portals', () => {
   it('renders content inside the portal', () => {
-    mount(
+    cy.mount(
       <div id="component">
         <p>Hello World!</p>
         <RenderInPortal>

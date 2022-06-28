@@ -1,18 +1,18 @@
 /// <reference types="cypress" />
-import { mount } from '@cypress/react'
+
 import React from 'react'
 import Select from './Note'
 
 describe('Note', () => {
   it('save text', () => {
-    mount(<Select />)
+    cy.mount(<Select />)
     cy.get('#change').type('input text')
     cy.contains('button', 'Save').click()
     cy.getByCy('saved').should('have.text', 'Saved: input text')
   })
 
   it('load data', () => {
-    mount(<Select />)
+    cy.mount(<Select />)
     cy.contains('button', 'Load').click()
     // there is a built-in delay in loading the data
     // but we don't worry about it - we just check if the text eventually appears

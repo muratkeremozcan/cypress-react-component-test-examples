@@ -1,7 +1,6 @@
 /// <reference types="cypress" />
 import Card from './card.jsx'
 import React from 'react'
-import { mount } from '@cypress/react'
 
 // example from https://reactjs.org/docs/testing-recipes.html#timers
 
@@ -13,7 +12,7 @@ it('should select null after timing out', () => {
   // without synthetic clock we must wait for the real delay
   const onSelect = cy.stub().as('selected')
 
-  mount(<Card onSelect={onSelect} />)
+  cy.mount(<Card onSelect={onSelect} />)
 
   cy.get('@selected', { timeout: 6000 }).should('have.been.calledWith', null)
 })
@@ -23,7 +22,7 @@ it('should select null after timing out - using cy.clock & cy.tick()', () => {
 
   // https://on.cypress.io/clock
   cy.clock()
-  mount(<Card onSelect={onSelect} />)
+  cy.mount(<Card onSelect={onSelect} />)
 
   cy.tick(100)
   expect(onSelect).to.not.have.been.called
@@ -35,7 +34,7 @@ it('should select null after timing out - using cy.clock & cy.tick()', () => {
 it('should accept selections', () => {
   const onSelect = cy.stub().as('selected')
 
-  mount(<Card onSelect={onSelect} />)
+  cy.mount(<Card onSelect={onSelect} />)
 
   cy.get("[data-testid='2']")
     .click()

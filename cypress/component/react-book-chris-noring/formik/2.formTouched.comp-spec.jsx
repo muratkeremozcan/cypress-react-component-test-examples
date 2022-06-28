@@ -1,10 +1,10 @@
 /// <reference types="cypress" />
-import { mount } from '@cypress/react'
+
 import FormTouched from './2.FormTouched'
 
 describe('FormTouched', () => {
   it('should show errors when an empty form is submitted', () => {
-    mount(<FormTouched />)
+    cy.mount(<FormTouched />)
     cy.get('span').should('not.exist')
     cy.getByCy('submit').click()
     cy.contains('Name is required')

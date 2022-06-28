@@ -1,8 +1,6 @@
 // Jeff Delaney 10 React Anti-patterns to Avoid, try curry
 // https://www.youtube.com/watch?v=b0IZo2Aho9Y&list=FL8lPlH6RrRLc4sYhAE6f3JQ&index=31&t=460s
 
-import { mount } from '@cypress/react'
-
 const NotThis = () => {
   const handleIt = (e: any, v: number) => console.log(e, v)
 
@@ -48,12 +46,12 @@ describe('with curry', () => {
   )
 
   it('should not code this', () => {
-    mount(<NotThis />)
+    cy.mount(<NotThis />)
     testIt()
   })
 
   it('should code this', () => {
-    mount(<CodeThis />)
+    cy.mount(<CodeThis />)
     testIt()
   })
 })

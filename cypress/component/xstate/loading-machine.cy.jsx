@@ -1,7 +1,7 @@
 // https://glebbahmutov.com/blog/negative-assertions-and-missing-states/
 import { useMachine } from '@xstate/react'
 import { createMachine } from 'xstate'
-import { mount } from '@cypress/react'
+
 import './styles.css'
 
 export const loadingMachine = createMachine({
@@ -84,7 +84,7 @@ const Component = () => {
 
 describe('Loading machine', () => {
   it('should resolve', () => {
-    mount(<Component />)
+    cy.mount(<Component />)
     // stays pending... doesn't fall over to loading
   })
 })

@@ -1,10 +1,10 @@
 import React from 'react'
-import { mount } from '@cypress/react'
+
 import CounterWithHooks from './counter-with-hooks.jsx'
 
 describe('hook with callback and effect', function () {
   it('changes document title', function () {
-    mount(<CounterWithHooks />)
+    cy.mount(<CounterWithHooks />)
     cy.contains('0')
     cy.document().should(
       'have.property',

@@ -1,10 +1,10 @@
 import Colors from './Colors'
-import { mount } from '@cypress/react'
+
 import './styles.css'
 
 describe('Colors', () => {
   it('should render children', () => {
-    mount(<Colors />)
+    cy.mount(<Colors />)
     cy.getByCyLike('teal').click()
 
     cy.contains('color is teal')

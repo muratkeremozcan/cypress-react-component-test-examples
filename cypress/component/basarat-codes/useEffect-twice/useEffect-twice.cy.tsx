@@ -1,5 +1,4 @@
 import App from './App'
-import { mount } from '@cypress/react'
 
 function compareTimers(secondsPassed = 0) {
   cy.getByCy('timer').contains(secondsPassed)
@@ -9,7 +8,7 @@ function compareTimers(secondsPassed = 0) {
 describe('useEffect twice', () => {
   it('the timers should stay in sync', () => {
     cy.clock()
-    mount(<App />)
+    cy.mount(<App />)
     compareTimers(0)
 
     cy.tick(5000)

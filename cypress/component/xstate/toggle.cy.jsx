@@ -1,6 +1,5 @@
 import { useMachine } from '@xstate/react'
 import { createMachine } from 'xstate'
-import { mount } from '@cypress/react'
 
 const toggleMachine = createMachine({
   id: 'toggle',
@@ -28,7 +27,7 @@ export const Toggler = () => {
 
 describe('toggle', () => {
   it('should toggle the states', () => {
-    mount(<Toggler />)
+    cy.mount(<Toggler />)
     cy.get('button')
       .contains('Click to activate')
       .click()

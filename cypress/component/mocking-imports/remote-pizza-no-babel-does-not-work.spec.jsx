@@ -1,6 +1,6 @@
 import React from 'react'
 import RemotePizza from './RemotePizza'
-import { mount } from '@cypress/react'
+
 // prepare for import mocking
 import * as services from './services'
 
@@ -13,7 +13,7 @@ describe.skip('RemotePizza', () => {
       .resolves({ args: { ingredients } })
       .as('fetchMock')
 
-    mount(<RemotePizza />)
+    cy.mount(<RemotePizza />)
     cy.contains('button', /cook/i).click()
 
     for (const ingredient of ingredients) {

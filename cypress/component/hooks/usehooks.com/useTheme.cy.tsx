@@ -1,5 +1,5 @@
 import { useLayoutEffect } from 'react'
-import { mount } from '@cypress/react'
+
 import './styles.css'
 
 // Usage
@@ -43,6 +43,6 @@ function App() {
 }
 
 it('useTheme', () => {
-  mount(<App />)
+  cy.mount(<App />)
   cy.get('button').should('have.css', 'background-color', 'rgb(103, 114, 229)')
 })

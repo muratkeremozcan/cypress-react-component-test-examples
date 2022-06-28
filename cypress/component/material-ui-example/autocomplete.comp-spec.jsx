@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-import { mount } from '@cypress/react'
+
 // select example from
 // https://material-ui.com/components/autocomplete/
 
@@ -32,7 +32,7 @@ function ComboBox() {
 
 it('finds my favorite movie', () => {
   cy.viewport(500, 700)
-  mount(<ComboBox />, {
+  cy.mount(<ComboBox />, {
     stylesheets: [
       'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap',
       'https://fonts.googleapis.com/icon?family=Material+Icons'

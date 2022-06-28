@@ -1,5 +1,5 @@
 import React from 'react'
-import { mount } from '@cypress/react'
+
 import User from './user'
 
 it('can stub fetch at window level using cy.stub(window, fetch)', () => {
@@ -17,7 +17,7 @@ it('can stub fetch at window level using cy.stub(window, fetch)', () => {
     })
   // })
 
-  mount(<User id={123} />)
+  cy.mount(<User id={123} />)
   cy.contains('summary', fakeUser.name).click()
   cy.contains('strong', fakeUser.age).should('be.visible')
   cy.contains(fakeUser.address)

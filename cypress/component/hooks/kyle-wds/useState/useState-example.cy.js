@@ -1,9 +1,8 @@
-import { mount } from '@cypress/react'
 import App from './useState-example'
 
 describe('useState', () => {
   it('should change the state', () => {
-    mount(<App />)
+    cy.mount(<App />)
     const initialState = 0
     cy.getByCy('count').should('contain', initialState)
     cy.getByCy('+').click()

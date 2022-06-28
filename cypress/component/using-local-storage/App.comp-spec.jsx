@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 import React from 'react'
-import { mount } from '@cypress/react'
+
 import App from './App.jsx'
 
 // localStorage with useEffect
@@ -17,14 +17,14 @@ describe('App', () => {
 
     localStorage.setItem('cart', JSON.stringify(items))
 
-    mount(<App />)
+    cy.mount(<App />)
 
     cy.get('.item').should('have.length', 3)
     cy.contains('.item', 'oranges 🍊').should('be.visible')
   })
 
   it('updates localStorage after adding an item to the cart', () => {
-    mount(<App />)
+    cy.mount(<App />)
     cy.contains('.item', 'kiwi 🥝').should('be.visible')
     cy.contains('Add juice').click()
     cy.contains('.item', 'juice 🧃')

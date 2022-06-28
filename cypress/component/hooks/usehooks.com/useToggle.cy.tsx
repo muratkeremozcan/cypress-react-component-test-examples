@@ -1,5 +1,4 @@
 import { useCallback, useState } from 'react'
-import { mount } from '@cypress/react'
 
 // https://usehooks.com/useToggle/
 
@@ -27,7 +26,7 @@ function App() {
 }
 
 it('useToggle', () => {
-  mount(<App />)
+  cy.mount(<App />)
 
   cy.contains('button', 'Click to Toggle').click()
   cy.contains('button', 'Toggled').click()

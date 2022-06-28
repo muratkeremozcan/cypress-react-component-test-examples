@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
 /// <reference types="cypress" />
 import React from 'react'
-import { mount } from '@cypress/react'
+
 import PropTypes from 'prop-types'
 
 describe('https://softchris.github.io/books/react/state/', () => {
@@ -36,7 +36,7 @@ describe('https://softchris.github.io/books/react/state/', () => {
       }
     }
 
-    mount(<Element name={'yoda'} />)
+    cy.mount(<Element name={'yoda'} />)
     cy.contains('div', 'yoda')
     cy.get('button').click()
     cy.contains('div', 'new name')
@@ -77,7 +77,7 @@ describe('https://softchris.github.io/books/react/state/', () => {
       }
     }
 
-    mount(<Element show={true} />)
+    cy.mount(<Element show={true} />)
     cy.contains('div', 'show text..')
     cy.get('button').click()
     cy.get('div').should('not.contain', 'show text..')

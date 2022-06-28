@@ -1,5 +1,4 @@
 import React from 'react'
-import { mount } from '@cypress/react'
 
 // test retries from
 // https://github.com/cypress-io/cypress/pull/3968
@@ -21,7 +20,7 @@ describeOrSkip('Test', () => {
   }
 
   it('does not retry', { retries: 0 }, () => {
-    mount(<Hello />)
+    cy.mount(<Hello />)
     cy.contains('retry 0')
 
     // now let's fail the test - it won't retry it
@@ -30,7 +29,7 @@ describeOrSkip('Test', () => {
   })
 
   it('retries', { retries: 3 }, () => {
-    mount(<Hello />)
+    cy.mount(<Hello />)
     // now let's fail the test - it will retry several times and pass
     cy.contains('retry 3', { timeout: 1500 })
   })

@@ -1,5 +1,5 @@
 import React from 'react'
-import { mount } from '@cypress/react'
+
 import App from '../../../src/App'
 
 // note: the tests can also be near the source code,
@@ -15,7 +15,7 @@ import App from '../../../src/App'
 */
 
 it('renders learn react link', () => {
-  mount(<App />)
+  cy.mount(<App />)
   cy.get('a').contains('Learn React')
 })
 
@@ -32,13 +32,13 @@ describe('Alias', () => {
   }) => <div>Hello {props.name}</div>
 
   it('default alias is the component name', () => {
-    mount(<Greeting />)
+    cy.mount(<Greeting />)
     cy.get('@Greeting').its('props').should('be.empty')
     cy.get('@Greeting').its('type').should('eq', Greeting)
   })
 
   it('the default alias can be overwritten', () => {
-    mount(<GreetingCard name="World" />, { alias: 'Hello' })
+    cy.mount(<GreetingCard name="World" />, { alias: 'Hello' })
     cy.get('@Hello').its('props').should('deep.equal', { name: 'World' })
     cy.get('@Hello').its('props').should('contain', { name: 'World' })
   })
@@ -53,10 +53,12 @@ describe('mount in beforeEach', () => {
   )
 
   beforeEach(() => {
-    mount(
-      <Hello>
-        <div className="inside">Inner div</div>
-      </Hello>
+    cy.mount(
+      <>
+        <Hello>
+          <div className="inside">Inner div</div>
+        </Hello>
+      </>
     )
   })
 
