@@ -15,7 +15,7 @@ describe('App', { viewportHeight: 1000 }, () => {
       (yAxis) => yAxis >= 200,
       {
         log: true,
-        limit: 20,
+        limit: 50,
         timeout: 10000,
         delay: 300,
         post() {

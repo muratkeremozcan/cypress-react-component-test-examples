@@ -17,7 +17,7 @@ describe('InfiniteListSimple', { viewportHeight: 800 }, () => {
       ($item) => $item.text().includes(itemId),
       {
         log: false,
-        limit: 20,
+        limit: 50,
         timeout: 20000,
         delay: 1000,
         post() {
