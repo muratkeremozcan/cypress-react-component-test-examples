@@ -1,6 +1,6 @@
 [Cypress Dashboard](https://dashboard.cypress.io/projects/62pyqm/runs?branches=%5B%5D&committers=%5B%5D&flaky=%5B%5D&page=1&status=%5B%5D&tags=%5B%5D&timeRange=%7B%22startDate%22%3A%221970-01-01%22%2C%22endDate%22%3A%222038-01-19%22%7D)
 
-Cypress React Component Test Examples
+# Cypress React Component Test Examples
 
 This repo started as a practice project, replicating & reviving old Cypress React component tests, hidden in the main Cypress repo.
 As time passed, new examples were added and are still being added with Cypress 10. It can be used as a starting point for new tests, showing working examples.
