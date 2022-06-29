@@ -8,7 +8,7 @@ describe('useEffect', () => {
     ;['Posts', 'Users', 'Comments'].forEach((button) => {
       cy.getByCy(button.toLowerCase()).click()
       cy.getByCy('resource-type').contains(button)
-      cy.getByCyLike('item-').should('have.length.gte', 100)
+      cy.getByCyLike('item-').should('have.length.gte', 10)
     })
   })
 })
