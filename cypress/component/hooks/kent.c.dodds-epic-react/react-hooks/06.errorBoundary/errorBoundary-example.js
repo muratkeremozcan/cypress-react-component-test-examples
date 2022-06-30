@@ -1,6 +1,4 @@
-// useEffect: HTTP requests
-// 💯 use resetKeys
-// http://localhost:3000/isolated/final/06.extra-8.js
+// github.com/muratkeremozcan/epic-react/blob/main/02.react-hooks/src/exercise/06.jss
 
 import * as React from 'react'
 import { ErrorBoundary } from 'react-error-boundary'
@@ -23,7 +21,9 @@ function PokemonInfo({ pokemonName }) {
     if (!pokemonName) {
       return
     }
+
     setState({ status: 'pending' })
+
     fetchPokemon(pokemonName).then(
       (pokemon) => {
         setState({ status: 'resolved', pokemon })
@@ -43,9 +43,7 @@ function PokemonInfo({ pokemonName }) {
     throw error
   } else if (status === 'resolved') {
     return <PokemonDataView pokemon={pokemon} />
-  }
-
-  throw new Error('This should be impossible')
+  } else throw new Error('This should be impossible')
 }
 
 function ErrorFallback({ error, resetErrorBoundary }) {
