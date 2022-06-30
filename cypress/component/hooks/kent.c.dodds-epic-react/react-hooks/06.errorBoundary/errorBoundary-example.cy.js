@@ -15,7 +15,7 @@ describe('Pokemon api', () => {
   })
 
   function getPokemon(pokemonName) {
-    cy.get('#pokemonName-input').type('pokemonName')
+    cy.get('#pokemonName-input').type(pokemonName)
     cy.get('div > button').click(0)
   }
 
