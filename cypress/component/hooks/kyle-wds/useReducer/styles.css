@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 50px;
+}
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+span {
+  font-size: 40px;
+  padding: 20px;
+}
+
+.btn {
+  padding: 5px 10px;
+  border: none;
+  background-color: rgb(63, 63, 63);
+  color: #fff;
+  margin: 0 5px;
+}
+
+.count-btn {
+  width: 80px;
+  font-size: 40px;
+}
+
+input {
+  padding: 10px 20px;
+  font-size: 20px;
+}
+
+ul {
+  list-style: none;
+}
+
+ul li {
+  padding: 0;
+}
+
+.todo-item {
+  border: 1px solid rgb(63, 63, 63);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.todo-item .btn {
+  font-size: 12px;
+}
