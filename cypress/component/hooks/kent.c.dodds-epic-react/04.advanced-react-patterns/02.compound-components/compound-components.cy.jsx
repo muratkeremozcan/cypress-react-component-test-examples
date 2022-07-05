@@ -1,6 +1,6 @@
 import App from './compound-components'
 
-describe('compound components', () => {
+describe('flexible compound components', () => {
   it('should share state implicitly to a set of components', () => {
     cy.mount(<App />)
     cy.contains('off')
