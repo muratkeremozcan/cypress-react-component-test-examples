@@ -60,14 +60,14 @@ describe('https://softchris.github.io/books/react/styledcomponents/', () => {
       cy.mount(<Element show={false} />)
       cy.get('span').should('not.exist')
       cy.getByCy('button').should('not.have.css', 'box-shadow', '')
-      // cy.getByCy('button')
-      // .realHover()
-      // .then(($btn) => {
-      //   cy.wrap($btn).should('have.css', 'box-shadow')
-      //   cy.wrap($btn).click()
-      //   cy.get('span').should('contain', 'show text..')
-      // })
-      // .and('have.css', 'border-radius')
+      cy.getByCy('button')
+        .realHover()
+        .then(($btn) => {
+          cy.wrap($btn).should('have.css', 'box-shadow')
+          cy.wrap($btn).click()
+          cy.get('span').should('contain', 'show text..')
+        })
+        .and('have.css', 'border-radius')
     })
 
     // eslint-disable-next-line no-template-curly-in-string
