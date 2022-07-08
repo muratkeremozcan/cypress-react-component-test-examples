@@ -13,3 +13,5 @@ it('counter increments and decrements when the buttons are clicked', () => {
 
 // 1:1 comparison with RTL
 // https://github.com/muratkeremozcan/epic-react-testingJs/blob/main/epic-react/06.testing-react-apps/src/__tests__/exercise/02.js
+// https://github.com/muratkeremozcan/epic-react-testingJs/blob/main/epic-react/06.testing-react-apps/src/__tests__/exercise/03.js
+// https://github.com/muratkeremozcan/epic-react-testingJs/blob/main/epic-react/06.testing-react-apps/src/__tests__/exercise/04.js
