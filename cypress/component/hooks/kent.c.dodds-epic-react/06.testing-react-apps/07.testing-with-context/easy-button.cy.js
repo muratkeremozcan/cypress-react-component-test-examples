@@ -45,3 +45,6 @@ it('renders with the styles for the light theme - helper', () => {
     .should('have.css', 'background-color', 'rgb(255, 255, 255)')
     .and('have.css', 'color', 'rgb(0, 0, 0)')
 })
+
+// 1:1 comparison with RTL
+// https://github.com/muratkeremozcan/epic-react-testingJs/blob/main/epic-react/06.testing-react-apps/src/__tests__/exercise/07.js
