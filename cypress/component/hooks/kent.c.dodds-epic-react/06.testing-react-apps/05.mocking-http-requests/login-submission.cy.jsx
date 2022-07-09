@@ -11,6 +11,7 @@ function buildLoginForm(overrides) {
 
 describe('Mocking http requests', () => {
   it(`logging in displays the user's username`, () => {
+    Cypress.on('uncaught:exception', () => false)
     cy.intercept(
       'POST',
       'https://auth-provider.example.com/api/login',
@@ -57,5 +58,80 @@ describe('Mocking http requests', () => {
 
     cy.wait('@login')
     // cy.contains('password required')
+  })
+
+  it('omitting the password results in an error', () => {
+    const message = 'Missing password'
+    cy.intercept(
+      {
+        method: 'POST',
+        url: 'https://auth-provider.example.com/api/login'
+      },
+      {
+        statusCode: 400,
+        body: {
+          message
+        }
+      }
+    ).as('login')
+
+    cy.mount(<LoginSubmission />)
+    const { username } = buildLoginForm()
+
+    cy.getByCy('username').type(username)
+    cy.getByCy('submit').click()
+
+    cy.wait('@login')
+    cy.contains('div', message)
+  })
+
+  it('omitting the username results in an error', () => {
+    const message = 'Missing username'
+    cy.intercept(
+      {
+        method: 'POST',
+        url: 'https://auth-provider.example.com/api/login'
+      },
+      {
+        statusCode: 400,
+        body: {
+          message
+        }
+      }
+    ).as('login')
+
+    cy.mount(<LoginSubmission />)
+    const { password } = buildLoginForm()
+
+    cy.getByCy('password').type(password)
+    cy.getByCy('submit').click()
+
+    cy.wait('@login')
+    cy.contains('div', message)
+  })
+
+  it('unknown server error displays the error message', () => {
+    const message = 'Oh no, something bad happened'
+    cy.intercept(
+      {
+        method: 'POST',
+        url: 'https://auth-provider.example.com/api/login'
+      },
+      {
+        statusCode: 500,
+        body: {
+          message
+        }
+      }
+    ).as('login')
+
+    cy.mount(<LoginSubmission />)
+    const { username } = buildLoginForm()
+
+    cy.getByCy('username').type(username)
+    cy.getByCy('submit').click()
+
+    cy.wait('@login')
+    cy.contains('div', message)
   })
 })
