@@ -21,7 +21,7 @@ it('displays the users current location', () => {
   cy.contains(fakePosition.coords.longitude)
 })
 
-// get Gleb's opinion on this
+// TODO: get Gleb's opinion on this
 it('throws error message when geolocation is not supported', () => {
   const fakeError = new Error(
     'Geolocation is not supported or permission denied'
