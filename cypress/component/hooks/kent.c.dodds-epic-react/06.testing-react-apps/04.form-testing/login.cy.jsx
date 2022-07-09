@@ -1,4 +1,4 @@
-import Login from './login'
+import Login from '../05.mocking-http-requests/login'
 import faker from 'faker'
 
 function buildLoginForm(overrides) {
