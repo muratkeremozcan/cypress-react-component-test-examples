@@ -32,8 +32,8 @@ describe('Mocking http requests', () => {
       'POST',
       'https://auth-provider.example.com/api/login',
       (req) => {
-        return req.reply((res) => console.log(res)) // BLOWS UP
-        // if (!req.body.password) { // This should just work...
+        return req.reply((res) => console.log(res)) // blows up...
+        // if (!req.body.password) { // this should just work...
         //   return req.reply((res) =>
         //     res.send({
         //       statusCode: 400,
@@ -89,78 +89,83 @@ describe('Mocking http requests', () => {
     cy.contains('div', message)
   })
 
-  it('omitting the password results in an error (static response)', () => {
-    const message = 'Missing password'
-    cy.intercept(
-      {
-        method: 'POST',
-        url: 'https://auth-provider.example.com/api/login'
-      },
-      {
-        statusCode: 400,
-        body: {
-          message
+  context('static response alternatives', () => {
+    it('omitting the password results in an error (static response)', () => {
+      const message = 'Missing password'
+      cy.intercept(
+        {
+          method: 'POST',
+          url: 'https://auth-provider.example.com/api/login'
+        },
+        {
+          statusCode: 400,
+          body: {
+            message
+          }
         }
-      }
-    ).as('login')
+      ).as('login')
 
-    cy.mount(<LoginSubmission />)
-    const { username } = buildLoginForm()
+      cy.mount(<LoginSubmission />)
+      const { username } = buildLoginForm()
 
-    cy.getByCy('username').type(username)
-    cy.getByCy('submit').click()
+      cy.getByCy('username').type(username)
+      cy.getByCy('submit').click()
 
-    cy.wait('@login')
-    cy.contains('div', message)
-  })
+      cy.wait('@login')
+      cy.contains('div', message)
+    })
 
-  it('omitting the username results in an error (static response)', () => {
-    const message = 'Missing username'
-    cy.intercept(
-      {
-        method: 'POST',
-        url: 'https://auth-provider.example.com/api/login'
-      },
-      {
-        statusCode: 400,
-        body: {
-          message
+    it('omitting the username results in an error (static response)', () => {
+      const message = 'Missing username'
+      cy.intercept(
+        {
+          method: 'POST',
+          url: 'https://auth-provider.example.com/api/login'
+        },
+        {
+          statusCode: 400,
+          body: {
+            message
+          }
         }
-      }
-    ).as('login')
+      ).as('login')
 
-    cy.mount(<LoginSubmission />)
-    const { password } = buildLoginForm()
+      cy.mount(<LoginSubmission />)
+      const { password } = buildLoginForm()
 
-    cy.getByCy('password').type(password)
-    cy.getByCy('submit').click()
+      cy.getByCy('password').type(password)
+      cy.getByCy('submit').click()
 
-    cy.wait('@login')
-    cy.contains('div', message)
-  })
+      cy.wait('@login')
+      cy.contains('div', message)
+    })
 
-  it('unknown server error displays the error message (static response)', () => {
-    const message = 'Oh no, something bad happened'
-    cy.intercept(
-      {
-        method: 'POST',
-        url: 'https://auth-provider.example.com/api/login'
-      },
-      {
-        statusCode: 500,
-        body: {
-          message
+    it('unknown server error displays the error message (static response)', () => {
+      const message = 'Oh no, something bad happened'
+      cy.intercept(
+        {
+          method: 'POST',
+          url: 'https://auth-provider.example.com/api/login'
+        },
+        {
+          statusCode: 500,
+          body: {
+            message
+          }
         }
-      }
-    ).as('login')
+      ).as('login')
 
-    cy.mount(<LoginSubmission />)
-    const { username } = buildLoginForm()
+      cy.mount(<LoginSubmission />)
+      const { username } = buildLoginForm()
 
-    cy.getByCy('username').type(username)
-    cy.getByCy('submit').click()
+      cy.getByCy('username').type(username)
+      cy.getByCy('submit').click()
 
-    cy.wait('@login')
-    cy.contains('div', message)
+      cy.wait('@login')
+      cy.contains('div', message)
+    })
   })
 })
+
+// 1:1 comparison with RTL
+// https://github.com/muratkeremozcan/epic-react-testingJs/blob/main/epic-react/06.testing-react-apps/src/__tests__/exercise/05.js#L24
