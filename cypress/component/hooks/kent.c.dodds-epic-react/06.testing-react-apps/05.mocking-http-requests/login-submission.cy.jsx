@@ -11,13 +11,8 @@ function buildLoginForm(overrides) {
 
 describe('Mocking http requests', () => {
   it(`logging in displays the user's username`, () => {
-    Cypress.on('uncaught:exception', () => false)
-    cy.intercept(
-      'POST',
-      'https://auth-provider.example.com/api/login',
-      (req) => {
-        return req.reply({ username: req.body.username })
-      }
+    cy.intercept('POST', 'https://auth-provider.example.com/api/login', (req) =>
+      req.reply({ username: req.body.username })
     ).as('login')
 
     cy.mount(<LoginSubmission />)
@@ -31,22 +26,30 @@ describe('Mocking http requests', () => {
     cy.contains(`Welcome ${username}`)
   })
 
-  it.skip('omitting the password results in an error', () => {
+  it.skip('omitting the password results in an error (dynamic response)', () => {
     Cypress.on('uncaught:exception', () => false)
     cy.intercept(
       'POST',
       'https://auth-provider.example.com/api/login',
       (req) => {
-        // if (!req.body.password) {
-        console.log('no password')
-        return req.reply((res) => console.log(res))
-        // return req.reply((res) =>
-        //   res.send({
-        //     status: 400,
-        //     message: 'Missing password'
-        //   })
-        // )
+        return req.reply((res) => console.log(res)) // BLOWS UP
+        // if (!req.body.password) { // This should just work...
+        //   return req.reply((res) =>
+        //     res.send({
+        //       statusCode: 400,
+        //       message: 'Missing password'
+        //     })
+        //   )
         // }
+        // if (!req.body.username) {
+        //   return req.reply((res) =>
+        //     res.send({
+        //       statusCode: 400,
+        //       message: 'Missing username'
+        //     })
+        //   )
+        // }
+        // return req.reply({ username: req.body.username })
       }
     ).as('login')
 
@@ -60,7 +63,33 @@ describe('Mocking http requests', () => {
     // cy.contains('password required')
   })
 
-  it('omitting the password results in an error', () => {
+  it('omitting the password results in an error (static response with req.reply)', () => {
+    const message = 'Missing password'
+    cy.intercept(
+      {
+        method: 'POST',
+        url: 'https://auth-provider.example.com/api/login'
+      },
+      (req) =>
+        req.reply({
+          statusCode: 400,
+          body: {
+            message
+          }
+        })
+    ).as('login')
+
+    cy.mount(<LoginSubmission />)
+    const { username } = buildLoginForm()
+
+    cy.getByCy('username').type(username)
+    cy.getByCy('submit').click()
+
+    cy.wait('@login')
+    cy.contains('div', message)
+  })
+
+  it('omitting the password results in an error (static response)', () => {
     const message = 'Missing password'
     cy.intercept(
       {
@@ -85,7 +114,7 @@ describe('Mocking http requests', () => {
     cy.contains('div', message)
   })
 
-  it('omitting the username results in an error', () => {
+  it('omitting the username results in an error (static response)', () => {
     const message = 'Missing username'
     cy.intercept(
       {
@@ -110,7 +139,7 @@ describe('Mocking http requests', () => {
     cy.contains('div', message)
   })
 
-  it('unknown server error displays the error message', () => {
+  it('unknown server error displays the error message (static response)', () => {
     const message = 'Oh no, something bad happened'
     cy.intercept(
       {
