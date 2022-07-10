@@ -18,6 +18,7 @@ import './commands'
 import '@testing-library/cypress/add-commands'
 import 'cypress-real-events/support'
 import 'cypress-react-app-actions'
+import 'cypress-axe'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
