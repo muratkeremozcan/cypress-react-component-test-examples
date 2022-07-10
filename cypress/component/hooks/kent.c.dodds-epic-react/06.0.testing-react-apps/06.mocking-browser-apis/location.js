@@ -10,7 +10,6 @@ function Location() {
   }
 
   if (error) {
-    console.log('Got error')
     return (
       <div role="alert" style={{ color: 'red' }}>
         {error.message}

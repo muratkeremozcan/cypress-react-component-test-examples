@@ -1,5 +1,6 @@
 import EasyButton from './easy-button'
 import { ThemeProvider } from './theme'
+import { mount } from 'cypress/react'
 
 // TODO: ask DX why we cannot change the initialTheme prop and see the component mounted with that
 it('renders with the styles for the light theme - raw', () => {
@@ -32,15 +33,27 @@ it('renders with the styles for the light theme - wrapper ', () => {
 })
 
 it('renders with the styles for the light theme - helper', () => {
-  const renderWithProviders = (ui, { theme = 'light', ...options } = {}) => {
+  const renderWithProvider = (ui, { theme = 'light', ...options } = {}) => {
     const Wrapper = ({ children }) => (
       <ThemeProvider initialTheme={theme}>{children}</ThemeProvider>
     )
     return cy.mount(ui, { wrapper: Wrapper, ...options })
   }
 
-  renderWithProviders(<EasyButton>Easy</EasyButton>, { theme: 'light' })
+  renderWithProvider(<EasyButton>Easy</EasyButton>, { theme: 'light' })
 
+  cy.getByCy('easy-btn')
+    .should('have.css', 'background-color', 'rgb(255, 255, 255)')
+    .and('have.css', 'color', 'rgb(0, 0, 0)')
+})
+
+// https://github.com/cypress-io/cypress/issues/14672#issuecomment-900825353
+Cypress.Commands.add('mountWithProvider', (children, { theme = 'light' }) =>
+  mount(<ThemeProvider initialTheme={theme}>{children}</ThemeProvider>)
+)
+
+it('should mount with theme', () => {
+  cy.mountWithProvider(<EasyButton>Easy</EasyButton>, { theme: 'light' })
   cy.getByCy('easy-btn')
     .should('have.css', 'background-color', 'rgb(255, 255, 255)')
     .and('have.css', 'color', 'rgb(0, 0, 0)')

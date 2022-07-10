@@ -12,10 +12,9 @@ describe('ColorSample', () => {
     checkColor('rgb(255, 0, 0)')
     // here's  lower level way
     cy.getByCy('color-sample')
-    // TODO: show Gleb the issue with cy 10
-    // .getComponent()
-    // .its('props.color')
-    // .should('eq', 'red')
+      .getComponent()
+      .its('props.color')
+      .should('eq', 'red')
   })
 
   it('should sample blue', () => {
@@ -23,10 +22,9 @@ describe('ColorSample', () => {
     checkColor('rgb(0, 0, 255)')
 
     cy.getByCy('color-sample')
-    // TODO: show Gleb the issue with cy 10
-    // .getComponent()
-    // .its('props.color')
-    // .should('eq', 'blue')
+      .getComponent()
+      .its('props.color')
+      .should('eq', 'blue')
   })
 
   it('should sample no color without a prop', () => {

@@ -17,27 +17,26 @@ it('displays the users current location', () => {
 
   cy.mount(<Location />)
 
+  cy.get('@getCurrentPosition').should('be.called')
   cy.contains(fakePosition.coords.latitude)
   cy.contains(fakePosition.coords.longitude)
 })
 
-// TODO: get Gleb's opinion on this
 it('throws error message when geolocation is not supported', () => {
   const fakeError = new Error(
     'Geolocation is not supported or permission denied'
   )
-  const { match } = Cypress.sinon
 
   cy.window().then((win) =>
     cy
       .stub(win.navigator.geolocation, 'getCurrentPosition')
-      .withArgs(match.object)
-      .throws(fakeError)
+      .callsArgWith(1, fakeError)
       .as('getCurrentPosition')
   )
 
   cy.mount(<Location />)
-  expect(() => win.navigator.geolocation.getCurrentPosition()).to.throw()
+  cy.get('@getCurrentPosition').should('be.called')
+  cy.contains('Geolocation is not supported or permission denied')
 })
 
 // 1:1 comparison with RTL
