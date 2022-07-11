@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "types": [
+      "cypress",
+      "node",
+      "@testing-library/cypress",
+      "cypress-real-events"
+    ]
+  },
+  "include": ["cypress/**/*.js", "cypress/**/*.jsx", "cypress/**/*.cy.jsx"]
+}
