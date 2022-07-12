@@ -30,7 +30,7 @@ it.skip('inaccessible forms fail axe (will fail)', () => {
   })
 })
 
-it('accessible forms pass axe', () => {
+it.skip('accessible forms pass axe', () => {
   cy.mount(<AccessibleForm />)
   cy.injectAxe()
   cy.checkA11y(null, {
