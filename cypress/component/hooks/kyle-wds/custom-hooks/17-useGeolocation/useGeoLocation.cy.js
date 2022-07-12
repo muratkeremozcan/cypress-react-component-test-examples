@@ -31,21 +31,21 @@ describe('useGeolocation', () => {
     cy.contains(fakePosition.coords.longitude)
   })
 
-  it('throws error message when geolocation is not supported', () => {
-    const fakeError = new Error(
-      'Geolocation is not supported or permission denied'
-    )
+  // it('throws error message when geolocation is not supported', () => {
+  //   const fakeError = new Error(
+  //     'Geolocation is not supported or permission denied'
+  //   )
 
-    cy.window().then((win) =>
-      cy
-        .stub(win.navigator.geolocation, 'getCurrentPosition')
-        .callsArgWith(1, fakeError)
-        //     .callsFake((onSuccess, onError) => onError(fakeError)) // same thing
-        .as('getCurrentPosition')
-    )
+  //   cy.window().then((win) =>
+  //     cy
+  //       .stub(win.navigator.geolocation, 'getCurrentPosition')
+  //       .callsArgWith(1, fakeError)
+  //       //     .callsFake((onSuccess, onError) => onError(fakeError)) // same thing
+  //       .as('getCurrentPosition')
+  //   )
 
-    cy.mount(<GeolocationComponent />)
-    cy.get('@getCurrentPosition').should('be.called')
-    cy.contains('Geolocation is not supported or permission denied')
-  })
+  //   cy.mount(<GeolocationComponent />)
+  //   cy.get('@getCurrentPosition').should('be.called')
+  //   cy.contains('Geolocation is not supported or permission denied')
+  // })
 })
