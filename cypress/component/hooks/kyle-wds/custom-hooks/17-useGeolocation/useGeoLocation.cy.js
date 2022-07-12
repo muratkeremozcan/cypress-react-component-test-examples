@@ -1,6 +1,6 @@
-import Location from './location'
-// https://glebbahmutov.com/blog/cypress-geolocation/#investigation
-describe('geoLocation', () => {
+import GeolocationComponent from './GeolocationComponent'
+
+describe('useGeolocation', () => {
   it('displays the users current location', () => {
     const fakePosition = {
       coords: {
@@ -13,10 +13,18 @@ describe('geoLocation', () => {
       cy
         .stub(win.navigator.geolocation, 'getCurrentPosition')
         .callsArgWith(0, fakePosition)
+        // .callsFake((onSuccess, onError) => onSuccess(fakePosition))  // same thing
         .as('getCurrentPosition')
     )
 
-    cy.mount(<Location />)
+    /*
+			https://www.youtube.com/watch?v=zR6o_tdJKDk&t=59s
+			withArgs : controls when the stub is used
+			callsArg : CallsArg is the response like calling the callback argument to the stub
+			callsArgWith : Like callsArg, but with arguments to pass to the callback.
+		*/
+
+    cy.mount(<GeolocationComponent />)
 
     cy.get('@getCurrentPosition').should('be.called')
     cy.contains(fakePosition.coords.latitude)
@@ -32,13 +40,12 @@ describe('geoLocation', () => {
       cy
         .stub(win.navigator.geolocation, 'getCurrentPosition')
         .callsArgWith(1, fakeError)
+        //     .callsFake((onSuccess, onError) => onError(fakeError)) // same thing
         .as('getCurrentPosition')
     )
 
-    cy.mount(<Location />)
+    cy.mount(<GeolocationComponent />)
     cy.get('@getCurrentPosition').should('be.called')
     cy.contains('Geolocation is not supported or permission denied')
   })
 })
-// 1:1 comparison with RTL
-// https://github.com/muratkeremozcan/epic-react-testingJs/blob/main/epic-react/06.testing-react-apps/src/__tests__/exercise/06.js

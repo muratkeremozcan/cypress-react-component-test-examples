@@ -1,5 +1,5 @@
-import { useEffect } from "react"
+import { useEffect } from 'react'
 
 export default function useEffectOnce(cb) {
-  useEffect(cb, [])
+  return useEffect(cb, [])
 }
