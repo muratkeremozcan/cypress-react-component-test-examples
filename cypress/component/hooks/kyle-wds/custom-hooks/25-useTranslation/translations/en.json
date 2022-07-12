@@ -1,5 +1,5 @@
 {
   "hi": "Hello",
   "bye": "Goodbye",
-  "nested": { "value": "Test" }
+  "nested": { "value": "Test EN" }
 }

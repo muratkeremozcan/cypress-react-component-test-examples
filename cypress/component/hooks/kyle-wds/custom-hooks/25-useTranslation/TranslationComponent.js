@@ -1,4 +1,4 @@
-import useTranslation from "./useTranslation"
+import useTranslation from './useTranslation'
 
 export default function TranslationComponent() {
   const { language, setLanguage, setFallbackLanguage, t } = useTranslation()
@@ -6,12 +6,19 @@ export default function TranslationComponent() {
   return (
     <>
       <div>{language}</div>
-      <div>{t("hi")}</div>
-      <div>{t("bye")}</div>
-      <div>{t("nested.value")}</div>
-      <button onClick={() => setLanguage("sp")}>Change To Spanish</button>
-      <button onClick={() => setLanguage("en")}>Change To English</button>
-      <button onClick={() => setFallbackLanguage("sp")}>Change FB Lang</button>
+      <div>{t('hi')}</div>
+      <div>{t('bye')}</div>
+      <div>{t('nested.value')}</div>
+      <div>{t('')}</div>
+      <button data-cy="spanish" onClick={() => setLanguage('sp')}>
+        Change To Spanish
+      </button>
+      <button data-cy="english" onClick={() => setLanguage('en')}>
+        Change To English
+      </button>
+      <button data-cy="fallback-lang" onClick={() => setFallbackLanguage('en')}>
+        Change FB Lang
+      </button>
     </>
   )
 }
