@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Redirect } from 'react-router'
+import { Navigate } from 'react-router'
 import { savePost } from './api'
 
 export default function Editor({ user }) {
@@ -20,7 +20,7 @@ export default function Editor({ user }) {
     }).then(() => setRedirect(true))
   }
 
-  if (redirect) return <Redirect to="/" />
+  if (redirect) return <Navigate to="/" />
 
   return (
     <form onSubmit={handleSubmit}>
