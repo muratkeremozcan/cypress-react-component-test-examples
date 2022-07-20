@@ -11,6 +11,9 @@ export const CustomTimer = () => {
       () => setSeconds((seconds) => seconds + 1),
       1000
     )
+    // In React whenever you setup something during mount,
+    // you need to clear it when you unmount
+    // need to clear interval when component unmounts, otherwise it will mount twice
     return () => clearInterval(interval)
   }, [])
 
