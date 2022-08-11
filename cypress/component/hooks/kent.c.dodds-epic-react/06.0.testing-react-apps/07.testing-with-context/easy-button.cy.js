@@ -1,6 +1,5 @@
 import EasyButton from './easy-button'
 import { ThemeProvider } from './theme'
-import { mount } from 'cypress/react'
 
 // TODO: ask DX why we cannot change the initialTheme prop and see the component mounted with that
 it('renders with the styles for the light theme - raw', () => {

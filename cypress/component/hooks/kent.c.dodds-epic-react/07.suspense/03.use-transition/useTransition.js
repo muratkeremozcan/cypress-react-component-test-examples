@@ -11,7 +11,7 @@ import { createResource } from '../utils'
 function PokemonInfo({ pokemonResource }) {
   const pokemon = pokemonResource.read()
   return (
-    <div>
+    <div data-cy="pokemon-info">
       <div className="pokemon-info__img-wrapper">
         <img src={pokemon.image} alt={pokemon.name} />
       </div>
@@ -46,7 +46,7 @@ function createPokemonResource(pokemonName) {
 function App() {
   const [pokemonName, setPokemonName] = React.useState('')
   // 🐨 add a useTransition hook here
-  const [startTransition, isPending] = React.useTransition(SUSPENSE_CONFIG)
+  const [isPending, startTransition] = React.useTransition(SUSPENSE_CONFIG)
   console.log({ isPending })
   const [pokemonResource, setPokemonResource] = React.useState(null)
 
@@ -100,6 +100,6 @@ function App() {
 
 export default App
 
-// [3] useTransition hook is used for an intermediate step between ErrorBoundary and Suspense
+// useTransition hook can be used for an intermediate step between ErrorBoundary and Suspense
 // where we can use a isPending flag to further customize the intermediate loading state
 // start -> show isPending (ex: grey out) -> show suspense fallback (ex: loading... -> show final UI
