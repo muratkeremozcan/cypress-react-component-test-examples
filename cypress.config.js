@@ -2,6 +2,10 @@ import { defineConfig } from 'cypress'
 
 export default defineConfig({
   projectId: '62pyqm',
+  retries: {
+    runMode: 2,
+    openMode: 0
+  },
   e2e: {
     setupNodeEvents(on, config) {},
     baseUrl: 'http://localhost:3000',

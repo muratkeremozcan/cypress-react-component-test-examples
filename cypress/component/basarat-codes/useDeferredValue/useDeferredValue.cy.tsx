@@ -1,5 +1,5 @@
 import App from './App'
-describe('useDeferredValue', { defaultCommandTimeout: 10000 }, () => {
+describe('useDeferredValue', { defaultCommandTimeout: 15000 }, () => {
   it('should render the list', () => {
     cy.mount(<App />)
 
