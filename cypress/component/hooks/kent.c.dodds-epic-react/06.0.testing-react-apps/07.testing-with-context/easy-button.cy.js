@@ -48,7 +48,7 @@ it('renders with the styles for the light theme - helper', () => {
 
 // https://github.com/cypress-io/cypress/issues/14672#issuecomment-900825353
 Cypress.Commands.add('mountWithProvider', (children, { theme = 'light' }) =>
-  mount(<ThemeProvider initialTheme={theme}>{children}</ThemeProvider>)
+  cy.mount(<ThemeProvider initialTheme={theme}>{children}</ThemeProvider>)
 )
 
 it('should mount with theme', () => {
