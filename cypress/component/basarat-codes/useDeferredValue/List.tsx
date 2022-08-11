@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 
-const COUNT = 1000 // Tweak based on your machine performance to get some lag
+const COUNT = 100 // Tweak based on your machine performance to get some lag
 
 export function Products({ searchTerm }: { searchTerm: string }) {
   const items = useMemo(() => {
