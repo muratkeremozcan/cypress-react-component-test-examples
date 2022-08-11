@@ -5,5 +5,7 @@ import { useEffect } from 'react'
 // start its name with use, for example, useDocumentTitle, useFetch, useUsers, or useLocalStorage.
 /** sets document title with the given title with useEffect */
 export default function useDocumentTitle(title) {
-  return useEffect(() => (document.title = title), [title])
+  return useEffect(() => {
+    document.title = title
+  }, [title])
 }

@@ -9,7 +9,9 @@ export default function SayHello() {
   /// * running side effects after a component mounts, renders/updates, unmounts/cleans up
   /// * controlling when a side effect runs
   // think of useEffect as a replacement for life cycle methods: componentDidMount, componentDidUpdate, and componentWillUnmount
-  useEffect(() => (document.title = greetings[index]))
+  useEffect(() => {
+    document.title = greetings[index]
+  })
   // here the document.title is bound to the greetings[index]
   // [index] changes with every setIndex on button click
   // therefore we want useEffect firing every render

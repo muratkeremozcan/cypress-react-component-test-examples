@@ -17,7 +17,9 @@ export default function SayHello() {
   // [7.0.2] once you add the other missing dependency, you get another warning
   // "The 'greetings' array makes the dependencies of useEffect Hook (at line 20) change on every render.
   // To fix this, wrap the initialization of 'greetings' in its own useMemo "
-  useEffect(() => (document.title = greetings[index]), [greetings, index])
+  useEffect(() => {
+    document.title = greetings[index]
+  }, [greetings, index])
 
   const updateGreeting = () =>
     setIndex(Math.floor(Math.random() * greetings.length))

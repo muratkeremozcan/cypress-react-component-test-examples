@@ -6,6 +6,6 @@ describe('useTransition', () => {
     cy.mount(<App />)
     cy.get('input').type('abc')
 
-    cy.getByCyLike('item').should('have.length.gt', 100).contains('abc')
+    cy.getByCyLike('item').should('have.length.gte', 1000).contains('abc')
   })
 })

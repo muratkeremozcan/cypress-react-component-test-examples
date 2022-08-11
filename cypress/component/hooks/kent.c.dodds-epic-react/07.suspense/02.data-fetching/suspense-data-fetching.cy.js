@@ -25,6 +25,6 @@ it('suspense, data fetching, error boundary', { viewportHeight: 600 }, () => {
   cy.mount(<App />)
 
   cy.getByCy('loading').should('be.visible')
-  cy.wait('@pika')
+  cy.wait('@pika', { timeout: 10000 })
   cy.getByCy('pokemon-info').should('be.visible')
 })

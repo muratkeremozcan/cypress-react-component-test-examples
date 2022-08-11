@@ -20,7 +20,11 @@ describe('useEffect', () => {
     cy.wrap().should(() => expect(resizeEventFired).to.eq(false))
   })
 
-  it('should trigger a resize event after a window size change', () => {
+  // TODO: merge the tests together once the defect is fixed
+  // https://github.com/cypress-io/cypress/issues/23081
+  // probably with 10.5.0
+
+  it.skip('should trigger a resize event after a window size change', () => {
     cy.viewport(400, 500)
     cy.wrap().should(() => expect(resizeEventFired).to.eq(true))
 
