@@ -86,7 +86,7 @@ jobs:
   cypress-component-tests:
     strategy:
       matrix:
-        machines: [1, 2, 3, 4] # uses 2 CI machines to run tests in parallel
+        machines: [1, 2]
     needs: [install-dependencies]
     runs-on: ubuntu-latest
     container: cypress/included:10.4.0 # save time on not having to install cypress
