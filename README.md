@@ -1,6 +1,6 @@
-[![cypress-react-component-test-examples](https://img.shields.io/endpoint?url=https://dashboard.cypress.io/badge/detailed/62pyqm/master&style=plastic&logo=cypress)](https://dashboard.cypress.io/projects/62pyqm/runs)
-
 # Cypress React Component Test Examples
+
+[![cypress-react-component-test-examples](https://img.shields.io/endpoint?url=https://dashboard.cypress.io/badge/detailed/62pyqm/master&style=flat&logo=cypress)](https://dashboard.cypress.io/projects/62pyqm/runs)
 
 This repo started as a practice project, replicating & reviving old Cypress React component tests, hidden in the main Cypress repo.
 As time passed, new examples were added and are still being added with Cypress 10. It can be used as a starting point for new tests, showing working examples.
