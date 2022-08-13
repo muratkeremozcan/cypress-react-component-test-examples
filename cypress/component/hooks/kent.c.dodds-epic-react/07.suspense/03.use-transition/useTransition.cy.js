@@ -28,7 +28,7 @@ it.skip(
     ).as('pika')
     cy.mount(<App />)
 
-    cy.getByCy('loading').should('be.visible')
+    cy.getByCy('loading').should('exist')
     cy.wait('@pika', { timeout: 15000 })
     cy.getByCy('pokemon-info').should('be.visible')
   }
