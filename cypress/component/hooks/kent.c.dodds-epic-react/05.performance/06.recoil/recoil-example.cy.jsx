@@ -7,10 +7,10 @@ describe('Recoil', () => {
     cy.get('#dogName').type('Doggo')
     cy.contains('Doggo,')
 
-    cy.get('#rows').clear().type(5)
-    cy.get('#columns').clear().type(5)
+    cy.get('#rows').clear().type(3)
+    cy.get('#columns').clear().type(3)
     cy.get('.cell')
-      .should('have.length', 25)
+      .should('have.length', 9)
       .each(($cell) =>
         cy
           .wrap($cell)
