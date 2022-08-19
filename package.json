@@ -75,7 +75,7 @@
     ]
   },
   "devDependencies": {
-    "@cypress/webpack-dev-server": "2.1.0",
+    "@cypress/webpack-dev-server": "2.2.0",
     "@testing-library/cypress": "8.0.3",
     "@types/faker": "6.6.8",
     "axios": "0.27.2",
