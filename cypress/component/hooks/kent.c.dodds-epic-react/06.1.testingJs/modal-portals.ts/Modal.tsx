@@ -18,8 +18,8 @@ const Modal = ({ children }: ModalProps) => {
   useEffect(() => {
     const currentEl = el.current
 
-    modalRoot.appendChild(currentEl)
-    return () => void modalRoot.removeChild(currentEl)
+    modalRoot!.appendChild(currentEl)
+    return () => void modalRoot!.removeChild(currentEl)
   }, [modalRoot])
 
   return createPortal(children, el.current)
