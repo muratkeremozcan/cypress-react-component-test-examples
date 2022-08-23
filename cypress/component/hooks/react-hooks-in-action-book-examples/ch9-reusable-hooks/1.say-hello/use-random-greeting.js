@@ -6,7 +6,9 @@ import useDocumentTitle from './use-doc-title'
 const getRandomIndex = (length) => Math.floor(Math.random() * length)
 
 export default function useRandomGreeting(greetings) {
-  const [index, setIndex] = useState(() => getRandomIndex(greetings.length))
+  const [index, setIndex] = useState(() => {
+    getRandomIndex(greetings.length)
+  })
 
   useDocumentTitle(greetings[index])
 

@@ -1,7 +1,7 @@
 import { defineConfig } from 'cypress'
 
 export default defineConfig({
-  // experimentalSingleTabRunMode: true,
+  experimentalSingleTabRunMode: true,
   projectId: '62pyqm',
   retries: {
     runMode: 2,
