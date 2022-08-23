@@ -5,7 +5,7 @@ it('useHover', () => {
 
   cy.getByCy('element').should('have.css', 'background-color', 'rgb(255, 0, 0)')
 
-  cy.getByCy('element').realHover()
+  cy.getByCy('element').realHover().click()
 
   cy.getByCy('element').should('have.css', 'background-color', 'rgb(0, 0, 255)')
 })
