@@ -8,4 +8,10 @@ describe('useTransition', () => {
 
     cy.getByCyLike('item').should('have.length.gte', 1000).contains('abc')
   })
+  it('should use random to populate items', () => {
+    cy.mount(<App />)
+    cy.get('button').click()
+
+    cy.getByCyLike('item').should('have.length.gt', 100)
+  })
 })

@@ -105,7 +105,7 @@ function PokemonInfoFallback({ name }) {
     fetchedAt: 'loading...'
   }
   return (
-    <div>
+    <div data-cy="loading">
       <div className="pokemon-info__img-wrapper">
         <img src={fallbackImgUrl} alt={initialName} />
       </div>
