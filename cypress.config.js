@@ -1,7 +1,9 @@
 import { defineConfig } from 'cypress'
 
 export default defineConfig({
-  experimentalSingleTabRunMode: true,
+  // TODO: there is 1 test in CI that fails with this on, when not parallelized
+  // cypress/component/hooks/usehooks.com/useHover.cy.tsx
+  // experimentalSingleTabRunMode: true,
   projectId: '62pyqm',
   retries: {
     runMode: 2,

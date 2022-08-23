@@ -68,7 +68,6 @@ describe('useHover', () => {
   })
 
   it('useHover', () => {
-    // @ts-ignore
     cy.get('button', { timeout: 10000 }).should('be.visible').click()
 
     cy.getByCy('smile').should(
