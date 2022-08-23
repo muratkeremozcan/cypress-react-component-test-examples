@@ -45,7 +45,7 @@ describe('Alias', () => {
 })
 
 describe('mount in beforeEach', () => {
-  const Hello: React.FC<{}> = ({ children }) => (
+  const Hello = ({ children }) => (
     <>
       <div className="hello">Hello there!</div>
       {children}

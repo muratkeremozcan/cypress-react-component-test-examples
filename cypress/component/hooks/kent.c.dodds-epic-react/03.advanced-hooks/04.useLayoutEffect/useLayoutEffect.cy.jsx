@@ -7,7 +7,7 @@ describe('useLayoutEffect', () => {
     cy.getByCy('quote-7').should('be.visible')
     cy.getByCy('quote-8').should('not.exist')
 
-    cy.getByCy('add-message').dblclick()
+    cy.getByCy('add-message').click().dblclick()
     cy.getByCy('quote-9').should('be.visible')
 
     cy.getByCy('remove-message').click()
