@@ -8,13 +8,11 @@ export default function App() {
   console.log('render')
   // [] runs on mount
   // [resourceType] runs when the value changes
-  useEffect(
-    () =>
-      fetch(`https://jsonplaceholder.typicode.com/${resourceType}`)
-        .then((response) => response.json())
-        .then((json) => setItems(json)),
-    [resourceType]
-  )
+  useEffect(() => {
+    fetch(`https://jsonplaceholder.typicode.com/${resourceType}`)
+      .then((response) => response.json())
+      .then((json) => setItems(json))
+  }, [resourceType])
 
   return (
     <>
