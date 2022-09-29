@@ -81,7 +81,7 @@
     "copy-to-clipboard": "3.3.2",
     "cross-env": "7.0.3",
     "cy-spok": "1.5.2",
-    "cypress": "10.6.0",
+    "cypress": "10.9.0",
     "cypress-axe": "1.0.0",
     "cypress-react-app-actions": "1.0.2",
     "cypress-real-events": "1.7.1",
