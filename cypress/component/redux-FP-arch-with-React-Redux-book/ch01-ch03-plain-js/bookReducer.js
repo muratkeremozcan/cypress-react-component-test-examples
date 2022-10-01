@@ -1,0 +1,44 @@
+import { createStore } from 'redux'
+
+// use Quokka
+
+const initialState = {
+  title: 'beautiful code',
+  author: 'Douglas Rockford'
+}
+
+// reducer function : transforms state, takes current state and action
+// the update/reducer functions are pure functions, they do not change the state directly.
+// Redux uses the update functions to change the state.
+function updateBook(state = initialState, action) {
+  switch (action.type) {
+    case 'CHANGE_BOOK_TITLE':
+      return {
+        ...state,
+        title: action.title
+      }
+    default:
+      return state
+  }
+}
+
+// create the store: takes the reducer and initial state`
+const store = createStore(updateBook, initialState)
+
+// still initial state
+store.getState() //?
+
+// subscribes &shows to all future changes of state
+store.subscribe(() => {
+  store.getState() //?
+})
+
+// change the state with dispatch, dispatch takes an Action (an object)
+store.dispatch({
+  type: 'CHANGE_BOOK_TITLE',
+  title: 'JS The Best Parts'
+})
+store.getState() //?
+
+store.dispatch({ type: 'CHANGE_BOOK_TITLE', title: 'How JavaScript Works' })
+store.getState() //?
