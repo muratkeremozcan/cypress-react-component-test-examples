@@ -33,7 +33,7 @@ store.subscribe(() => {
   store.getState() //?
 })
 
-// change the state with dispatch, dispatch takes an Action (an object)
+// change the state with dispatch, dispatch takes an Action
 store.dispatch({
   type: 'CHANGE_BOOK_TITLE',
   title: 'JS The Best Parts'

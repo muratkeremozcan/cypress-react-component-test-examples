@@ -92,6 +92,7 @@
     "eslint-plugin-cypress": "2.12.1",
     "eslint-plugin-prettier": "4.0.0",
     "js-cookie": "3.0.1",
+    "lodash": "^4.17.21",
     "prettier": "2.7.1",
     "pretty": "2.0.0",
     "react-error-boundary": "3.1.4",
@@ -103,6 +104,7 @@
     "recoil": "0.7.5",
     "redux": "4.2.0",
     "redux-actions": "^2.6.5",
+    "thunkify": "^2.1.2",
     "use-interval": "1.4.0",
     "vanilla-tilt": "1.7.2",
     "warning": "4.0.3"
