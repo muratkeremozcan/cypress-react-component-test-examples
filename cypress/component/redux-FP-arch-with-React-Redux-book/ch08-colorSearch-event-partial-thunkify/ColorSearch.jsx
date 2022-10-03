@@ -6,9 +6,9 @@ import { partial } from 'lodash'
 
 function ColorSearch({ searchTerm, changeSearch, submitSearch }) {
   // KEY: FP tricks (thunkify, partial, and lodash) to create the event handler
-  // const search = () => submitSearch(searchTerm)
-  // const search = partial(submitSearch, searchTerm)
-  const search = thunkify(submitSearch)(searchTerm)
+  // const search = () => submitSearch(searchTerm) // fn returns a fn invocation
+  // const search = partial(submitSearch, searchTerm) // partial
+  const search = thunkify(submitSearch)(searchTerm) // thunkify
 
   return (
     <form>
@@ -29,11 +29,13 @@ function mapState({ searchTermInput }) {
 export default connect(mapState, { changeSearch, submitSearch })(ColorSearch)
 
 /*
-Partial application is the process of applying a number of arguments to a function and creating a new function with fewer arguments.
+Partial application transforms a function with several arguments into a function with fewer arguments.
 
-A thunk is a function that delays the invocation of another function. 
+
 The thunk function calls the original function with all the arguments. 
 thunkify(f) takes a function f and returns a new function that asks for arguments 
 and returns a third function that, when called, invokes f with the all arguments.
+
+
 
 */
