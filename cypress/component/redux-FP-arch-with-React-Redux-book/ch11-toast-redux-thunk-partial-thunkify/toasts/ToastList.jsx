@@ -13,9 +13,9 @@ function ToastList({ toasts, deleteToast }) {
   )
 }
 
-function mapStateToProps(state) {
+function mapStateToProps({ toasts }) {
   return {
-    toasts: state.toasts
+    toasts
   }
 }
 
