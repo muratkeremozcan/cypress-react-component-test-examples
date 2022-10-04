@@ -78,6 +78,7 @@
   "devDependencies": {
     "@testing-library/cypress": "8.0.3",
     "@types/faker": "6.6.8",
+    "@types/ramda": "^0.28.15",
     "@types/redux-actions": "^2.6.2",
     "@types/redux-thunk": "^2.1.0",
     "axios": "0.27.2",
@@ -95,6 +96,7 @@
     "lodash": "^4.17.21",
     "prettier": "2.7.1",
     "pretty": "2.0.0",
+    "ramda": "^0.28.0",
     "react-error-boundary": "3.1.4",
     "react-infinite-scroll-hook": "4.0.3",
     "react-redux": "8.0.2",
@@ -106,6 +108,7 @@
     "redux-actions": "^2.6.5",
     "thunkify": "^2.1.2",
     "use-interval": "1.4.0",
+    "uuid": "^9.0.0",
     "vanilla-tilt": "1.7.2",
     "warning": "4.0.3"
   }

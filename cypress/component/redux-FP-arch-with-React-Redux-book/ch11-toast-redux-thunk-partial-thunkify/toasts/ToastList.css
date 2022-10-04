@@ -1,0 +1,22 @@
+.toast {
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+.toast-item {
+    color: #004085;
+    background-color: #cce5ff;
+    border-color: #b8daff;
+    width: 200px;
+    padding: 8px;
+    margin: 24px;
+    display: flex;
+}
+
+.toast-item-delete {
+    margin-left: 4px;
+    cursor: pointer;
+    background-color: #cce5ff;
+    border:0 ;
+}
