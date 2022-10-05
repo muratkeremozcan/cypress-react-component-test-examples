@@ -7,7 +7,7 @@ describe('Weather app', () => {
     const maxNoOfNewStories = 5
 
     cy.getByCyLike('story-').should('have.length', maxNoOfNewStories)
-    // cy.getByCy('show-more').click()
-    // cy.getByCyLike('story-').should('have.length', 2 * maxNoOfNewStories)
+    cy.getByCy('show-more').click()
+    cy.getByCyLike('story-').should('have.length', 2 * maxNoOfNewStories)
   })
 })

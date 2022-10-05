@@ -1,14 +1,6 @@
 import { handleActions } from 'redux-actions'
 import * as actions from './actions'
 
-// generic flow:
-// action: the work being done (reducer)
-// reducer: how state should change (operation)
-// selector: get data out of the store (operation)
-// operation: utils for interactions with the back-end, used as a prop (component)
-// mapStateToProps: get state from store and use it as a prop (component)
-// connect(mapStateToProps, {operation}): link up with state (component)
-
 const initialState = Object.freeze({
   storiesIds: [],
   topStories: []

@@ -2,6 +2,14 @@ import { connect } from 'react-redux'
 import { showMoreStories } from './operations'
 import StoryItem from './StoryItem'
 
+// generic flow with backend and redux:
+// action: the work being done (reducer)
+// reducer: how state should change (operation)
+// selector: get data out of the store (operation)
+// operation: utils for interactions with the back-end, used as a prop (component)
+// mapStateToProps: get state from store and use it as a prop (component)
+// connect(mapStateToProps, {operation}): link up with state (component)
+
 function TopStories({ stories, showMoreStories }) {
   return (
     <div>
