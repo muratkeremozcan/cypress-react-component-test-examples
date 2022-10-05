@@ -25,6 +25,11 @@ function updateBook(state = initialState, action) {
 // create the store: takes the reducer and initial state`
 const store = createStore(updateBook, initialState)
 
+// The store has just a few methods:
+// * getState() returns the current state tree of the application.
+// * dispatch(action) can change state by dispatching actions.
+// * subscribe(listener) allows listening for changes.
+
 // still initial state
 store.getState() //?
 
