@@ -4,6 +4,10 @@ import { store as importedStore } from './store'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 
+// [redux4] Provider - a React component that you’ll render at the top of the React app.
+// takes  the store as a prop and wraps the top-level component in your app
+// any child component rendered within Provider can access the Redux store
+
 describe('Counter', () => {
   it('should import store', () => {
     cy.mount(

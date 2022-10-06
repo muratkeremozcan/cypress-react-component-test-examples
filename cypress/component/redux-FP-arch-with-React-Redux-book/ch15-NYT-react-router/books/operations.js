@@ -1,6 +1,7 @@
 import api from './api'
 import * as actions from './actions'
 
+// async action creator
 function fetchBookCategories() {
   return function (dispatch) {
     return api
@@ -11,6 +12,7 @@ function fetchBookCategories() {
   }
 }
 
+// async action creator
 function fetchBooks(category) {
   return function (dispatch) {
     return api.fetchBooks(category).then(toBooks).then(actions.setBooks).then(dispatch)

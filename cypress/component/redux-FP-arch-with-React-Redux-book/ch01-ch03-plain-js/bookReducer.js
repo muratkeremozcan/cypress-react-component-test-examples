@@ -9,7 +9,6 @@ const initialState = {
 
 // reducer function : transforms state, takes current state and action
 // the update/reducer functions are pure functions, they do not change the state directly.
-// Redux uses the update functions to change the state.
 function updateBook(state = initialState, action) {
   switch (action.type) {
     case 'CHANGE_BOOK_TITLE':
@@ -25,7 +24,7 @@ function updateBook(state = initialState, action) {
 // create the store: takes the reducer and initial state`
 const store = createStore(updateBook, initialState)
 
-// The store has just a few methods:
+// [redux ch1] The store has just a few methods:
 // * getState() returns the current state tree of the application.
 // * dispatch(action) can change state by dispatching actions.
 // * subscribe(listener) allows listening for changes.

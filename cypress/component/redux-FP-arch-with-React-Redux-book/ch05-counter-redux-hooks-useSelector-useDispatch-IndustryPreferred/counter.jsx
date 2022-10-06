@@ -2,8 +2,9 @@ import * as React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { INCREMENT, DECREMENT } from './reducer'
 
-// this approach diverges from using redux-actions,
+// [redux5.3KEY] using react-redux-hooks diverges from using redux-actions,
 // and instead makes the original setup from ch04 easier
+// event -> ACTION -(dispatch)-(middleware)-> REDUCER -> STORE(state) -(selector)-> update VIEW
 
 export default function Counter() {
   const counter = useSelector((state) => state.counter)

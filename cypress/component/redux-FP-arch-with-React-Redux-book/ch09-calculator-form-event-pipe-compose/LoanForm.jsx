@@ -18,7 +18,7 @@ const extractFormData = (e) => {
 }
 
 function LoanForm({ loanRequest, submitLoanRequest }) {
-  // KEY: FP tricks: 3 versions of taking a form event, extracting the form data, and submitting it
+  // [redux6]KEY: FP tricks: 3 versions of taking a form event, extracting the form data, and submitting it
   // https://github.com/lodash/lodash/wiki/FP-Guide
 
   // const handleSubmit = (e) => {  // 1. imperative version

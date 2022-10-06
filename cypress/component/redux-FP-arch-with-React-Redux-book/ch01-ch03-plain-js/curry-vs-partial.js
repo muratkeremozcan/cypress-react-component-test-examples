@@ -4,6 +4,8 @@ import { partial, curry } from 'lodash'
 import * as R from 'ramda'
 // import thunkify from 'thunkify' // doesn't work
 
+// [redux2] curry vs partial
+
 // actions
 const ActionAddToast = createAction('ADD_TOAST')
 const ActionDeleteToast = createAction('DELETE_TOAST')
@@ -53,7 +55,6 @@ const toast = (message) => (/*dispatch*/) => {
 }
 
 // const handleClick = () => toast('a second message')()
-
 // const handleClick = partial(toast, 'a second message'')()
 // const handleClick = curry(toast)('a second message')
 // const handleClick = curry(toast, 'a second message')()

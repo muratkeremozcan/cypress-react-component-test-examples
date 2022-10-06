@@ -3,11 +3,10 @@ import * as actions from './actions'
 
 const initialState = 0
 
-// redux-actions simplifies action creation
-
 const increment = (counter) => counter + 1
 const decrement = (counter) => counter - 1
 
+// [redux5.2] redux-actions simplifies action creation
 // we can replace the switch with a Map
 // handleActions() is a utility function from redux-actions
 // that can map actions to smaller update functions

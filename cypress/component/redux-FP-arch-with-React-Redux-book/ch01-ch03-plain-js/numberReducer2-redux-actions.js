@@ -3,7 +3,7 @@ import { createAction, handleActions } from 'redux-actions'
 
 const initialState = 1
 
-// redux-actions simplifies actions
+// [redux3] redux-actions simplifies actions
 
 const double = (number) => number * 2
 const actionDouble = createAction('DOUBLE_VALUE')

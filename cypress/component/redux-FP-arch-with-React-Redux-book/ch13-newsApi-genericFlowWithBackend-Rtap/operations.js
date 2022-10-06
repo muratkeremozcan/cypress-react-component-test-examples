@@ -17,10 +17,11 @@ function fetchDetailsForStories(ids) {
 // * dispatch(action) can change state by dispatching actions.
 // * subscribe(listener) allows listening for changes.
 
+// async action creator
 //  currying: the outer fn takes our custom arg (if any) and returns a fn that takes the event
 // the event is (dispatch, getState)
-export const showMoreStories = () => (dispatch, getState) => {
-  const { storiesIds } = getState()
+export const showMoreStories = () => async (dispatch, getState) => {
+  const { storiesIds } = await getState()
   // console.log(getState()) // {storiesIds: Array(500), topStories: Array(0)}
 
   const from = getTopStoriesNumber(getState()) // 0, 5, 10 ...

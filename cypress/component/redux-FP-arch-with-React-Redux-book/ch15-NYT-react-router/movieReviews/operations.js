@@ -3,6 +3,7 @@ import api from './api'
 import * as actions from './actions'
 import { getResults } from '../shared/api-tools'
 
+// async action creator
 function fetchMoviesCriticsPicks() {
   return function (dispatch) {
     axios(api.requestCriticsPicks())

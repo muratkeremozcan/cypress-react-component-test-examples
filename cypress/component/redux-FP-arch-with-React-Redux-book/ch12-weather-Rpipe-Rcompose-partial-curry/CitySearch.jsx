@@ -23,13 +23,13 @@ function CitySearch({ cityName, fetchCity /*, changeCityName */ }) {
   //   const withChange = (cb) => pipe(getInputChange, cb) // pipe
   //   const handleChange = withChange(changeCityName) // needs the prop changeCityName
 
+  // [redux6]KEY: FP tricks compose, pipe
   // works with ramda (I like this better, because it doesn't need the prop changeCityName)
   //   const handleChange = (changeCityName) => () => changeCityName(getInputChange) // single line version
   //   const handleChange = (changeCityName) => R.compose(changeCityName, getInputChange) // compose
-  //   const handleChange = (changeCityName) => R.pipe(getInputChange, changeCityName) // pipe
   const handleChange = (changeCityName) => R.pipe(getInputChange, changeCityName) // pipe
 
-  // FP tricks: partial, curry
+  // [redux6]FP tricks: partial, curry
   //   const handleClick = () => fetchCity(cityName)
   //   const handleClick = partial(fetchCity, cityName)
   //   const handleClick = curry(fetchCity, cityName)

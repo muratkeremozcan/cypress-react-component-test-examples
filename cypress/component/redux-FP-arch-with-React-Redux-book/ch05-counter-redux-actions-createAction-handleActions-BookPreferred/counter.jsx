@@ -21,7 +21,7 @@ function mapStateToProps(counter) {
   }
 }
 
-// with redux-actions we save on mapDispatchToProps
+// [redux5.1] with redux-actions we save on mapDispatchToProps
 export default connect(mapStateToProps, { increment, decrement })(Counter)
 
 // function mapDispatchToProps(dispatch) {

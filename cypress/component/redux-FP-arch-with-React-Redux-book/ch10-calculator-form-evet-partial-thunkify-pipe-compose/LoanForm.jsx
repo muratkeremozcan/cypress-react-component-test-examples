@@ -22,12 +22,12 @@ function LoanForm({ loanRequest, submitLoanRequest, changeLoanRequest }) {
     return changeLoanRequest(change)
   }
 
-  // KEY: FP tricks: partial, thunkify
+  // [redux6]KEY: FP tricks: partial, thunkify
   // const partialSubmit = () => submitLoanRequest(loanRequest) // fn returns a fn invocation
   const partialSubmit = partial(submitLoanRequest, loanRequest) // partial
   // const partialSubmit = thunkify(submitLoanRequest)(loanRequest) // thunkify
 
-  // KEY: FP tricks: pipe, compose
+  // [redux6]KEY: FP tricks: pipe, compose
   // const handleSubmit = (e) => {
   //   preventDefault(e)
   //   return partialSubmit()
