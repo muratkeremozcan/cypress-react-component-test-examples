@@ -1,16 +1,16 @@
-import { handleActions } from 'redux-actions';
-import * as actions from "./actions";
+import { handleActions } from 'redux-actions'
+import * as actions from './actions'
 
-const initialState = [];
+const initialState = []
 
 //updaters
-function setMoviesReviews(state, action){
-    return action.payload;
+function setMoviesReviews(state, action) {
+  return action.payload
 }
 
 export default handleActions(
-    {
-      [actions.setMoviesReviews]: setMoviesReviews
-    },
-    initialState
-);
+  {
+    [actions.setMoviesReviews]: setMoviesReviews
+  },
+  initialState
+)

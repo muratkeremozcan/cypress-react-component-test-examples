@@ -1,7 +1,5 @@
-import { createAction } from 'redux-actions';
+import { createAction } from 'redux-actions'
 
-const setMoviesReviews = createAction('SET_MOVIES_REVIEWS');
+const setMoviesReviews = createAction('SET_MOVIES_REVIEWS')
 
-export {
-    setMoviesReviews
-};
+export { setMoviesReviews }
