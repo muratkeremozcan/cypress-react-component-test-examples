@@ -76,17 +76,19 @@ jobs:
           install: false # no need to install because of the above 2
           start: yarn start
           wait-on: 'http://localhost:3000'
-          browser: chrome
-          record: true # records on cypress dashboard
-          group: e2e-tests
-          tag: e2e-tests
+          # if you want to enable parallelization
+          # browser: chrome
+          # record: true # records on cypress dashboard
+          # group: e2e-tests
+          # tag: e2e-tests
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
 
   cypress-component-tests:
-    strategy:
-      matrix:
-        machines: [1, 2, 3, 4, 5]
+    # if you want to enable parallelization
+    # strategy:
+    #   matrix:
+    #     machines: [1, 2, 3, 4, 5]
     needs: [install-dependencies]
     runs-on: ubuntu-latest
     container: cypress/included:10.9.0 # save time on not having to install cypress
@@ -103,9 +105,10 @@ jobs:
           install: false
           component: true
           browser: chrome
-          record: true
-          parallel: true # parallelizes tests
-          group: component-tests
-          tag: component-test
+          # if you want to enable parallelization
+          # record: true
+          # parallel: true # parallelizes tests
+          # group: component-tests
+          # tag: component-test
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}

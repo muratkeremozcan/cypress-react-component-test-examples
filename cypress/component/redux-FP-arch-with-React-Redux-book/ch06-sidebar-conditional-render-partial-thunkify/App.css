@@ -1,0 +1,27 @@
+button {
+  padding: 4px;
+  background: #cce5ff;
+  cursor: pointer;
+  border: 0;
+}
+
+.side-bar {
+  position: relative;
+}
+
+.side-bar-opened,
+.side-bar-closed {
+  position: absolute;
+  border: 1px solid #b8daff;
+  margin-top: 10px;
+}
+
+.side-bar-opened {
+  width: 200px;
+  min-height: 200px;
+}
+
+.side-bar-closed {
+  width: 0;
+  min-height: 0;
+}
