@@ -6,7 +6,7 @@ describe('Weather app', () => {
     cy.mount(<App />)
 
     const maxNoOfNewStories = 5
-    Cypress._.times(maxNoOfNewStories + 1, cy.wait('@api-call'))
+    Cypress._.times(maxNoOfNewStories, cy.wait('@api-call'))
 
     cy.getByCy('show-more').click()
     cy.getByCyLike('story-').should('have.length', maxNoOfNewStories)
