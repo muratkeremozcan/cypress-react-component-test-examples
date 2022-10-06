@@ -7,7 +7,7 @@ import App from './App'
 const getByHref = (route) => cy.get(`a[href="/${route}/"]`)
 
 describe('App', () => {
-  it.only('should render home page', () => {
+  it('should render home page', () => {
     cy.mount(<App />)
 
     getByHref('books')
