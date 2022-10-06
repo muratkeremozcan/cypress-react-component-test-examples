@@ -51,7 +51,7 @@
     "cy:run": "cypress run --e2e --browser chrome",
     "cy:open-ct": "cypress open --component --browser chrome",
     "cy:run-ct": "cypress run --component --browser chrome",
-    "cy:run-ct-fast": "yarn cy:run-ct --config video=false screenshot=false",
+    "cy:run-ct-fast": "yarn cy:run-ct --config video=false screenshot=false useExperimentalComponentTesting=true",
     "server:test": "server-test 3000 cy:run"
   },
   "eslintConfig": {
