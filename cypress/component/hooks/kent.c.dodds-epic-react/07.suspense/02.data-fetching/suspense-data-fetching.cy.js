@@ -1,6 +1,7 @@
 import App from './suspense-data-fetching'
 
-it(
+// does not work reliably in CI
+it.skip(
   'suspense, data fetching, error boundary',
   { viewportHeight: 600, defaultCommandTimeout: 15000 },
   () => {
@@ -27,7 +28,6 @@ it(
     ).as('pika')
     cy.mount(<App />)
 
-    cy.getByCy('loading').should('be.visible')
     cy.wait('@pika', { timeout: 15000 })
     cy.getByCy('pokemon-info').should('be.visible')
   }
