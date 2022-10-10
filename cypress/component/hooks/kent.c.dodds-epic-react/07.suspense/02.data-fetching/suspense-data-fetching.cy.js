@@ -1,6 +1,7 @@
 import App from './suspense-data-fetching'
 
-it(
+// does not work reliably in CI
+it.skip(
   'suspense, data fetching, error boundary',
   { viewportHeight: 600, defaultCommandTimeout: 15000 },
   () => {
