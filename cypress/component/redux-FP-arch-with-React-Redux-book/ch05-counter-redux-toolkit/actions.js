@@ -1,4 +1,5 @@
-import { createAction } from 'redux-actions'
+// import { createAction } from 'redux-actions'
+import { createAction } from '@reduxjs/toolkit'
 
 // event -> ACTION -(dispatch)-(middleware)-> REDUCER -> STORE(state) -(selector)-> update VIEW
 // [redux5.0] In Redux, actions are payloads of information that send data from your application to your store.
