@@ -26,8 +26,8 @@ function App() {
     return e
   }
   const destructEvent = () => ({
-    email: emailRef.current.value,
-    password: passwordRef.current.value
+    email: emailRef.current?.value,
+    password: passwordRef.current?.value
   })
   const handleSubmit = pipe(preventDefault, destructEvent, console.log)
 
