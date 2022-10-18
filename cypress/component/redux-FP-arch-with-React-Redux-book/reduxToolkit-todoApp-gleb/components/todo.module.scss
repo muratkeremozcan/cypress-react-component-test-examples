@@ -1,0 +1,30 @@
+.todo {
+  height: 48px;
+  margin-top: 8px;
+  padding: 0 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 18px;
+  background: #ebe3ee;
+
+  &:last-child {
+    margin-bottom: 24px;
+  }
+
+  span {
+    width: 85%;
+    font-size: 0.8rem;
+    color: #7868e6;
+  }
+
+  img {
+    cursor: pointer;
+    height: 40%;
+    transition: filter 0.3s;
+
+    &:hover {
+      filter: brightness(150%);
+    }
+  }
+}

@@ -1,0 +1,21 @@
+.container {
+  width: 400px;
+  height: fit-content;
+  padding: 48px 24px;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%);
+  background: #edeef7;
+  border-radius: 18px;
+  border: 1px solid #7868e6;
+
+  h1 {
+    margin: 0;
+    color: #7868e6;
+  }
+  .pending {
+    color: #7868e6;
+    font-size: 0.8rem;
+  }
+}
