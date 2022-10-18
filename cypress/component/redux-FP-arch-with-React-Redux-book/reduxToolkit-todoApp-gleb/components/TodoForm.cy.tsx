@@ -11,7 +11,7 @@ describe('TodoForm', () => {
       </Provider>
     )
 
-    cy.findByPlaceholderText('Add new todo here').type('foo{enter}')
+    cy.get('input')
 
     // this might we an example how how we have to go higher
     // when needing to test the click event

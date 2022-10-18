@@ -49,9 +49,9 @@ describe('Todo App', () => {
     cy.window()
       .its('store')
       .invoke('getState')
-      .then((data) => {
-        console.log(JSON.stringify(data))
-      })
+      // .then((data) => {
+      //   console.log(JSON.stringify(data))
+      // })
       .should(
         spok({
           todos: {
