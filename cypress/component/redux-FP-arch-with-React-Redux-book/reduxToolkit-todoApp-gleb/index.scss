@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: #b8b5ff;
+  font-family: stolzl;
+  font-weight: 100;
+}
+
+/* Styling Placeholders */
+::placeholder {
+  color: #7868e6;
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  color: #7868e6;
+}
+
+::-ms-input-placeholder {
+  color: #7868e6;
+}
+
+/* Custom Fonts */
+@font-face {
+  font-family: stolzl;
+  src: url(./assets/fonts/STOLZL-BOLD.TTF);
+  font-weight: 300;
+}
+@font-face {
+  font-family: stolzl;
+  src: url(./assets/fonts/STOLZL-MEDIUM.TTF);
+  font-weight: 200;
+}
+@font-face {
+  font-family: stolzl;
+  src: url(./assets/fonts/STOLZL-REGULAR.TTF);
+  font-weight: 100;
+}
