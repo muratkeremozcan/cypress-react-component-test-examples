@@ -18,13 +18,14 @@ export default function App() {
   }
 
   function handleSubmitR(e) {
-    const getInputValue = pipe(pathOr('', ['current', 'value']), trim)
-    const value = getInputValue(inputRef)
-    const setValue = ifElse(isEmpty, noop, () => setItems((prev) => [...prev, value]))
-    const searchValue = pipe(getInputValue, setValue)
+    const getNewItem = pipe(pathOr('', ['current', 'value']), trim)
+    const newItemValue = getNewItem(inputRef)
+    const setNewValue = () => setItems((prev) => [...prev, newItemValue])
+    const updateList = ifElse(isEmpty, noop, setNewValue)
+    const buildNewList = pipe(getNewItem, updateList)
 
     e.preventDefault()
-    searchValue(inputRef)
+    buildNewList(inputRef)
     inputRef.current.value = ''
   }
 
