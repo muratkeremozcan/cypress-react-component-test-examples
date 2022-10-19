@@ -23,7 +23,7 @@
     "i18next": "21.10.0",
     "mobx": "6.6.2",
     "mobx-react-lite": "3.4.0",
-    "node-sass": "^7.0.3",
+    "node-sass": "7.0.3",
     "prop-types": "15.8.1",
     "query-string": "7.1.1",
     "radioactive-state": "1.4.0",
