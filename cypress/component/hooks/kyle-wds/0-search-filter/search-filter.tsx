@@ -3,18 +3,20 @@ import { isEmpty, ifElse, pipe, pathOr, trim } from 'ramda'
 import { noop } from 'lodash'
 
 export default function App() {
-  const inputRef = useRef<HTMLInputElement>()
+  const inputRef = useRef<HTMLInputElement>(null)
   const [items, setItems] = useState<string[]>([])
   const [query, setQuery] = useState('')
 
+  const resetRef = () => (inputRef.current!.value = '')
+
   function handleSubmit(e) {
     e.preventDefault()
-    const value = inputRef.current.value
+    const value = inputRef.current ? inputRef.current.value : ''
 
     if (value === '') return
     setItems((prev) => [...prev, value])
 
-    inputRef.current.value = ''
+    resetRef()
   }
 
   function handleSubmitR(e) {
@@ -26,7 +28,7 @@ export default function App() {
 
     e.preventDefault()
     buildNewList(inputRef)
-    inputRef.current.value = ''
+    resetRef()
   }
 
   const filteredItems = useMemo(
