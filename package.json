@@ -80,7 +80,7 @@
   "devDependencies": {
     "@testing-library/cypress": "8.0.3",
     "@types/faker": "6.6.8",
-    "@types/ramda": "0.28.16",
+    "@types/ramda": "0.28.18",
     "@types/redux-actions": "2.6.2",
     "@types/redux-thunk": "2.1.0",
     "axios": "0.27.2",
