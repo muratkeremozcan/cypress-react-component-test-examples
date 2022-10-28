@@ -15,7 +15,7 @@
     "@types/faker": "6.6.8",
     "@types/jest": "29.2.0",
     "@types/node": "18.11.7",
-    "@types/react": "18.0.23",
+    "@types/react": "18.0.24",
     "@types/react-dom": "18.0.7",
     "@xstate/react": "3.0.1",
     "faker": "5.5.3",
