@@ -22,25 +22,13 @@ it('renders learn react link', () => {
 describe('Alias', () => {
   const Greeting = () => <div>Hello!</div>
   const GreetingCard = (props: {
-    name:
-      | boolean
-      | React.ReactChild
-      | React.ReactFragment
-      | React.ReactPortal
-      | null
-      | undefined
+    name: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined
   }) => <div>Hello {props.name}</div>
 
   it('default alias is the component name', () => {
     cy.mount(<Greeting />)
     cy.get('@Greeting').its('props').should('be.empty')
     cy.get('@Greeting').its('type').should('eq', Greeting)
-  })
-
-  it('the default alias can be overwritten', () => {
-    cy.mount(<GreetingCard name="World" />, { alias: 'Hello' })
-    cy.get('@Hello').its('props').should('deep.equal', { name: 'World' })
-    cy.get('@Hello').its('props').should('contain', { name: 'World' })
   })
 })
 
