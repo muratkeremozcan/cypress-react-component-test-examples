@@ -4540,10 +4540,10 @@ cypress-axe@1.0.0:
   resolved "https://registry.yarnpkg.com/cypress-axe/-/cypress-axe-1.0.0.tgz#ab4e9486eaa3bb956a90a1ae40d52df42827b4f0"
   integrity sha512-QBlNMAd5eZoyhG8RGGR/pLtpHGkvgWXm2tkP68scJ+AjYiNNOlJihxoEwH93RT+rWOLrefw4iWwEx8kpEcrvJA==
 
-cypress-each@1.13.0:
-  version "1.13.0"
-  resolved "https://registry.yarnpkg.com/cypress-each/-/cypress-each-1.13.0.tgz#48215663f349443afd7e53e53c95142cbf970954"
-  integrity sha512-gwD4sZ229jKgGwHO5hBOMM17WukXn++3uA2SH8Gq1cBtG+5VG4dNmt41BKbdSRuExT5Lo1Zb4jD2qESGj5du1w==
+cypress-each@1.13.1:
+  version "1.13.1"
+  resolved "https://registry.yarnpkg.com/cypress-each/-/cypress-each-1.13.1.tgz#65121a7f9fe865a6ea52e0751133b4e0e84f47a8"
+  integrity sha512-YbVfrjk4gWTDLOV8YAb3tA6ovQiyl90zvl4M7aLADD0aUBei6nOSXI7xu6LVgLlVcLkM4jRSS2jBIiifauGgpQ==
 
 cypress-react-app-actions@1.0.2:
   version "1.0.2"
