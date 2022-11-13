@@ -84,7 +84,7 @@
     "@types/redux-actions": "2.6.2",
     "@types/redux-thunk": "2.1.0",
     "axios": "0.27.2",
-    "copy-to-clipboard": "3.3.2",
+    "copy-to-clipboard": "3.3.3",
     "cross-env": "7.0.3",
     "cy-spok": "1.5.2",
     "cypress": "11.0.1",
