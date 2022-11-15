@@ -21,7 +21,7 @@
     "faker": "5.5.3",
     "formik": "2.2.9",
     "i18next": "22.0.5",
-    "mobx": "6.6.2",
+    "mobx": "6.7.0",
     "mobx-react-lite": "3.4.0",
     "prop-types": "15.8.1",
     "query-string": "7.1.1",
