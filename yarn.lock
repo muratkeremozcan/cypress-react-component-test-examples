@@ -4570,10 +4570,12 @@ cypress-real-events@1.7.4:
   resolved "https://registry.yarnpkg.com/cypress-real-events/-/cypress-real-events-1.7.4.tgz#87780ee0f6669ee30ce52016c4bfc94d094a6e3d"
   integrity sha512-bAlIf3w6uJa72hcbLFpQIl/hBoNGYnSVzFMgohefWcooyZz2WbFZdFAEDOl5qOPATtAU01o92sWvc2QW9eT8aA==
 
-cypress-recurse@1.23.0:
-  version "1.23.0"
-  resolved "https://registry.yarnpkg.com/cypress-recurse/-/cypress-recurse-1.23.0.tgz#f87334747516de6737bc4708754e8f429057bc6d"
-  integrity sha512-CAsdvynhuR3SUEXVJRO2jBEnZRJ6nJp7nMXHwzV4UQq9Lap3Bj72AwcJK0cl51fJXcTaGDXYTQQ9zvGe3TyaQA==
+cypress-recurse@1.24.0:
+  version "1.24.0"
+  resolved "https://registry.yarnpkg.com/cypress-recurse/-/cypress-recurse-1.24.0.tgz#d2d24024629573c84ee73b57955a728d6607046c"
+  integrity sha512-yH2XF71go+muxWjUbF7onNK0rzoVn27gzOPMTV3thg+Nv//jK2tV/z4hF0FWv88O3CAtmh7JZWhVNqFq4ghMZg==
+  dependencies:
+    humanize-duration "^3.27.3"
 
 cypress@11.1.0:
   version "11.1.0"
@@ -6752,6 +6754,11 @@ human-signals@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/human-signals/-/human-signals-2.1.0.tgz#dc91fcba42e4d06e4abaed33b3e7a3c02f514ea0"
   integrity sha512-B4FFZ6q/T2jhhksgkbEW3HBvWIfDW85snkQgawt07S7J5QXTk6BkNV+0yAeZrM5QpMAdYlocGoljn0sJ/WQkFw==
+
+humanize-duration@^3.27.3:
+  version "3.27.3"
+  resolved "https://registry.yarnpkg.com/humanize-duration/-/humanize-duration-3.27.3.tgz#db654e72ebf5ccfe232c7f56bc58aa3a6fe4df88"
+  integrity sha512-iimHkHPfIAQ8zCDQLgn08pRqSVioyWvnGfaQ8gond2wf7Jq2jJ+24ykmnRyiz3fIldcn4oUuQXpjqKLhSVR7lw==
 
 hyphenate-style-name@^1.0.3:
   version "1.0.4"
