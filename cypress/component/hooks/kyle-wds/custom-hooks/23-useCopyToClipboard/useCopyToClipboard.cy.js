@@ -1,6 +1,6 @@
 import CopyToClipboardComponent from './CopyToClipboardComponent'
 
-it('useCopyToClipboard', () => {
+it('useCopyToClipboard', { browser: 'electron' }, () => {
   cy.mount(<CopyToClipboardComponent />)
 
   cy.contains('button', 'Copy Text').realClick()
@@ -27,10 +27,7 @@ it('useCopyToClipboard', () => {
     .should('eq', 'granted')
 
   // confirm the clipboard content
-  cy.window()
-    .its('navigator.clipboard')
-    .invoke('readText')
-    .should('eq', 'This was copied')
+  cy.window().its('navigator.clipboard').invoke('readText').should('eq', 'This was copied')
 
   cy.get('input').focus()
   cy.document().invoke('execCommand', 'paste')
