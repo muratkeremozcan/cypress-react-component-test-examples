@@ -91,7 +91,7 @@
     "cypress-axe": "1.2.0",
     "cypress-each": "1.13.1",
     "cypress-react-app-actions": "1.0.2",
-    "cypress-real-events": "1.7.4",
+    "cypress-real-events": "1.7.6",
     "cypress-recurse": "1.26.0",
     "eslint-plugin-cypress": "2.12.1",
     "eslint-plugin-prettier": "4.0.0",

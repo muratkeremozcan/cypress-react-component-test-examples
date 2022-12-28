@@ -4591,10 +4591,10 @@ cypress-react-app-actions@1.0.2:
   resolved "https://registry.yarnpkg.com/cypress-react-app-actions/-/cypress-react-app-actions-1.0.2.tgz#dc486207a5da32f13e3f6e3399e71ad848779d74"
   integrity sha512-5aEyFW3tuqZgq2rHy3WsO/9dH7Xj706TmXfOhZkOYiUn5D/00uoCik3c1ao8HbeoFdnQK74nIpKFqwq8lCRYdA==
 
-cypress-real-events@1.7.4:
-  version "1.7.4"
-  resolved "https://registry.yarnpkg.com/cypress-real-events/-/cypress-real-events-1.7.4.tgz#87780ee0f6669ee30ce52016c4bfc94d094a6e3d"
-  integrity sha512-bAlIf3w6uJa72hcbLFpQIl/hBoNGYnSVzFMgohefWcooyZz2WbFZdFAEDOl5qOPATtAU01o92sWvc2QW9eT8aA==
+cypress-real-events@1.7.6:
+  version "1.7.6"
+  resolved "https://registry.yarnpkg.com/cypress-real-events/-/cypress-real-events-1.7.6.tgz#6f17e0b2ceea1d6dc60f6737d8f84cc517bbbb4c"
+  integrity sha512-yP6GnRrbm6HK5q4DH6Nnupz37nOfZu/xn1xFYqsE2o4G73giPWQOdu6375QYpwfU1cvHNCgyD2bQ2hPH9D7NMw==
 
 cypress-recurse@1.26.0:
   version "1.26.0"
