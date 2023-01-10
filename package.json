@@ -31,7 +31,7 @@
     "react-dom": "18.2.0",
     "react-google-maps": "9.4.5",
     "react-i18next": "12.1.4",
-    "react-router-dom": "6.6.1",
+    "react-router-dom": "6.6.2",
     "react-scripts": "4.0.3",
     "sass": "^1.56.1",
     "start-server-and-test": "1.15.2",
