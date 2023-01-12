@@ -16,10 +16,6 @@ function RenderSearchParams() {
   )
 }
 
-function ShowParams() {
-  return <pre>{JSON.stringify(useParams())}</pre>
-}
-
 const routeWrappedMount = (
   WrappedComponent: React.ReactNode,
   route: string,
