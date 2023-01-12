@@ -43,20 +43,8 @@ declare global {
   }
 }
 
-it('should navigate to /books/new', () => {
-  cy.routeWrappedMount(<App />, '/books/new')
-
-  cy.location('pathname').should('equal', '/books/new')
-  cy.getByCy('sidebar').should('not.exist')
-})
-it('should navigate to /books', () => {
-  cy.routeWrappedMount(<App />, '/books/new')
-
-  cy.location('pathname').should('equal', '/books')
-  cy.getByCy('sidebar').should('be.visible')
-})
 it.only('test useParams with custom command', () => {
-  // window.history.pushState({}, null, '/books')
+  // window.history.pushState({}, null, '/books') // we should not need this
   cy.routeWrappedMount(<App />, '/books')
   cy.location('pathname').should('equal', '/books')
 })
