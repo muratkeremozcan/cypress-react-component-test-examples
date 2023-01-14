@@ -1,4 +1,3 @@
-import '@testing-library/cypress/add-commands'
 import { MemoryRouter, Route, Routes } from 'react-router-dom'
 import { WholesalePricing } from './wholesale-pricing'
 import { MountOptions, MountReturn } from 'cypress/react'

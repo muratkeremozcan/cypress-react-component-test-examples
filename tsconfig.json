@@ -19,12 +19,12 @@
     "rootDir": ".",
     "noImplicitAny": false
   },
-  "types": [
-    "cypress",
-    "node",
-    "@testing-library/cypress",
-    "cypress-real-events"
-  ],
+  "types": ["cypress", "node", "@testing-library/cypress", "cypress-real-events"],
   "include": ["**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules", "dist", "web/webpack.config.ts"]
+  "exclude": [
+    "node_modules",
+    "dist",
+    "web/webpack.config.ts",
+    "cypress/component/hooks/kyle-wds/react-router-useParams-component-test/react-router-test-useParams.cy.tsx"
+  ]
 }
