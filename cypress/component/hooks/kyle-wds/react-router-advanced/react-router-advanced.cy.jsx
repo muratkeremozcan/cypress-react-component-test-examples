@@ -6,9 +6,7 @@ describe('react router', () => {
     beforeEach(() => {
       cy.mount(
         <Router>
-          <>
-            <App />
-          </>
+          <App />
         </Router>
       )
     })
@@ -48,9 +46,7 @@ describe('react router', () => {
       window.history.pushState({}, null, '/books/new')
       cy.mount(
         <Router>
-          <>
-            <App />
-          </>
+          <App />
         </Router>
       )
 
@@ -62,9 +58,7 @@ describe('react router', () => {
       window.history.pushState({}, null, '/books')
       cy.mount(
         <Router>
-          <>
-            <App />
-          </>
+          <App />
         </Router>
       )
 
