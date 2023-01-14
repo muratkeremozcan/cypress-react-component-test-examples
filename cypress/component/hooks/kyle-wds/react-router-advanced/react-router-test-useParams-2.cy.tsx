@@ -2,7 +2,7 @@ import App from './app'
 import { MemoryRouter, useParams, Route, Routes } from 'react-router-dom'
 import { MountOptions, MountReturn } from 'cypress/react'
 
-const routeWrappedMount = (
+const routeWrappedMount2 = (
   WrappedComponent: React.ReactNode,
   route: string,
   path: string,
@@ -19,12 +19,12 @@ const routeWrappedMount = (
   )
   return cy.mount(wrapped, options)
 }
-Cypress.Commands.add('routeWrappedMount', routeWrappedMount)
+Cypress.Commands.add('routeWrappedMount2', routeWrappedMount2)
 
 declare global {
   namespace Cypress {
     interface Chainable<Subject> {
-      routeWrappedMount(
+      routeWrappedMount2(
         component: React.ReactNode,
         route: string,
         path: string,
@@ -41,7 +41,7 @@ describe('test useParams with custom command', () => {
       const { books } = useParams()
       return <div>{`pathParam: /${books}`}</div>
     }
-    cy.routeWrappedMount(<App />, '/books', '/:books', MockParams)
+    cy.routeWrappedMount2(<App />, '/books', '/:books', MockParams)
     cy.getByCy('sidebar').should('be.visible')
 
     cy.contains('pathParam: /books')
@@ -52,7 +52,7 @@ describe('test useParams with custom command', () => {
       const { id } = useParams()
       return <div>{`pathParam: /${id}`}</div>
     }
-    cy.routeWrappedMount(<App />, '/books/1', 'books/:id', MockParams)
+    cy.routeWrappedMount2(<App />, '/books/1', 'books/:id', MockParams)
     cy.getByCy('sidebar').should('not.exist')
     cy.contains('h1', 'Book 1')
     cy.contains('pathParam: /1')
@@ -63,7 +63,7 @@ describe('test useParams with custom command', () => {
       const { id } = useParams()
       return <div>{`pathParam: /${id}`}</div>
     }
-    cy.routeWrappedMount(<App />, '/books/2', 'books/:id', MockParams)
+    cy.routeWrappedMount2(<App />, '/books/2', 'books/:id', MockParams)
     cy.getByCy('sidebar').should('not.exist')
     cy.contains('h1', 'Book 2')
     cy.contains('pathParam: /2')
@@ -74,7 +74,7 @@ describe('test useParams with custom command', () => {
       const { id } = useParams()
       return <div>{`pathParam: /${id}`}</div>
     }
-    cy.routeWrappedMount(<App />, '/books/new', 'books/:id', MockParams)
+    cy.routeWrappedMount2(<App />, '/books/new', 'books/:id', MockParams)
     cy.getByCy('sidebar').should('not.exist')
     cy.contains('h1', 'New Book')
     cy.contains('pathParam: /new')
