@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom'
 
-const WholesalePricing = () => {
+export const WholesalePricing = () => {
   const { storeId, planId } = useParams<{ storeId: string; planId: string }>()
 
   return (
@@ -20,5 +20,3 @@ const WholesalePricing = () => {
     </>
   )
 }
-
-export { WholesalePricing }
