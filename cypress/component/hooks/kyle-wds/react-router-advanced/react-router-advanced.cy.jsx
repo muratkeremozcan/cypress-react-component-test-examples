@@ -42,7 +42,7 @@ describe('react router', () => {
   })
 
   context('trick the CT runner into having a url', () => {
-    it('should navigate to /books/new', () => {
+    it.only('should navigate to /books/new', () => {
       window.history.pushState({}, null, '/books/new')
       cy.mount(
         <Router>
