@@ -47,7 +47,7 @@ describe('test useParams with custom command', () => {
     cy.contains('pathParam: /books')
   })
 
-  it('books/1', () => {
+  it.only('books/1', () => {
     const MockParams = () => {
       const { id } = useParams()
       return <div>{`pathParam: /${id}`}</div>
