@@ -13,7 +13,7 @@ it('should deal with win.location.replace', () => {
   })
 
   cy.intercept('GET', 'index.html', (req) => {
-    req.continue((res) => {
+    req.reply((res) => {
       res.body = res.body.replaceAll('window.location.assign', 'window.__location.assign')
     })
   }).as('index')

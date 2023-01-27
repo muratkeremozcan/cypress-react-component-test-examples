@@ -2,9 +2,8 @@ import { LoginBtn, Location } from './login'
 
 it('should deal with win.location.replace', () => {
   // how would we do the same workaround in a component test?
-  // cypress/e2e/win-location-replace.spec.ts
-  // cy.on('window:before:load', win => ...) is not an event in component tests
-  // so we stub the Location.assign dummy method
+  // we stub the common object Location instead
+  // https://glebbahmutov.com/blog/stub-react-import/#move-the-side-effect
 
   cy.stub(Location, 'assign').as('assign')
 
