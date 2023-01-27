@@ -10,5 +10,5 @@
     "allowSyntheticDefaultImports": true,
     "jsx": "react-jsx"
   },
-  "include": ["**/*.ts", "**/*.tsx", "**/*.cy.tsx", "component/okta-login/okta.tsx"]
+  "include": ["**/*.ts", "**/*.tsx", "**/*.cy.tsx", "component/redirect/okta.tsx"]
 }
