@@ -2,12 +2,7 @@
   "compilerOptions": {
     "target": "esnext",
     "lib": ["esnext", "dom"],
-    "types": [
-      "cypress",
-      "node",
-      "@testing-library/cypress",
-      "cypress-real-events"
-    ],
+    "types": ["cypress", "node", "@testing-library/cypress", "cypress-real-events"],
     "moduleResolution": "node",
     "esModuleInterop": true,
     "allowJs": true,
@@ -15,5 +10,5 @@
     "allowSyntheticDefaultImports": true,
     "jsx": "react-jsx"
   },
-  "include": ["**/*.ts", "**/*.tsx", "**/*.cy.tsx"]
+  "include": ["**/*.ts", "**/*.tsx", "**/*.cy.tsx", "component/redirect/okta.tsx"]
 }
