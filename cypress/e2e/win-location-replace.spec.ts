@@ -1,5 +1,10 @@
 it('should deal with win.location.replace', () => {
   // https://glebbahmutov.com/blog/cypress-tips-and-tricks/#deal-with-windowlocationreplace
+  // window.location is locked down for security reasons.
+  // During the test, we can use the cy.intercept command to modify the application code.
+  //  For example, it could call window.__location.assign instead.
+  //  Our test would create this dummy window.__location object before the component mounts
+
   cy.on('window:before:load', (win) => {
     // @ts-ignore
     win.__location = {
