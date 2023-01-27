@@ -1,16 +1,17 @@
-// const redirectUrl = async (): Promise<string> => {
-//   const state = String(Cypress._.random(16))
-//   localStorage.setItem('state', state)
-
-//   const url = 'www.google.com'
-
-//   return url
-// }
+/** This common object wraps around things we cannot stub
+ * like window.locations methods which are locked for security reasons
+ * But, we can stub Location's methods
+ */
+export const Location = {
+  assign(url: string) {
+    window.location.assign(url)
+  }
+}
 
 export const LoginBtn = () => {
   const handleSubmit = () => {
     setTimeout(() => {
-      window.location.assign('https://www.cypress.io')
+      Location.assign('https://www.cypress.io')
     }, 1000)
   }
 
