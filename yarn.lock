@@ -1088,6 +1088,17 @@
     "@babel/helper-validator-identifier" "^7.19.1"
     to-fast-properties "^2.0.0"
 
+"@bahmutov/spok@1.2.4":
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/@bahmutov/spok/-/spok-1.2.4.tgz#bbaf170e2518095fba07cf1e2f9f7bc07b70bc55"
+  integrity sha512-rP4JVwntBxgTRLuzDQJoEntibA9IVPMeETYlCcsgk/Dq9fJIEKY6VYdoTP+TOmVKft7NflJcQy3K3HK3r4egpg==
+  dependencies:
+    ansicolors "~0.3.2"
+    is-arguments "^1.1.1"
+    is-generator-function "^1.0.10"
+    is-typed-array "^1.1.10"
+    which-typed-array "^1.1.9"
+
 "@bcoe/v8-coverage@^0.2.3":
   version "0.2.3"
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
@@ -4636,12 +4647,12 @@ csstype@^3.0.2:
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.1.1.tgz#841b532c45c758ee546a11d5bd7b7b473c8c30b9"
   integrity sha512-DJR/VvkAvSZW9bTouZue2sSxDwdTN92uHjqeKVm+0dAqdfNykRzQ95tay8aXMBAAPpUiq4Qcug2L7neoRh2Egw==
 
-cy-spok@1.5.2:
-  version "1.5.2"
-  resolved "https://registry.yarnpkg.com/cy-spok/-/cy-spok-1.5.2.tgz#d6977f8de621353c2e58452f24f3388aa4b7e587"
-  integrity sha512-+3D/EDSW/e4icwkh4u+hX5RPj/CnYfNtyrFrGq2oPTLwaW+hMmR3LLgNiQ70Kz4JyQLK3JCNb+9aGBGlL/TJCQ==
+cy-spok@1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/cy-spok/-/cy-spok-1.6.0.tgz#d94c77606632357bb72ed29c7bdfa273cf876a9c"
+  integrity sha512-X4iTCgl3xAaSO5v/t8ci4l0nLElMY5ErVFdDnZOR+zj/yk6A3mVl+eWafr9nZiyhXqgcWUE83XiiEw9mlC4ESw==
   dependencies:
-    spok "^1.4.3"
+    "@bahmutov/spok" "1.2.4"
     strip-ansi "6.0.1"
 
 cyclist@^1.0.1:
@@ -7313,6 +7324,13 @@ is-generator-fn@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/is-generator-fn/-/is-generator-fn-2.1.0.tgz#7d140adc389aaf3011a8f2a2a4cfa6faadffb118"
   integrity sha512-cTIB4yPYL/Grw0EaSzASzg6bBy9gqCofvWN8okThAYIxKJZC+udlRAmGbM0XLeniEJSs8uEgHPGuHSe1XsOLSQ==
+
+is-generator-function@^1.0.10:
+  version "1.0.10"
+  resolved "https://registry.yarnpkg.com/is-generator-function/-/is-generator-function-1.0.10.tgz#f1558baf1ac17e0deea7c0415c438351ff2b3c72"
+  integrity sha512-jsEjy9l3yiXEQ+PsXdmBwEPcOxaXWLspKdplFUVI9vq1iZgIekeC0L167qeu86czQaxed3q/Uzuw0swL0irL8A==
+  dependencies:
+    has-tostringtag "^1.0.0"
 
 is-glob@^3.1.0:
   version "3.1.0"
@@ -12038,13 +12056,6 @@ split@0.3:
   integrity sha512-wD2AeVmxXRBoX44wAycgjVpMhvbwdI2aZjCkvfNcH1YqHQvJVa1duWc73OyVGJUc05fhFaTZeQ/PYsrmyH0JVA==
   dependencies:
     through "2"
-
-spok@^1.4.3:
-  version "1.4.3"
-  resolved "https://registry.yarnpkg.com/spok/-/spok-1.4.3.tgz#8516234e6bd8caf0e10567bd675e15fd03b5ceb8"
-  integrity sha512-5wFGctwrk638aDs+44u99kohxFNByUq2wo0uShQ9yqxSmsxqx7zKbMo1Busy4s7stZQXU+PhJ/BlVf2XWFEGIw==
-  dependencies:
-    ansicolors "~0.3.2"
 
 sprintf-js@~1.0.2:
   version "1.0.3"
