@@ -19,7 +19,7 @@
     "@types/node": "18.13.0",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
-    "@xstate/react": "3.1.2",
+    "@xstate/react": "3.2.1",
     "faker": "5.5.3",
     "formik": "2.2.9",
     "i18next": "22.4.9",
