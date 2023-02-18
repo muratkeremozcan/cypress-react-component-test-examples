@@ -12,7 +12,7 @@
     "@material-ui/pickers": "3.3.10",
     "@reduxjs/toolkit": "1.9.2",
     "@testing-library/jest-dom": "5.16.5",
-    "@testing-library/react": "13.4.0",
+    "@testing-library/react": "14.0.0",
     "@testing-library/user-event": "14.4.3",
     "@types/faker": "6.6.8",
     "@types/jest": "29.4.0",
