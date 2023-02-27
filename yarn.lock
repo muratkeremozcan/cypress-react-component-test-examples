@@ -10908,17 +10908,17 @@ react-i18next@12.2.0:
     "@babel/runtime" "^7.20.6"
     html-parse-stringify "^3.0.1"
 
-react-infinite-scroll-hook@4.0.4:
-  version "4.0.4"
-  resolved "https://registry.yarnpkg.com/react-infinite-scroll-hook/-/react-infinite-scroll-hook-4.0.4.tgz#616e66ba1de6421f74cd37d652e5b8c26c886373"
-  integrity sha512-fCjG9xwCfnV9GcAHVz9rXGnLqO55fcYsbeshSxgEH2biF8fVFHmfzZrfX4iTzoOWO1Rrz5hxrK4bBcqL5fAy9Q==
+react-infinite-scroll-hook@4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/react-infinite-scroll-hook/-/react-infinite-scroll-hook-4.1.0.tgz#17f457c9261ea106a196f78b8dcf98a696b56073"
+  integrity sha512-SIiXcdjPQxfhVz8QL0NqYIMQUx637KxR1LA7OZAXLcFU7a94DMpKBNYNcYjPWAOA630O4fegVItYuBaaw1/9Tw==
   dependencies:
-    react-intersection-observer-hook "^2.0.6"
+    react-intersection-observer-hook "^2.1.0"
 
-react-intersection-observer-hook@^2.0.6:
-  version "2.0.6"
-  resolved "https://registry.yarnpkg.com/react-intersection-observer-hook/-/react-intersection-observer-hook-2.0.6.tgz#f7c416002c2ec8e763841849c666e650f010c034"
-  integrity sha512-NTx+4Qat1tS9Bn4CXa6YgmbxLGcxFttV94Us7ZUEZ4mIZD3XaCpnm6U/FU35c6cJOMIfc7UfSzpju69ckfmb+Q==
+react-intersection-observer-hook@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/react-intersection-observer-hook/-/react-intersection-observer-hook-2.1.0.tgz#04852df11c0f283fd4d8e95b58da814c6c98f935"
+  integrity sha512-jW3PRxuZgi14ihmk9nXljOwpycBHWVA6uAZkkFy6Jk+0DmjluBVfGiouirTNoANlk1DcczWkNvSjkO/xf8+WKA==
 
 react-is@^16.13.1, react-is@^16.3.2, react-is@^16.7.0:
   version "16.13.1"
