@@ -14,10 +14,12 @@ declare global {
        * cy.getByCyLike('chat-button') // where the selector is [data-cy="chat-button-start-a-new-claim"]
        * ```
        */
-      getByCyLike(
-        partialQaSelector: string,
-        args?: any
-      ): Chainable<JQuery<HTMLElement>>
+      getByCyLike(partialQaSelector: string, args?: any): Chainable<JQuery<HTMLElement>>
+
+      /** Mounts a React node
+       * @param component React Node to mount
+       * @param options Additional options to pass into mount
+       */
     }
   }
 }
