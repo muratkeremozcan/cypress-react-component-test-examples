@@ -102,7 +102,7 @@
     "prettier": "2.8.7",
     "pretty": "2.0.0",
     "ramda": "0.28.0",
-    "react-error-boundary": "3.1.4",
+    "react-error-boundary": "4.0.3",
     "react-infinite-scroll-hook": "4.1.1",
     "react-redux": "8.0.5",
     "react-transition-group": "4.4.5",
