@@ -15,6 +15,7 @@ const TaskInput = () => {
 
   const addTask = () => {
     if (input) {
+      // @ts-ignore
       setTasks([...tasks, input])
       setInput('')
     }

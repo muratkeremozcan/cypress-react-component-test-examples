@@ -8,107 +8,26 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  install-dependencies:
-    name: Install Dependencies
+  checks:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+      # https://github.com/cypress-io/github-action
+      - name: Install 📦
+        uses: cypress-io/github-action@v5
         with:
-          cache: 'yarn'
-          node-version: 16.10.0
-      - uses: bahmutov/npm-install@v1.8.29
-        with: { useRollingCache: true } # recommended for large projects
-        env:
-          CYPRESS_INSTALL_BINARY: 0 # no need to install the Cypress binary, we are already using the docker image in the e2e job
-
-  # unit-test:
-  #   needs: [install-dependencies]
-  #   name: Run Unit Tests
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v3
-  #     - uses: bahmutov/npm-install@v1.8.15
-  #       with:
-  #         useRollingCache: true
-  #     - name: Run tests
-  #       run: yarn test
-
-  lint:
-    needs: [install-dependencies]
-    name: Run Lint
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: bahmutov/npm-install@v1.8.29
-        with: { useRollingCache: true }
-        env:
-          CYPRESS_INSTALL_BINARY: 0
-      - name: lint
+          runTests: false
+      - name: Check types 🧹
+        run: yarn typecheck
+      - name: Lint
         run: yarn lint
 
-  typecheck:
-    needs: [install-dependencies]
-    name: Run Typecheck
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: bahmutov/npm-install@v1.8.29
-        with: { useRollingCache: true }
-        env:
-          CYPRESS_INSTALL_BINARY: 0
-      - name: typecheck
-        run: yarn typecheck
-
-  cypress-e2e-tests:
-    needs: [install-dependencies]
-    runs-on: ubuntu-latest
-    container: cypress/included:12.6.0 # save time on not having to install cypress
-    steps:
-      - uses: actions/checkout@v3
-
-      - uses: bahmutov/npm-install@v1.8.29 # save time on dependencies
-        with: { useRollingCache: true }
-
-      - name: Cypress e2e tests 🧪
-        uses: cypress-io/github-action@v5.6.1
-        with:
-          install: false # no need to install because of the above 2
-          start: yarn start
-          wait-on: 'http://localhost:3000'
-          # if you want to enable parallelization
-          # browser: chrome
-          # record: true # records on cypress dashboard
-          # group: e2e-tests
-          # tag: e2e-tests
-        env:
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-
-  cypress-component-tests:
-    # if you want to enable parallelization
-    # strategy:
-    #   matrix:
-    #     machines: [1, 2, 3, 4, 5]
-    needs: [install-dependencies]
-    runs-on: ubuntu-latest
-    container: cypress/included:12.6.0 # save time on not having to install cypress
-    steps:
-      - uses: actions/checkout@v3
-
-      - uses: bahmutov/npm-install@v1.8.29 # save time on dependencies
-        with: { useRollingCache: true }
-
-      - name: Cypress component tests 🧪
-        uses: cypress-io/github-action@v5.6.1
-        with:
-          # we have already installed everything
-          install: false
-          component: true
-          browser: chrome
-          # if you want to enable parallelization
-          # record: true
-          # parallel: true # parallelizes tests
-          # group: component-tests
-          # tag: component-test
-        env:
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+  tests:
+    needs: checks
+    uses: bahmutov/cypress-workflows/.github/workflows/split.yml@v2
+    with:
+      nE2E: 1
+      nComponent: 10
+      start: yarn start
+      wait-on: 'http://localhost:3000'

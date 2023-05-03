@@ -20,6 +20,7 @@ const Parent = ({ children }) => {
 }
 
 const ComponentWithStateContext = () => {
+  // @ts-ignore
   const [state, setState] = useContext(StateContext)
   return (
     <div>
