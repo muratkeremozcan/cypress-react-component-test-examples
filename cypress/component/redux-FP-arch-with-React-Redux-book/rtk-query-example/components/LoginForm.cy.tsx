@@ -1,6 +1,6 @@
 import LoginForm from './LoginForm'
 
-describe('LoginForm', {viewportWidth: 600, viewportHeight: 600}, () => {
+describe('LoginForm', () => {
   it('should verify password and both field cases', () => {
     cy.mount(<LoginForm />)
 

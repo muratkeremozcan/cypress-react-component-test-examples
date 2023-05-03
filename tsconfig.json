@@ -19,7 +19,7 @@
     "rootDir": ".",
     "noImplicitAny": false
   },
-  "types": ["cypress", "node", "@testing-library/cypress", "cypress-real-events"],
+  "types": ["cypress", "node", "@testing-library/cypress", "cypress-real-events", "cypress-map"],
   "include": ["**/*.ts", "**/*.tsx"],
   "exclude": [
     "node_modules",
