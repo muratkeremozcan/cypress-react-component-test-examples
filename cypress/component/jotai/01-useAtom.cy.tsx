@@ -10,7 +10,10 @@ const doubleCountAtom = atom((get) => get(countAtom) * 2)
 // and allows updating the countAtom value based on the triple count.
 const tripleCountAtom = atom(
   (get) => get(countAtom) * 3, // if the 1st arg was null, it would be write-only derived atom
-  (get, set, newValue: number) => set(countAtom, newValue / 3)
+  (get, set, newValue: number) => {
+    // console.log(newValue) // what is read above, goes to newValue here
+    set(countAtom, newValue / 3) // still ensure that he original count is updated, at 1/3 the rate
+  }
 )
 
 function App() {
@@ -18,6 +21,7 @@ function App() {
   const [doubleCount] = useAtom(doubleCountAtom)
   // const doubleCount = useAtomValue(doubleCountAtom) // same thing
   const [tripleCount, setTripleCount] = useAtom(tripleCountAtom)
+  console.log(tripleCount)
 
   return (
     <div>

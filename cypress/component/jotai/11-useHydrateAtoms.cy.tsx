@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import { ReactNode } from 'react'
 import { useHydrateAtoms } from 'jotai/utils'
 import { atom, useAtom, Provider } from 'jotai'
 
