@@ -100,7 +100,7 @@
     "eslint-plugin-prettier": "4.0.0",
     "jotai": "^2.0.4",
     "jotai-optics": "^0.3.0",
-    "js-cookie": "3.0.1",
+    "js-cookie": "3.0.5",
     "lodash": "4.17.21",
     "optics-ts": "^2.4.0",
     "prettier": "2.8.7",
