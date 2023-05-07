@@ -96,7 +96,7 @@
     "cypress-react-app-actions": "1.0.2",
     "cypress-real-events": "1.7.6",
     "cypress-recurse": "1.31.2",
-    "eslint-plugin-cypress": "2.12.1",
+    "eslint-plugin-cypress": "2.13.3",
     "eslint-plugin-prettier": "4.0.0",
     "jotai": "^2.0.4",
     "jotai-optics": "^0.3.0",
