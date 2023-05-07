@@ -82,7 +82,7 @@
   "devDependencies": {
     "@testing-library/cypress": "9.0.0",
     "@types/faker": "6.6.8",
-    "@types/ramda": "0.28.23",
+    "@types/ramda": "0.29.1",
     "@types/redux-actions": "2.6.2",
     "@types/redux-thunk": "2.1.0",
     "axios": "0.27.2",
@@ -105,7 +105,7 @@
     "optics-ts": "^2.4.0",
     "prettier": "2.8.8",
     "pretty": "2.0.0",
-    "ramda": "0.28.0",
+    "ramda": "0.29.0",
     "react-error-boundary": "3.1.4",
     "react-infinite-scroll-hook": "4.1.1",
     "react-redux": "8.0.5",
