@@ -38,7 +38,7 @@
     "sass": "^1.56.1",
     "start-server-and-test": "2.0.0",
     "styled-components": "5.3.10",
-    "typescript": "5.0.2",
+    "typescript": "5.0.4",
     "web-vitals": "3.3.0",
     "xstate": "4.37.1",
     "yup": "1.0.2"
