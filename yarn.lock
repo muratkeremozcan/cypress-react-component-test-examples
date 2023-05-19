@@ -4711,9 +4711,9 @@ cypress-each@1.13.3:
   integrity sha512-aNFoDuybFAQ7OObbeO5yxBGmXkGKVAcT1wLHLiL3+HQi+g+q3vECbn4J9cYOXJ7yYfbcBLh8dgQd/IG3Ls2z7A==
 
 cypress-map@^1.19.1:
-  version "1.19.1"
-  resolved "https://registry.yarnpkg.com/cypress-map/-/cypress-map-1.19.1.tgz#b57308055accaf91ef692a8ea317ca56dc6802f6"
-  integrity sha512-YInLCoNbv9j/+GKKVCDYouP0Qhnuiy1SVrVPoUXYgMWdSIJYYqHryNH+CqA7vxVntNoNSD8+FQTiewZ2HVhkkw==
+  version "1.20.1"
+  resolved "https://registry.yarnpkg.com/cypress-map/-/cypress-map-1.20.1.tgz#ef65f5a034752a2d8234bedde067715c688098c5"
+  integrity sha512-+GJMV3LhuBQsbybvaxdmuRTaFbjlCcpIMUUIhB8s4irnfDavZDYfI8sgIgnhUckO/rjaXbkN7FSwOJIICZe5KQ==
   dependencies:
     string-format "^2.0.0"
 
