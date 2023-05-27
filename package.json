@@ -41,7 +41,7 @@
     "typescript": "5.0.4",
     "web-vitals": "3.3.1",
     "xstate": "4.37.2",
-    "yup": "1.1.1"
+    "yup": "1.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
