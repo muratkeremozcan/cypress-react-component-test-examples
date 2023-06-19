@@ -8258,9 +8258,9 @@ jotai-optics@^0.3.0:
   integrity sha512-5ttpCRREIBu6DJix0wlyBP6y1QDPlePnoMZSXNDi/FOkXZrhk9uIXKjwvw34/yBCHT5mYpFUD4sFDvRUU2vkvQ==
 
 jotai@^2.0.4:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/jotai/-/jotai-2.2.0.tgz#80c176efeb59d32d7eef7f14510ba8e01ef7b0db"
-  integrity sha512-2gsMVpoaBa6aPHLArNhphck4+n8unZ8xF4Ciqhb+Z+tjsvabn5QFisNFHBMWooMAAmmTNU5TcvBIP8/XAsZy8Q==
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/jotai/-/jotai-2.2.1.tgz#0a95b88c5f3ea4fd656b5f79af6f84e895f84f5a"
+  integrity sha512-Gz4tpbRQy9OiFgBwF9F7TieDn0UTE3C0IFSDuxHjOIvgn2tACH30UKz6p/wIlfoZROXSTCIxEvYEa7Y25WM+8g==
 
 js-beautify@^1.6.12:
   version "1.14.7"
