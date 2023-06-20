@@ -118,6 +118,7 @@
     "redux-devtools-extension": "2.13.9",
     "rxjs": "^7.8.1",
     "thunkify": "2.1.2",
+    "type": "^2.7.2",
     "typescript-plugin-css-modules": "^5.0.1",
     "use-interval": "1.4.0",
     "uuid": "9.0.0",
