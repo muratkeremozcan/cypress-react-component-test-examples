@@ -108,7 +108,7 @@
     "ramda": "0.29.0",
     "react-error-boundary": "3.1.4",
     "react-infinite-scroll-hook": "4.1.1",
-    "react-redux": "8.1.0",
+    "react-redux": "8.1.1",
     "react-transition-group": "4.4.5",
     "react-use-geolocation": "0.1.1",
     "react-use-keypress": "1.3.1",
