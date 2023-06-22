@@ -28,4 +28,13 @@ describe('App', { viewportWidth: 900, viewportHeight: 700 }, () => {
     cy.getByCy('show').click()
     cy.getByCy('anagrams').should('not.exist')
   })
+
+  it('should reset input to default text when reset button is clicked', () => {
+    cy.getByCy('reset').click()
+    cy.getByCy('anagram-data').contains('6')
+
+    cy.getByCy('default-text').clear().type('ab')
+    cy.getByCy('reset').click()
+    cy.getByCy('anagram-data').contains('2')
+  })
 })
