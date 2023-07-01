@@ -89,7 +89,7 @@
     "copy-to-clipboard": "3.3.3",
     "cross-env": "7.0.3",
     "cy-spok": "1.6.1",
-    "cypress": "12.15.0",
+    "cypress": "12.16.0",
     "cypress-axe": "1.4.0",
     "cypress-each": "1.13.3",
     "cypress-map": "^1.19.1",
