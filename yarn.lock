@@ -9637,9 +9637,9 @@ opn@^5.5.0:
     is-wsl "^1.1.0"
 
 optics-ts@^2.4.0:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/optics-ts/-/optics-ts-2.4.0.tgz#b23d177a76de66fdec9a832eefbd43458a91953e"
-  integrity sha512-BIYgnqOTEf+WiXuxuBFXeoCtyIDOwnUwCMybdQh8qdHyWXunwVVt7iD9XwNq8SCd5vUo9vqgYxF5ati/6inIuQ==
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/optics-ts/-/optics-ts-2.4.1.tgz#de94bda2b0ed7fde5b7631283031b9699459d40d"
+  integrity sha512-HaYzMHvC80r7U/LqAd4hQyopDezC60PO2qF5GuIwALut2cl5rK1VWHsqTp0oqoJJWjiv6uXKqsO+Q2OO0C3MmQ==
 
 optimize-css-assets-webpack-plugin@5.0.4:
   version "5.0.4"
