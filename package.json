@@ -39,7 +39,7 @@
     "start-server-and-test": "2.0.0",
     "styled-components": "6.0.4",
     "typescript": "5.1.6",
-    "web-vitals": "3.3.2",
+    "web-vitals": "3.4.0",
     "xstate": "4.38.1",
     "yup": "1.2.0"
   },
