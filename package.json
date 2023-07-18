@@ -94,7 +94,7 @@
     "cypress-each": "1.13.3",
     "cypress-map": "^1.19.1",
     "cypress-react-app-actions": "1.0.2",
-    "cypress-real-events": "1.8.1",
+    "cypress-real-events": "1.9.1",
     "cypress-recurse": "1.35.2",
     "eslint-plugin-cypress": "2.13.3",
     "eslint-plugin-prettier": "4.0.0",
