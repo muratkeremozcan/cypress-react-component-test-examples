@@ -1207,10 +1207,10 @@
     "@babel/helper-validator-identifier" "^7.22.5"
     to-fast-properties "^2.0.0"
 
-"@bahmutov/spok@1.2.5":
-  version "1.2.5"
-  resolved "https://registry.yarnpkg.com/@bahmutov/spok/-/spok-1.2.5.tgz#57af99032d44ab239e12693d5b1346280b4d8b14"
-  integrity sha512-tRtKM5rmL59Ciu3yBgDYEV798B6RdK85wUsNOsVJ2lrw5UGdxk17nlvwrLVoX6xHpfoOudiFZ9O8Ae+uhOSQ0w==
+"@bahmutov/spok@1.2.6":
+  version "1.2.6"
+  resolved "https://registry.yarnpkg.com/@bahmutov/spok/-/spok-1.2.6.tgz#b4b462907c9a3241a422c0456fbfbb326b77026b"
+  integrity sha512-ZwQQq1yj5T4f/Mwmd/NRlg39ytp6wY5eE/F8x81nlctVo13UvcmWjzsQmnJUzWk7kwmMO5GO+nb+lFnsk8X1OA==
   dependencies:
     ansicolors "~0.3.2"
     is-arguments "^1.1.1"
@@ -4803,12 +4803,12 @@ csstype@^3.0.2, csstype@^3.1.2:
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.1.2.tgz#1d4bf9d572f11c14031f0436e1c10bc1f571f50b"
   integrity sha512-I7K1Uu0MBPzaFKg4nI5Q7Vs2t+3gWWW648spaF+Rg7pI9ds18Ugn+lvg4SHczUdKlHI5LWBXyqfS8+DufyBsgQ==
 
-cy-spok@1.6.1:
-  version "1.6.1"
-  resolved "https://registry.yarnpkg.com/cy-spok/-/cy-spok-1.6.1.tgz#549facf2904a3102e71870bbf02d6745ab0e8e46"
-  integrity sha512-1Hx3BWYifBujdr6iKUQlI4NN7jF/OQ4PvAa8AB9ZMKsk5vAXKXCG38an39JPzMn468zW3k9H5nmOeaauJfUN7w==
+cy-spok@1.6.2:
+  version "1.6.2"
+  resolved "https://registry.yarnpkg.com/cy-spok/-/cy-spok-1.6.2.tgz#3031eadea9001cdef4cbc06beac6e7ff6f08cada"
+  integrity sha512-Es7RgNvyJdLKIvbpf72HdsXHqBn4l6LdTB5Jf/rv0A3olx6SSjxmPmOPDdP2DaO/HBg/rsGFzXJ+edlvLpQE8g==
   dependencies:
-    "@bahmutov/spok" "1.2.5"
+    "@bahmutov/spok" "1.2.6"
     strip-ansi "6.0.1"
 
 cyclist@^1.0.1:

@@ -88,7 +88,7 @@
     "axios": "0.27.2",
     "copy-to-clipboard": "3.3.3",
     "cross-env": "7.0.3",
-    "cy-spok": "1.6.1",
+    "cy-spok": "1.6.2",
     "cypress": "12.17.1",
     "cypress-axe": "1.4.0",
     "cypress-each": "1.13.3",
