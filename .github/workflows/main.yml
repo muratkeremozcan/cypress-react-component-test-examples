@@ -63,7 +63,7 @@ jobs:
   cypress-e2e-tests:
     needs: [install-dependencies]
     runs-on: ubuntu-latest
-    container: cypress/included:12.6.0 # save time on not having to install cypress
+    container: cypress/included:12.17.2 # save time on not having to install cypress
     steps:
       - uses: actions/checkout@v3
 
@@ -91,7 +91,7 @@ jobs:
     #     machines: [1, 2, 3, 4, 5]
     needs: [install-dependencies]
     runs-on: ubuntu-latest
-    container: cypress/included:12.6.0 # save time on not having to install cypress
+    container: cypress/included:12.17.2 # save time on not having to install cypress
     steps:
       - uses: actions/checkout@v3
 
