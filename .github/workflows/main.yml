@@ -84,6 +84,8 @@ jobs:
       - name: Cypress e2e tests 🧪
         uses: cypress-io/github-action@v5.8.3
         with:
+          install: false
+          start: yarn start
           wait-on: 'http://localhost:3000'
           browser: chrome
           # if you want to enable parallelization
@@ -121,6 +123,7 @@ jobs:
       - name: Cypress component tests 🧪
         uses: cypress-io/github-action@v5.8.3
         with:
+          install: false
           component: true
           browser: chrome
           # if you want to enable parallelization
