@@ -12,103 +12,124 @@ jobs:
     name: Install Dependencies
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          cache: 'yarn'
-          node-version: 16.10.0
-      - uses: bahmutov/npm-install@v1.8.32
-        with: { useRollingCache: true } # recommended for large projects
-        env:
-          CYPRESS_INSTALL_BINARY: 0 # no need to install the Cypress binary, we are already using the docker image in the e2e job
-
-  # unit-test:
-  #   needs: [install-dependencies]
-  #   name: Run Unit Tests
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v3
-  #     - uses: bahmutov/npm-install@v1.8.15
-  #       with:
-  #         useRollingCache: true
-  #     - name: Run tests
-  #       run: yarn test
+          node-version: 16
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - name: Install dependencies
+        uses: cypress-io/github-action@v5.8.3
+        with:
+          runTests: false
 
   lint:
-    needs: [install-dependencies]
+    needs: install-dependencies
     name: Run Lint
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
       - uses: actions/checkout@v3
-      - uses: bahmutov/npm-install@v1.8.32
-        with: { useRollingCache: true }
-        env:
-          CYPRESS_INSTALL_BINARY: 0
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - name: Install dependencies
+        uses: cypress-io/github-action@v5.8.3
+        with:
+          runTests: false
       - name: lint
         run: yarn lint
 
   typecheck:
-    needs: [install-dependencies]
-    name: Run Typecheck
+    needs: install-dependencies
+    name: Run typecheck
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
       - uses: actions/checkout@v3
-      - uses: bahmutov/npm-install@v1.8.32
-        with: { useRollingCache: true }
-        env:
-          CYPRESS_INSTALL_BINARY: 0
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - name: Install dependencies
+        uses: cypress-io/github-action@v5.8.3
+        with:
+          runTests: false
       - name: typecheck
         run: yarn typecheck
 
-  cypress-e2e-tests:
+  cypress-e2e-test:
+    #  if you want to enable parallelization
+    # strategy:
+    #   fail-fast: false
+    #   matrix:
+    #     machines: [1, 2, 3]
     needs: [install-dependencies]
     runs-on: ubuntu-latest
-    container: cypress/included:12.6.0 # save time on not having to install cypress
     steps:
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
       - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
 
-      - uses: bahmutov/npm-install@v1.8.32 # save time on dependencies
-        with: { useRollingCache: true }
+      - name: Install Specific Chrome Version
+        run: |
+          sudo apt-get install -y wget
+          sudo wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+          sudo apt-get install ./google-chrome-stable_current_amd64.deb
 
       - name: Cypress e2e tests 🧪
         uses: cypress-io/github-action@v5.8.3
         with:
-          install: false # no need to install because of the above 2
           start: yarn start
           wait-on: 'http://localhost:3000'
+          browser: chrome
           # if you want to enable parallelization
-          # browser: chrome
-          # record: true # records on cypress dashboard
-          # group: e2e-tests
-          # tag: e2e-tests
+          record: true
+          parallel: true
+          group: e2e-tests
+          tag: e2e-tests
         env:
+          # if you want to enable parallelization
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-  cypress-component-tests:
+  cypress-ct-test:
     # if you want to enable parallelization
-    # strategy:
-    #   matrix:
-    #     machines: [1, 2, 3, 4, 5]
+    strategy:
+      fail-fast: false
+      matrix:
+        machines: [1, 2, 3, 4, 5, 6]
     needs: [install-dependencies]
     runs-on: ubuntu-latest
-    container: cypress/included:12.6.0 # save time on not having to install cypress
     steps:
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
       - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
 
-      - uses: bahmutov/npm-install@v1.8.32 # save time on dependencies
-        with: { useRollingCache: true }
+      - name: Install Specific Chrome Version
+        run: |
+          sudo apt-get install -y wget
+          sudo wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+          sudo apt-get install ./google-chrome-stable_current_amd64.deb
 
       - name: Cypress component tests 🧪
         uses: cypress-io/github-action@v5.8.3
         with:
-          # we have already installed everything
-          install: false
           component: true
           browser: chrome
           # if you want to enable parallelization
-          # record: true
-          # parallel: true # parallelizes tests
-          # group: component-tests
-          # tag: component-test
+          record: true
+          parallel: true
+          group: ct-tests
+          tag: ct-tests
         env:
+          # if you want to enable parallelization
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
