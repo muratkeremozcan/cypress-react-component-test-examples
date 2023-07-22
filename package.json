@@ -37,7 +37,7 @@
     "react-scripts": "4.0.3",
     "sass": "^1.56.1",
     "start-server-and-test": "2.0.0",
-    "styled-components": "6.0.4",
+    "styled-components": "6.0.5",
     "typescript": "5.1.6",
     "web-vitals": "3.4.0",
     "xstate": "4.38.1",
