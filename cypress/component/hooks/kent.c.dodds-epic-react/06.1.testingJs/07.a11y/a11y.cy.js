@@ -1,3 +1,5 @@
+import 'cypress-axe'
+
 function InaccessibleForm() {
   return (
     <form>
