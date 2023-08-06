@@ -22,7 +22,7 @@
     "@xstate/react": "3.2.2",
     "faker": "5.5.3",
     "formik": "2.4.3",
-    "i18next": "23.4.1",
+    "i18next": "23.4.2",
     "mobx": "6.10.0",
     "mobx-react-lite": "4.0.3",
     "prop-types": "15.8.1",
