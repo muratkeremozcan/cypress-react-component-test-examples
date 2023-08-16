@@ -121,7 +121,7 @@
     "typescript-plugin-css-modules": "^5.0.1",
     "use-interval": "1.4.0",
     "uuid": "9.0.0",
-    "vanilla-tilt": "1.8.0",
+    "vanilla-tilt": "1.8.1",
     "warning": "4.0.3"
   }
 }

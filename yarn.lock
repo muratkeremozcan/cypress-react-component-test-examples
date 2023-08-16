@@ -13543,10 +13543,10 @@ validate-npm-package-license@^3.0.1:
     spdx-correct "^3.0.0"
     spdx-expression-parse "^3.0.0"
 
-vanilla-tilt@1.8.0:
-  version "1.8.0"
-  resolved "https://registry.yarnpkg.com/vanilla-tilt/-/vanilla-tilt-1.8.0.tgz#64528ff3667dc6976270236a56332a123482ce3c"
-  integrity sha512-wVCHyyfRuiRdKhDTNxKPb60lkagmywDSqLgFETEr71Sm646AvGxuf/14Kx9A8FaISyYvMoKQHk6FTqt+YLGhEw==
+vanilla-tilt@1.8.1:
+  version "1.8.1"
+  resolved "https://registry.yarnpkg.com/vanilla-tilt/-/vanilla-tilt-1.8.1.tgz#09cb4dc89509a55a44bb221917bb8ecdc2e39113"
+  integrity sha512-hPB1XUsnh+SIeVSW2beb5RnuFxz4ZNgxjGD78o52F49gS4xaoLeEMh9qrQnJrnEn/vjjBI7IlxrrXmz4tGV0Kw==
 
 vary@~1.1.2:
   version "1.1.2"
