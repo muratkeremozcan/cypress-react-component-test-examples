@@ -4827,12 +4827,10 @@ cypress-react-app-actions@1.0.2:
   resolved "https://registry.yarnpkg.com/cypress-react-app-actions/-/cypress-react-app-actions-1.0.2.tgz#dc486207a5da32f13e3f6e3399e71ad848779d74"
   integrity sha512-5aEyFW3tuqZgq2rHy3WsO/9dH7Xj706TmXfOhZkOYiUn5D/00uoCik3c1ao8HbeoFdnQK74nIpKFqwq8lCRYdA==
 
-cypress-real-events@1.10.0:
-  version "1.10.0"
-  resolved "https://registry.yarnpkg.com/cypress-real-events/-/cypress-real-events-1.10.0.tgz#6827ae4667561471c2a86bb4be30061fa9b177b8"
-  integrity sha512-ALSdCiG+Rj3Sl6qooqTFeFGBxOIe8QJUcgIuJ6ZVBanTEijXRzqxqstMC2ZKfixqj1TyNjolyZU4zOoN/jtHpg==
-  dependencies:
-    prettier "^3.0.0"
+cypress-real-events@1.10.1:
+  version "1.10.1"
+  resolved "https://registry.yarnpkg.com/cypress-real-events/-/cypress-real-events-1.10.1.tgz#289f2cb4a1d452e54a19e1ecd02931016b41b8ff"
+  integrity sha512-l4WvEymhup8EAheXVPqEi5gofBTCvhyYL/i3fOcJtL32prfpZ6jhnnXSLJsxOAl/RlmygIEP1ZeRpqrrDPgGIA==
 
 cypress-recurse@1.35.2:
   version "1.35.2"
@@ -10721,11 +10719,6 @@ prettier@3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-3.0.2.tgz#78fcecd6d870551aa5547437cdae39d4701dca5b"
   integrity sha512-o2YR9qtniXvwEZlOKbveKfDQVyqxbEIWn48Z8m3ZJjBjcCmUy3xZGIv+7AkaeuaTr6yPXJjwv07ZWlsWbEy1rQ==
-
-prettier@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-3.0.0.tgz#e7b19f691245a21d618c68bc54dc06122f6105ae"
-  integrity sha512-zBf5eHpwHOGPC47h0zrPyNn+eAEIdEzfywMoYn2XPi0P44Zp0tSq64rq0xAREh4auw2cJZHo9QUob+NqCQky4g==
 
 pretty-bytes@^5.3.0, pretty-bytes@^5.6.0:
   version "5.6.0"
