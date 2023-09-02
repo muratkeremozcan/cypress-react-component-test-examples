@@ -9,7 +9,7 @@
   "labels": ["type: dependencies", "renovate"],
   "packageRules": [
     {
-      "packageNames": ["faker"],
+      "packageNames": ["faker", "typescript"],
       "enabled": false
     }
   ]
