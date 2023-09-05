@@ -44,7 +44,7 @@
     "yup": "1.2.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts start --openssl-legacy-provider",
     "build": "react-scripts build",
     "test": "cross-env CI=true react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
@@ -89,7 +89,7 @@
     "copy-to-clipboard": "3.3.3",
     "cross-env": "7.0.3",
     "cy-spok": "1.6.2",
-    "cypress": "12.17.4",
+    "cypress": "13.1.0",
     "cypress-axe": "1.4.0",
     "cypress-each": "1.13.3",
     "cypress-map": "^1.19.1",
