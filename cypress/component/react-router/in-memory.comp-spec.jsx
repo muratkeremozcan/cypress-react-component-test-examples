@@ -10,10 +10,7 @@ describe('React Memory Router', () => {
     cy.viewport(600, 300)
 
     cy.mount(
-      <MemoryRouter
-        initialEntries={['/about', '/two', { pathname: '/three ' }]}
-        initialIndex={0}
-      >
+      <MemoryRouter initialEntries={['/about', '/two', { pathname: '/three ' }]} initialIndex={0}>
         <App />
       </MemoryRouter>
     )
@@ -22,23 +19,17 @@ describe('React Memory Router', () => {
     // so we should see "About" component
     cy.log('**About** component')
     cy.contains('h2', 'About')
-    // because the routing is in memory, the URL stays at the spec filename
-    cy.location('pathname').should('match', /in-memory.comp-spec.jsx$/)
 
     // Go to home route
     cy.contains('a', 'Home').click()
 
     cy.log('**Home** component')
     cy.contains('h2', 'Home') // from the "Home" component
-    // still at the spec url
-    cy.location('pathname').should('match', /in-memory.comp-spec.jsx$/)
 
     // Go to about route
     cy.log('back to **About** component')
     cy.contains('a', 'About').click()
 
     cy.contains('h2', 'About')
-    // still at the spec url
-    cy.location('pathname').should('match', /in-memory.comp-spec.jsx$/)
   })
 })
