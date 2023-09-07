@@ -7,6 +7,12 @@ concurrency:
   group: ${{ github.head_ref || github.ref }}
   cancel-in-progress: true
 
+env:
+  # if you want to enable parallelization
+  CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+  # so that we can abuse retry button in CI, and tests still run in parallel in Cy Cloud
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 jobs:
   install-dependencies:
     name: Install Dependencies
@@ -61,10 +67,10 @@ jobs:
 
   cypress-e2e-test:
     #  if you want to enable parallelization
-    # strategy:
-    #   fail-fast: false
-    #   matrix:
-    #     machines: [1, 2, 3]
+    strategy:
+      fail-fast: false
+      matrix:
+        machines: [1, 2, 3]
     needs: [install-dependencies]
     runs-on: ubuntu-latest
     steps:
@@ -88,21 +94,17 @@ jobs:
           wait-on: 'http://localhost:3000'
           browser: chrome
           # if you want to enable parallelization
-          # record: true
-          # parallel: true
-          # group: e2e-tests
-          # tag: e2e-tests
-        env:
-          # if you want to enable parallelization
-          # CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          record: true
+          parallel: true
+          group: e2e-tests
+          tag: e2e-tests
 
   cypress-ct-test:
     # if you want to enable parallelization
-    # strategy:
-    #   fail-fast: false
-    #   matrix:
-    #     machines: [1, 2, 3, 4, 5, 6]
+    strategy:
+      fail-fast: false
+      matrix:
+        machines: [1, 2, 3, 4, 5, 6]
     needs: [install-dependencies]
     runs-on: ubuntu-latest
     steps:
@@ -125,11 +127,7 @@ jobs:
           component: true
           browser: chrome
           # if you want to enable parallelization
-          # record: true
-          # parallel: true
-          # group: ct-tests
-          # tag: ct-tests
-        env:
-          # if you want to enable parallelization
-          # CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          record: true
+          parallel: true
+          group: ct-tests
+          tag: ct-tests
