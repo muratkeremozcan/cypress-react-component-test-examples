@@ -6,6 +6,7 @@ This repo started as a practice project, replicating & reviving old Cypress Reac
 As time passed, new examples were added and are still being added with Cypress 10. It can be used as a starting point for new tests, showing working examples.
 
 ```bash
+nvm use
 yarn install --registry https://registry.yarnpkg.com # specify the registry in case you are using a proprietary one
 
 # e2e
@@ -20,7 +21,6 @@ yarn cy:run-ct # headless version
 ```
 
 ## CI setup: multi stage caching using Github Actions
-
 
 ```
 build  -->  lint
