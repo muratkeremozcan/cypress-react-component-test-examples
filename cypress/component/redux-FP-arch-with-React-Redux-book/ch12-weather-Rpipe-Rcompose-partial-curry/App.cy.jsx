@@ -9,9 +9,11 @@ describe('App', () => {
         <App />
       </Provider>
     )
-
     // cy.intercept('GET', '*').as('axios-response') // non-stubbed version
-    cy.intercept('GET', '*', { body: response }).as('axios-response')
+    // cy.intercept('GET', '*', { body: response }).as('axios-response') +
+    cy.intercept('GET', 'http://api.openweathermap.org/**/*', { body: response }).as(
+      'axios-response'
+    )
     cy.get('input').type('Chicago')
     cy.get('button').click()
     cy.wait('@axios-response')
