@@ -67,10 +67,10 @@ jobs:
 
   cypress-e2e-test:
     #  if you want to enable parallelization
-    strategy:
-      fail-fast: false
-      matrix:
-        containers: [1, 2]
+    # strategy:
+    #   fail-fast: false
+    #   matrix:
+    #     containers: [1, 2]
     needs: [install-dependencies]
     runs-on: ubuntu-latest
     steps:
@@ -94,17 +94,17 @@ jobs:
           wait-on: 'http://localhost:3000'
           browser: chrome
           # if you want to enable parallelization
-          record: true
-          parallel: true
-          group: e2e-tests
-          tag: e2e-tests
+          # record: true
+          # parallel: true
+          # group: e2e-tests
+          # tag: e2e-tests
 
   cypress-ct-test:
     # if you want to enable parallelization
-    strategy:
-      fail-fast: false
-      matrix:
-        containers: [1, 2, 3, 4, 5, 6]
+    # strategy:
+    #   fail-fast: false
+    #   matrix:
+    #     containers: [1, 2, 3, 4, 5, 6]
     needs: [install-dependencies]
     runs-on: ubuntu-latest
     steps:
@@ -127,7 +127,7 @@ jobs:
           component: true
           browser: chrome
           # if you want to enable parallelization
-          record: true
-          parallel: true
-          group: ct-tests
-          tag: ct-tests
+          # record: true
+          # parallel: true
+          # group: ct-tests
+          # tag: ct-tests
