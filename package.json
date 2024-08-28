@@ -53,8 +53,8 @@
     "cy:open": "cypress open --e2e --browser chrome",
     "cy:run": "cypress run --e2e --browser chrome",
     "cy:open-ct": "cypress open --component --browser chrome",
-    "cy:run-ct": "export NODE_OPTIONS='--openssl-legacy-provider --max-old-space-size=40960' && cypress run --component --browser chrome",
-    "cy:run-ct-fast": "export NODE_OPTIONS='--openssl-legacy-provider --max-old-space-size=40960' && yarn cy:run-ct --config video=false screenshot=false useExperimentalComponentTesting=true",
+    "cy:run-ct": "cypress run --component --browser chrome",
+    "cy:run-ct-fast": "yarn cy:run-ct --config video=false screenshot=false useExperimentalComponentTesting=true",
     "server:test": "server-test 3000 cy:run"
   },
   "eslintConfig": {
