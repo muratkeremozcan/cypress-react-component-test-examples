@@ -1,4 +1,4 @@
-# add this job to branch prot
+# add this job to branch protection rules
 name: Merge Gatekeeper
 
 on:
