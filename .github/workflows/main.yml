@@ -20,7 +20,7 @@ jobs:
     steps:
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 20
       - uses: actions/checkout@v3
         with:
           ref: ${{ github.event.pull_request.head.sha }}
@@ -36,7 +36,7 @@ jobs:
     steps:
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 20
       - uses: actions/checkout@v3
         with:
           ref: ${{ github.event.pull_request.head.sha }}
@@ -54,7 +54,7 @@ jobs:
     steps:
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 20
       - uses: actions/checkout@v3
         with:
           ref: ${{ github.event.pull_request.head.sha }}
@@ -76,7 +76,7 @@ jobs:
     steps:
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 20
       - uses: actions/checkout@v3
         with:
           ref: ${{ github.event.pull_request.head.sha }}
@@ -110,7 +110,7 @@ jobs:
     steps:
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 20
       - uses: actions/checkout@v3
         with:
           ref: ${{ github.event.pull_request.head.sha }}
@@ -132,4 +132,4 @@ jobs:
           # group: ct-tests
           # tag: ct-tests
         env:
-          NODE_OPTIONS: --openssl-legacy-provider # prevents running into Error: error:0308010C:digital envelope routines::unsupported https://github.com/muratkeremozcan/cypress-react-component-test-examples/actions/runs/10599910943/job/29376141508?pr=816#step:5:88
+          NODE_OPTIONS: --openssl-legacy-provider # prevents running into Error: error:0308010C:digital envelope routines::unsupported https://github.com/muratkeremozcan/cypress-react-component-test-examples/actions/runs/10599910943/job/29376141508?pr=820#step:5:88
