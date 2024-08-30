@@ -12,6 +12,8 @@ env:
   CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
   # so that we can abuse retry button in CI, and tests still run in parallel in Cy Cloud
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  # prevents running into Error: error:0308010C:digital envelope routines::unsupported https://github.com/muratkeremozcan/cypress-react-component-test-examples/actions/runs/10599910943/job/29376141508?pr=820#step:5:88
+  NODE_OPTIONS: --openssl-legacy-provider
 
 jobs:
   install-dependencies:
@@ -20,12 +22,12 @@ jobs:
     steps:
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
       - uses: actions/checkout@v3
         with:
           ref: ${{ github.event.pull_request.head.sha }}
       - name: Install dependencies
-        uses: cypress-io/github-action@v5
+        uses: cypress-io/github-action@v6
         with:
           runTests: false
 
@@ -36,12 +38,12 @@ jobs:
     steps:
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
       - uses: actions/checkout@v3
         with:
           ref: ${{ github.event.pull_request.head.sha }}
       - name: Install dependencies
-        uses: cypress-io/github-action@v5
+        uses: cypress-io/github-action@v6
         with:
           runTests: false
       - name: lint
@@ -54,12 +56,12 @@ jobs:
     steps:
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
       - uses: actions/checkout@v3
         with:
           ref: ${{ github.event.pull_request.head.sha }}
       - name: Install dependencies
-        uses: cypress-io/github-action@v5
+        uses: cypress-io/github-action@v6
         with:
           runTests: false
       - name: typecheck
@@ -76,7 +78,7 @@ jobs:
     steps:
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
       - uses: actions/checkout@v3
         with:
           ref: ${{ github.event.pull_request.head.sha }}
@@ -88,7 +90,7 @@ jobs:
           sudo apt-get install ./google-chrome-stable_current_amd64.deb
 
       - name: Cypress e2e tests 🧪
-        uses: cypress-io/github-action@v5
+        uses: cypress-io/github-action@v6
         with:
           start: yarn start
           wait-on: 'http://localhost:3000'
@@ -101,16 +103,16 @@ jobs:
 
   cypress-ct-test:
     # if you want to enable parallelization
-    # strategy:
-    #   fail-fast: false
-    #   matrix:
-    #     containers: [1, 2, 3, 4, 5, 6]
+    strategy:
+      fail-fast: false
+      matrix:
+        containers: [1, 2, 3, 4, 5, 6]
     needs: [install-dependencies]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
       - uses: actions/checkout@v3
         with:
           ref: ${{ github.event.pull_request.head.sha }}
@@ -122,12 +124,12 @@ jobs:
           sudo apt-get install ./google-chrome-stable_current_amd64.deb
 
       - name: Cypress component tests 🧪
-        uses: cypress-io/github-action@v5
+        uses: cypress-io/github-action@v6
         with:
           component: true
           browser: chrome
           # if you want to enable parallelization
-          # record: true
-          # parallel: true
-          # group: ct-tests
-          # tag: ct-tests
+          record: true
+          parallel: true
+          group: ct-tests
+          tag: ct-tests
