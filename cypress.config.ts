@@ -17,7 +17,7 @@ export default defineConfig({
     specPattern: 'cypress/e2e/**/*.{js,jsx,ts,tsx}'
   },
   component: {
-    experimentalJustInTimeCompile: true,
+    // experimentalJustInTimeCompile: true,
     setupNodeEvents(on, config) {},
     devServer: {
       framework: 'create-react-app',
