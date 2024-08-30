@@ -12,6 +12,8 @@ env:
   CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
   # so that we can abuse retry button in CI, and tests still run in parallel in Cy Cloud
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  # prevents running into Error: error:0308010C:digital envelope routines::unsupported https://github.com/muratkeremozcan/cypress-react-component-test-examples/actions/runs/10599910943/job/29376141508?pr=820#step:5:88
+  NODE_OPTIONS: --openssl-legacy-provider
 
 jobs:
   install-dependencies:
@@ -25,7 +27,7 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.sha }}
       - name: Install dependencies
-        uses: cypress-io/github-action@v5
+        uses: cypress-io/github-action@v6
         with:
           runTests: false
 
@@ -41,7 +43,7 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.sha }}
       - name: Install dependencies
-        uses: cypress-io/github-action@v5
+        uses: cypress-io/github-action@v6
         with:
           runTests: false
       - name: lint
@@ -59,7 +61,7 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.sha }}
       - name: Install dependencies
-        uses: cypress-io/github-action@v5
+        uses: cypress-io/github-action@v6
         with:
           runTests: false
       - name: typecheck
@@ -88,7 +90,7 @@ jobs:
           sudo apt-get install ./google-chrome-stable_current_amd64.deb
 
       - name: Cypress e2e tests 🧪
-        uses: cypress-io/github-action@v5
+        uses: cypress-io/github-action@v6
         with:
           start: yarn start
           wait-on: 'http://localhost:3000'
@@ -122,7 +124,7 @@ jobs:
           sudo apt-get install ./google-chrome-stable_current_amd64.deb
 
       - name: Cypress component tests 🧪
-        uses: cypress-io/github-action@v5
+        uses: cypress-io/github-action@v6
         with:
           component: true
           browser: chrome
@@ -131,5 +133,3 @@ jobs:
           # parallel: true
           # group: ct-tests
           # tag: ct-tests
-        env:
-          NODE_OPTIONS: --openssl-legacy-provider # prevents running into Error: error:0308010C:digital envelope routines::unsupported https://github.com/muratkeremozcan/cypress-react-component-test-examples/actions/runs/10599910943/job/29376141508?pr=820#step:5:88
